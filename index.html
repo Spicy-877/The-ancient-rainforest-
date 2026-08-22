@@ -1453,7 +1453,7 @@ const TECH_GLYPH={
 const MOD_ICON={atlas:TECH_GLYPH.multi,lab:TECH_GLYPH.pxrf,exped:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 20c0-6 4-5 7-8s1-7 5-7" stroke-dasharray="2.5 3"/><circle cx="5" cy="20" r="1.7" fill="currentColor" stroke="none"/><path d="M14 3h4v4"/></svg>',archive:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 4v10l-7 4-7-4V7z"/><path d="M12 11l7-4M12 11 5 7M12 11v10" opacity=".6"/></svg>',void:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="2.4"/><circle cx="5" cy="6" r="1.4"/><circle cx="19" cy="7" r="1.4"/><circle cx="18" cy="18" r="1.4"/><path d="M6.2 6.9 10 10.6M17.7 7.9l-3.8 2.8M16.9 17 13.8 14" stroke-dasharray="1.5 2"/></svg>',kit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 8h12l1 12H5zM9 8V6a3 3 0 0 1 6 0v2"/></svg>'};
 
 Views.home=function(){
-  App.ctx={type:'view',id:'home',label:'The Ancient Forest — Home',go:['home']};
+  App.ctx={type:'view',id:'home',label:'The Rainforest — Home',go:['home']};
   const mods=[
     {go:'atlas',t:'The Atlas',d:'Six real landscapes — Tikal to the Amazon — as dossiers and navigable 3D surveys, canopy removable.',icon:MOD_ICON.atlas,tag:'Sites'},
     {go:'lab',t:'The Laboratory',d:'Eight retrieval technologies explained honestly — and their instruments handed to you in 3D, part by part.',icon:MOD_ICON.lab,tag:'Methods'},
@@ -3283,7 +3283,7 @@ function renderSenses(mount,site){
    +'<p class="small" style="margin-top:9px;font-size:11.5px">The ambience is <b style="color:var(--cyan)">synthesized — a labeled reconstruction</b>: its rain, wind and insect density follow the climate record above. No sound of the past survives anywhere; what does survive is the same forest’s living voice — the real field recordings below.</p>'
    +'<div id="recs" style="margin-top:4px"><div class="small">fetching real field recordings…</div></div>'
    +'<div class="live-tag" style="margin-top:8px">live · iNaturalist field recordings · © each recordist</div></div>'
-   +((D.viz&&D.viz.length)?'<div class="callout"><b style="color:var(--ink)">Published visual reconstructions.</b> Rather than inventing scenes and calling them accurate, THE ANCIENT FOREST links to the researchers’ own published visualisations: '
+   +((D.viz&&D.viz.length)?'<div class="callout"><b style="color:var(--ink)">Published visual reconstructions.</b> Rather than inventing scenes and calling them accurate, The Rainforest links to the researchers’ own published visualisations: '
      +D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · ')+'</div>':'');
   const go=mount.querySelector('#sndGo');
   go.onclick=function(){ if(SND.on){SND.stop();go.textContent='▶ Ambience'}
@@ -3938,7 +3938,7 @@ function renderSenses(mount,site){
    +'<div class="snd-bar"><button class="btn small primary" id="sndGo">▶ Compose the chorus</button><span class="chip" id="sndSt" hidden></span></div>'
    +'<div id="mix" style="margin-top:6px"></div>'
    +'<div class="live-tag" style="margin-top:8px">live · iNaturalist field recordings · © each recordist</div></div>'
-   +((D.viz&&D.viz.length)?'<div class="callout"><b style="color:var(--ink)">Published visual reconstructions.</b> Rather than inventing scenes and calling them accurate, THE ANCIENT FOREST shows the researchers’ own — see the Then / Now panel above, and: '
+   +((D.viz&&D.viz.length)?'<div class="callout"><b style="color:var(--ink)">Published visual reconstructions.</b> Rather than inventing scenes and calling them accurate, The Rainforest shows the researchers’ own — see the Then / Now panel above, and: '
      +D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · ')+'</div>':'');
   const go=mount.querySelector('#sndGo'),st=mount.querySelector('#sndSt'),mx=mount.querySelector('#mix');
   go.onclick=function(){
@@ -4081,7 +4081,7 @@ const LIB_REPORTS=[
  {t:'Caracol Archaeological Project — annual reports',n:'Four decades of season reports from the Chases’ project, as filed.',u:'https://www.caracol.org/'},
  {t:'PACUNAM Foundation',n:'The foundation behind the Guatemala lidar initiative — programme and imagery.',u:'https://www.pacunam.org/'}];
 const LIB_PRIMARY=[
- {t:'Zhou Daguan — A Record of Cambodia (1296–97)',n:'The only eyewitness account of living Angkor: markets, houses, fish and rice, palace processions. The original is public domain; modern translations are in copyright — THE ANCIENT FOREST paraphrases.',u:'https://en.wikipedia.org/wiki/Zhou_Daguan'},
+ {t:'Zhou Daguan — A Record of Cambodia (1296–97)',n:'The only eyewitness account of living Angkor: markets, houses, fish and rice, palace processions. The original is public domain; modern translations are in copyright — The Rainforest paraphrases.',u:'https://en.wikipedia.org/wiki/Zhou_Daguan'},
  {t:'Bernal Díaz del Castillo — True History of the Conquest of New Spain (1568/1632)',n:'Conquest-era description of Maya barricade warfare, quoted by Scherer et al. to interpret Yaxchilan’s walls.',u:'https://en.wikipedia.org/wiki/Bernal_D%C3%ADaz_del_Castillo'},
  {t:'The four surviving Maya codices',n:'Dresden, Madrid, Paris, Grolier/Maya Codex of Mexico — the astronomical books that survived the fires.',u:'https://commons.wikimedia.org/wiki/Category:Dresden_Codex'}];
 const LIB_NOTES=[
@@ -4411,7 +4411,7 @@ Views.site=function(id){
    +'<div class="grid g2" style="margin-bottom:6px">'
    +'<div><div class="live-tag" style="margin-bottom:6px">NOW — real photograph</div><div class="ph" id="nowPh" style="aspect-ratio:16/10;cursor:pointer"><div class="small" style="padding:12px">streaming…</div></div></div>'
    +'<div><div class="live-tag" style="margin-bottom:6px">THEN — published reconstruction, credited</div><div class="ph" id="thenPh" style="aspect-ratio:16/10;cursor:pointer"><div class="small" style="padding:12px">searching published reconstruction imagery…</div></div></div></div>'
-   +'<p class="small" style="margin:0 0 30px;font-size:11px">The “then” panel shows only published reconstruction artwork by credited researchers and artists, streamed from Commons — THE ANCIENT FOREST generates nothing'+(D.viz&&D.viz.length?'; more: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'')+'.</p>'
+   +'<p class="small" style="margin:0 0 30px;font-size:11px">The “then” panel shows only published reconstruction artwork by credited researchers and artists, streamed from Commons — The Rainforest generates nothing'+(D.viz&&D.viz.length?'; more: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'')+'.</p>'
    +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">Photographs — the real place</h3>'
    +'<div class="ph-strip" id="phStrip"><div class="small">streaming photographs…</div></div>'
    +'<div class="live-tag" style="margin-bottom:30px">live · Wikimedia Commons · credit &amp; licence on hover · click to open source</div>'
@@ -4624,11 +4624,11 @@ const EMERGING=[
  ['Residue chemistry','Lipids and starches in pot walls name a meal a thousand years cold — cacao at Tikal was proven exactly this way.','Hurst et al.'],
  ['Portable Raman & hyperspectral','Pigments and minerals identified in situ, nothing sampled — Maya Blue reads in seconds on a temple wall.','conservation science'],
  ['Airborne geophysics','Magnetometers and radar go on drones and swarms; flooded worlds like the Llanos de Mojos become surveyable.','method frontier'],
- ['The instrument that does not exist yet','Every method above began with someone noticing information nobody was reading. The next receiver is unmade. It could be yours.','the premise of THE ANCIENT FOREST']];
+ ['The instrument that does not exist yet','Every method above began with someone noticing information nobody was reading. The next receiver is unmade. It could be yours.','the premise of The Rainforest']];
 
 /* ── Views.home v3 — the manifesto up front ── */
 Views.home=function(){
-  App.ctx={type:'view',id:'home',label:'The Ancient Forest — Home',go:['home']};
+  App.ctx={type:'view',id:'home',label:'The Rainforest — Home',go:['home']};
   const mods=[
     {go:'atlas',t:'The Atlas',d:'The core landscapes of the source papers — Tikal, Yaxchilan, Angkor, Cotoca — as dossiers, real-terrain surveys and real 360° presence.',icon:MOD_ICON.atlas,tag:'Sites'},
     {go:'lab',t:'The Laboratory',d:'The machines that listen to the past — real devices, photographed — plus the emerging methods that do not fully exist yet.',icon:MOD_ICON.lab,tag:'Methods'},
@@ -4648,7 +4648,7 @@ Views.home=function(){
       d.innerHTML='<div style="height:56px"></div>'
        +'<div class="overline">The premise</div>'
        +'<h2 class="sect">Information is <em>everywhere</em>. These are the machines that listen.</h2>'
-       +'<p class="lede" style="max-width:74ch">Everything that happens writes itself into something — isotopes in a tooth, starch in a pot wall, DNA in lake mud, the centimetre-scale shape of the ground under a forest. Archaeology is the engineering discipline of reading messages that were never meant to be messages. Every instrument in the Laboratory began as one person inventing a new way to listen; the newest ones read elite rooftops with neural nets and image pyramids with cosmic rays. THE ANCIENT FOREST exists to hand you that listening — the real data, the real devices, the real forests — and the itch to build the receiver that does not exist yet.</p>'
+       +'<p class="lede" style="max-width:74ch">Everything that happens writes itself into something — isotopes in a tooth, starch in a pot wall, DNA in lake mud, the centimetre-scale shape of the ground under a forest. Archaeology is the engineering discipline of reading messages that were never meant to be messages. Every instrument in the Laboratory began as one person inventing a new way to listen; the newest ones read elite rooftops with neural nets and image pyramids with cosmic rays. The Rainforest exists to hand you that listening — the real data, the real devices, the real forests — and the itch to build the receiver that does not exist yet.</p>'
        +'<div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap"><button class="btn primary" data-go="lab">Meet the instruments</button><button class="btn" data-go="codex">Enter a culture world</button></div>';
       const tg=document.querySelector('#v-home .tag-src');(tg?tg.parentNode:stats.parentNode).insertBefore(d,tg?tg.nextElementSibling:stats.nextElementSibling)}}
   const stop=startHero();
@@ -5005,7 +5005,7 @@ Views.site=function(id){
    +'<div class="live-tag" style="margin-bottom:30px">live · Wikimedia Commons · credit &amp; licence on hover · click to open source</div>'
    +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">What it may have looked like — published reconstructions</h3>'
    +'<div class="ph-strip" id="thenStrip"><div class="small">searching published reconstruction imagery…</div></div>'
-   +'<p class="small" style="margin:4px 0 30px;font-size:11px">Only published reconstruction artwork by credited researchers and artists, streamed from Commons — THE ANCIENT FOREST generates nothing'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p>'
+   +'<p class="small" style="margin:4px 0 30px;font-size:11px">Only published reconstruction artwork by credited researchers and artists, streamed from Commons — The Rainforest generates nothing'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p>'
    +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">Survey plates — real elevation, rendered</h3>'
    +'<div class="ph-strip" id="plates" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))"><div class="small">rendering from the live elevation stream…</div></div>'
    +'<p class="small" style="margin:6px 0 34px;font-size:11px">Computed in-app from real measured elevation (~30 m posting). The survey-grade archaeological lidar (0.5–1 m) is held by the projects — see the real thing: '
@@ -5471,7 +5471,7 @@ Views.site=function(id){
    +'<div class="live-tag">live · Wikimedia Commons · credit &amp; licence on hover · click to open source</div></div>'
    +'<div id="st-then"><h3 style="font:400 26px var(--serif);margin:36px 0 2px">What it may have looked like — published reconstructions</h3>'
    +'<div class="ph-strip" id="thenStrip"><div class="small">searching published reconstruction imagery…</div></div>'
-   +'<p class="small" style="margin:4px 0 0;font-size:11px">Only published, credited reconstruction artwork — THE ANCIENT FOREST generates nothing'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p></div>'
+   +'<p class="small" style="margin:4px 0 0;font-size:11px">Only published, credited reconstruction artwork — The Rainforest generates nothing'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p></div>'
    +'<div id="st-life"><h3 style="font:400 26px var(--serif);margin:36px 0 8px">Ancient life — and exactly how we know</h3>'
    +'<div class="dossier"><div class="prose selectable">'
    +'<p class="small" style="font:400 10.5px var(--mono);letter-spacing:.06em;color:var(--faint)">EVERY CLAIM BELOW IS TIED TO THE INSTRUMENT THAT RETRIEVED IT — THE CYAN CHIPS ABOVE OPEN EACH METHOD.</p>'
