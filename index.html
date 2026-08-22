@@ -12,11 +12,11 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>THE ANCIENT FOREST · Field Edition — Real-Data Tropical-Forest Archaeology</title>
+<title>The Rainforest · Field Edition — Real-Data Tropical-Forest Archaeology</title>
 <meta name="description" content="A research instrument for tropical-forest archaeology: survey real sites in 3D, examine the instruments of information retrieval, walk the forest, and build your own knowledge void.">
 
 <!-- ════════════════════════════════════════════════════════════════════════
-     THE ANCIENT FOREST · single-file research platform
+     The Rainforest  · single-file research platform
      ─────────────────────────────────────────────────────────────────────────
      HOW TO EDIT (each system is isolated — change one without touching others)
        §THEME        — colors & type (CSS variables, ~40 lines below)
@@ -416,12 +416,12 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
 <div class="plate" aria-hidden="true"><i></i><i></i><i></i><i></i><span class="sheet" id="sheetLabel">TAF·01 — SURVEY</span></div>
 
 <header>
-  <div class="mark" data-go="home" role="button" tabindex="0" aria-label="The Ancient Forest home">
+  <div class="mark" data-go="home" role="button" tabindex="0" aria-label="The Rainforest home">
     <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
       <path d="M12 3 L21 19 H3 Z" opacity=".9"/><circle cx="12" cy="19" r="1.6" fill="var(--cyan)" stroke="none"/>
       <path d="M6.5 13.5 h11" stroke="var(--cyan)" stroke-dasharray="2 2.5"/>
     </svg>
-    <div><b>THE ANCIENT FOREST</b><span>TROPICAL-FOREST ARCHAEOLOGY</span></div>
+    <div><b>The Rainforest</b><span>TROPICAL-FOREST ARCHAEOLOGY</span></div>
   </div>
   <nav id="topnav">
     <button data-go="atlas">Atlas</button>
@@ -531,7 +531,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
 
 <footer>
   <div class="fin">
-    <div>THE ANCIENT FOREST — a research platform for tropical-forest archaeology.<br>Reference reconstructions; all factual claims cited to peer-reviewed sources.<br><span style="font:500 9px var(--mono);letter-spacing:.16em;color:var(--faint)">BUILD F4 · 2026-08-10</span></div>
+    <div>The Rainforest — a research platform for tropical-forest archaeology.<br>Reference reconstructions; all factual claims cited to peer-reviewed sources.<br><span style="font:500 9px var(--mono);letter-spacing:.16em;color:var(--faint)">BUILD F4 · 2026-08-10</span></div>
     <div>Your data is yours: private by default, exportable any time.<br><span class="linkline" id="refsFootLink">References &amp; methodology</span></div>
   </div>
 </footer>
@@ -585,7 +585,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
     if(!gl||!window.fetch||!window.Promise||!window.Map){
       var d=document.createElement('div');
       d.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:#04100b;color:#ebf5ef;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center;font:15px/1.6 system-ui,sans-serif';
-      d.innerHTML='<div style="max-width:540px"><h2 style="font-size:22px;margin-bottom:10px">THE ANCIENT FOREST needs a current browser</h2><p style="color:#9db7ab">The 3D surveys and live real-data streams require WebGL and modern JavaScript. Please open this file in an up-to-date Chrome, Edge, Firefox, Safari, Opera or Samsung Internet — on any desktop, tablet or phone.</p></div>';
+      d.innerHTML='<div style="max-width:540px"><h2 style="font-size:22px;margin-bottom:10px">The Rainforest needs a current browser</h2><p style="color:#9db7ab">The 3D surveys and live real-data streams require WebGL and modern JavaScript. Please open this file in an up-to-date Chrome, Edge, Firefox, Safari, Opera or Samsung Internet — on any desktop, tablet or phone.</p></div>';
       document.body.appendChild(d);}
   }catch(e){}
 })();
@@ -593,7 +593,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
 /* ════════════════════════════════════════════════════════════════════
    §CLOUD — PERMANENT ACCOUNTS (5-minute, one-time setup — free tier)
    ────────────────────────────────────────────────────────────────────
-   The Ancient Forest runs instantly in Local Mode (data saved in this browser +
+  The Rainforest runs instantly in Local Mode (data saved in this browser +
    exportable). For permanent accounts that work on ANY device with zero
    risk of loss, connect a free Firebase project:
 
@@ -1072,7 +1072,7 @@ const REFS=[
 /* ════════════════════════════════════════════════════════════════════
    §STORAGE — local mirror always; Firebase cloud when configured.
    ════════════════════════════════════════════════════════════════════ */
-const App={view:'home',ctx:{type:'view',id:'home',label:'The Ancient Forest'},sel:null,voidAPI:null,dirty:false};
+const App={view:'home',ctx:{type:'view',id:'home',label:'The Rainforest'},sel:null,voidAPI:null,dirty:false};
 const S={d:null};
 function defaultData(){return {v:1,profile:{name:'Field researcher',email:''},
   settings:{accent:'#54e2a7',quality:'high',motion:!matchMedia('(prefers-reduced-motion: reduce)').matches,seenIntro:false},
@@ -1406,7 +1406,7 @@ backup(body){
   $('#ab-exp').onclick=()=>{download('verdant-backup-'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify(S.d,null,2));logJ('view','Exported backup',null)};
   $('#ab-imp').onchange=e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();
     r.onload=()=>{try{const inc=JSON.parse(r.result);S.d=mergeData(S.d,inc);markDirty();applySettings();toast('Backup merged — '+S.d.collected.length+' items, '+S.d.notes.length+' notes','ok');Drawers.backup(body);if(App.voidAPI)App.voidAPI.rebuild()}catch(err){toast('That file couldn’t be read.','err')}};r.readAsText(f)};
-  $('#ab-clear').onclick=()=>openModal({title:'Erase everything here?',sub:'Removes all The Ancient Forest data stored on this device. Cloud accounts are untouched. This cannot be undone.',body:'',
+  $('#ab-clear').onclick=()=>openModal({title:'Erase everything here?',sub:'Removes all The Rainforest data stored on this device. Cloud accounts are untouched. This cannot be undone.',body:'',
     actions:[{label:'Keep my data',ghost:true},{label:'Erase',danger:true,onClick:()=>{localStorage.removeItem(LKEY());S.d=defaultData();applySettings();markDirty();closeDrawer();toast('Device data erased.')}}]});
 },
 settings(body){
@@ -4095,7 +4095,7 @@ Views.library=function(){
   $('#libraryBody').innerHTML=
    '<div class="overline">Library · the research itself</div>'
    +'<h2 class="sect">Papers, reports &amp; <em>field notes</em></h2>'
-   +'<p class="lede">Every claim in THE ANCIENT FOREST descends from work like this. The papers link to the journals; the field reports are the real documents projects file at season’s end; the notes are documented moments, sourced.</p>'
+   +'<p class="lede">Every claim in The Rainforest descends from work like this. The papers link to the journals; the field reports are the real documents projects file at season’s end; the notes are documented moments, sourced.</p>'
    +'<hr class="hair">'
    +'<h3 style="font:400 26px var(--serif);margin:6px 0 14px">Key papers</h3>'
    +'<div class="grid g2">'+LIB_PAPERS.map(function(p){
