@@ -4777,7 +4777,7 @@ Views.codex=function(){
     RECMIX.stop();
     const seeds=SCAN_SEEDS.filter(function(sd){return sd.sites.indexOf(th.site)>=0});
     const secs=[['sci','Sciences & timekeeping'],['mat','Technology & materials'],['art','Arts'],['adorn','Adornment & jewelry'],
-      ['food','Foods & taste'],['wild','Wildlife — then & now'],['rel','Religion & cosmology'],['lang','Language & writing'],
+      ['food','Foods & taste'],['wild','Wildlife: then & now'],['rel','Religion & cosmology'],['lang','Language & writing'],
       ['music','Sound & music'],['scan','Objects in 3D'],['how','How we know']];
     root.innerHTML=
      '<div class="cx-hero"><div class="bg" id="cxBg"></div><div class="in">'
@@ -4787,7 +4787,7 @@ Views.codex=function(){
      +'<p class="lede" style="max-width:70ch;margin-top:14px">'+esc(th.intro)+'</p>'
      +'<div class="cx-acts">'
      +'<button class="btn primary" data-go="site" data-param="'+th.site+'">⤳ Walk the ground</button>'
-     +(svLink(th.site)?'<a class="btn" target="_blank" rel="noopener" href="'+svLink(th.site)+'">Stand there — real 360° ↗</a>':'')
+     +(svLink(th.site)?'<a class="btn" target="_blank" rel="noopener" href="'+svLink(th.site)+'">Stand there: real 360° ↗</a>':'')
      +'<button class="btn" id="cxObj">Real museum objects</button>'
      +'<a class="btn ghost" href="#cxs-music">♪ Hear this forest</a></div>'
      +'<div class="live-tag" id="cxBgCr" style="margin-top:18px"></div>'
@@ -4799,13 +4799,13 @@ Views.codex=function(){
           +(dk==='art'?'<div class="ph-strip big" id="cxArt" style="margin-top:16px"><div class="small">streaming real works…</div></div><div class="live-tag">live · Wikimedia Commons · the real objects behind the entries</div>':'');
         else if(dk==='food')body=(D.foods.length?'<div class="senses" style="margin-top:0">'+D.foods.map(function(f){return '<div class="food-row"><b>'+esc(f.n)+'</b><span>'+esc(f.note)+'</span><span class="src">'+esc(f.src)+'</span></div>'}).join('')+'</div>':'')
           +(C.d.food?'<div class="grid g3">'+C.d.food.map(function(e,i){return cxEntryCard(cul,'food',e,i)}).join('')+'</div>':'');
-        else if(dk==='wild')body='<p class="small" style="margin-bottom:8px">Documented flora: '+esc((D.plants||[]).join(' · '))+'. Fauna: '+esc((D.animals||[]).join(' · '))+' — the living community below is photographed within ~30 km of '+esc(site.name)+', today.</p>'
+        else if(dk==='wild')body='<p class="small" style="margin-bottom:8px">Documented flora: '+esc((D.plants||[]).join(' · '))+'. Fauna: '+esc((D.animals||[]).join(' · '))+', the living community below is photographed within ~30 km of '+esc(site.name)+', today.</p>'
           +'<div class="sp-grid" id="cxWild"><div class="small">streaming iNaturalist…</div></div>'
           +'<div class="live-tag" style="margin-top:8px">live · iNaturalist research-grade · © each observer</div>';
         else if(dk==='music')body=(C.d.music?'<div class="grid g3">'+C.d.music.map(function(e,i){return cxEntryCard(cul,'music',e,i)}).join('')+'</div>':'')
-          +'<div class="senses"><div class="overline">The forest’s own voice — real recordings only</div>'
+          +'<div class="senses"><div class="overline">The forest's atmosphere, real recordings only</div>'
           +'<div class="snd-bar"><button class="btn small primary" id="cxSnd">▶ Compose the chorus</button><span class="chip" id="cxSt" hidden></span></div><div id="cxMix" style="margin-top:6px"></div>'
-          +'<p class="small" style="margin-top:8px;font-size:11.5px">Layered live from credited iNaturalist field recordings of the documented species — modern recordings, the same voices the ancient city heard. Nothing synthesized.</p></div>';
+          +'<p class="small" style="margin-top:8px;font-size:11.5px">Layered live from credited iNaturalist field recordings of the documented species, modern recordings of the sounds what the ancient city may have heard. Nothing synthesized.</p></div>';
         else if(dk==='scan')body=(seeds.length?'<div class="grid g3">'+seeds.map(function(sd,i){return '<div class="card cx-card"><div class="eyebrow" style="color:var(--cyan)">REAL SCAN</div><h3 style="font-size:16px">'+esc(sd.t)+'</h3><p style="font-size:12.5px">'+esc(sd.by)+'</p><div class="foot"><button class="btn small primary" data-seed2="'+i+'">Turn it in your hands</button></div></div>'}).join('')+'</div>':'')
           +'<div style="margin-top:12px"><button class="btn small" id="cxSfab">Search the live scan index — '+esc(C.name)+'</button></div>';
         else if(dk==='how')body='<p class="lede" style="max-width:72ch">'+esc(th.found)+'</p>'
@@ -4817,13 +4817,13 @@ Views.codex=function(){
     root.querySelector('#cxCul').querySelectorAll('button').forEach(function(b){b.onclick=function(){cul=b.dataset.c;render();scrollTo(0,0)}});
     root.querySelector('#cxObj').onclick=function(){App.pendingArchQ=CULT_ARCHQ[cul];show('archive')};
     root.querySelectorAll('[data-img]').forEach(function(b){b.onclick=function(ev){ev.stopPropagation();
-      openModal({wide:true,title:'Real photographs — '+b.dataset.img,sub:'Streamed live from Wikimedia Commons · credit &amp; licence on each',
+      openModal({wide:true,title:'Real photographs:'+b.dataset.img,sub:'Streamed live from Wikimedia Commons · credit &amp; licence on each',
         body:'<div class="ph-strip" id="cxImgs" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))"><div class="small">streaming…</div></div>',
         actions:[{label:'Close',primary:true}]});
       (async function(){try{const ps=await commonsPhotos(b.dataset.img,8);const el=$('#cxImgs');if(!el)return;
         el.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join(''):'<div class="small">none returned.</div>';
         el.querySelectorAll('.ph').forEach(function(e2){e2.onclick=function(){window.open(e2.dataset.u,'_blank')}});
-      }catch(e){const el=$('#cxImgs');if(el)el.innerHTML='<div class="small">stream blocked here — open the file directly in a browser.</div>'}})()}});
+      }catch(e){const el=$('#cxImgs');if(el)el.innerHTML='<div class="small">stream blocked here, open the file directly in a browser.</div>'}})()}});
     root.querySelectorAll('[data-obj]').forEach(function(b){b.onclick=function(ev){ev.stopPropagation();
       App.pendingArchQ=b.dataset.obj;show('archive')}});
     root.querySelectorAll('[data-seed2]').forEach(function(b){b.onclick=function(){
@@ -4845,7 +4845,7 @@ Views.codex=function(){
       g.innerHTML=rs.length?rs.map(function(o){const u=o.photos[0].url.replace('square','small');
         const nm=(o.taxon&&(o.taxon.preferred_common_name||o.taxon.name))||'observation';
         return '<div class="sp"><img loading="lazy" src="'+u+'" alt=""><div class="nm">'+esc(nm)+'<br>© '+esc(o.user?o.user.login:'iNaturalist')+'</div></div>'}).join(''):'<div class="small">no records returned.</div>';
-    }catch(e){const g=root.querySelector('#cxWild');if(g)g.innerHTML='<div class="small">live feed blocked here — open the file directly in a browser.</div>'}})();
+    }catch(e){const g=root.querySelector('#cxWild');if(g)g.innerHTML='<div class="small">live feed blocked here, open the file directly in a browser.</div>'}})();
     (async function(){try{const el=root.querySelector('#cxArt');if(!el||!C.d.art)return;
       const ps=await commonsPhotos(C.d.art[0].q,4);
       if(!document.body.contains(el))return;
@@ -4862,11 +4862,11 @@ Views.archive=function(){
   App.ctx={type:'view',id:'archive',label:'Archive',go:['archive']}; logJ('view','The Archive',['archive']);
   const grid=$('#archGrid'); grid.className='';
   grid.innerHTML=
-   '<div class="overline cy" style="margin-bottom:6px">Real 3D scans — turn them in your hands</div>'
+   '<div class="overline cy" style="margin-bottom:6px">Real 3D scans</div>'
    +'<div class="arch-bar">'+SCAN_SEEDS.map(function(sd,i){return '<button class="btn small" data-seed="'+i+'">◇ '+esc(sd.t.split(' — ')[0])+'</button>'}).join('')
    +'<button class="btn small primary" id="aSfab">Search the live scan index</button></div>'
    +'<hr class="hair">'
-   +'<div class="arch-bar"><input class="field" id="aQ" style="max-width:300px" placeholder="Search real collections — jade, Angkor, Yaxchilan, gold…">'
+   +'<div class="arch-bar"><input class="field" id="aQ" style="max-width:300px" placeholder="Search real collections: jade, Angkor, Yaxchilan, gold…">'
    +'<button class="btn small primary" id="aGo">Search</button><span class="sp"></span>'
    +'<span class="live-tag">live · The Met + Cleveland Museum · scope-locked to tropical-forest societies</span></div>'
    +'<div class="arch-bar">'+['Maya','Maya jade','Maya vessel','Yaxchilan','Khmer','Angkor','Tairona gold','Coclé gold','Marajoara','Olmec']
@@ -4887,12 +4887,12 @@ Views.archive=function(){
       if(my!==token||!document.body.contains(res))return;
       const met=out.filter(function(o){return o.src==='met'}).length;
       stat.textContent=(out.length
-        ? out.length+' real, photographed objects — '+met+' Met · '+(out.length-met)+' Cleveland.'
-        : 'nothing in-scope matched “'+q+'” — try a culture, material or place from the chips.')
+        ? out.length+' real, photographed objects '+met+' Met · '+(out.length-met)+' Cleveland.'
+        : 'nothing in-scope matched “'+q+'” , try a culture, material or place from the chips.')
         +(out.hidden?' · '+out.hidden+' off-scope result'+(out.hidden===1?'':'s')+' hidden (tropical-forest societies only).':'');
       res.innerHTML=out.map(archCardHTML).join('');
     }catch(e){ if(my!==token)return;
-      stat.textContent='the live collection APIs could not be reached — check the connection and search again.'}
+      stat.textContent='the live collection APIs could not be reached, check the connection and search again.'}
   }
   $('#aGo').onclick=function(){const q=inp.value.trim();if(q)run(q)};
   inp.addEventListener('keydown',function(e){if(e.key==='Enter'){const q=inp.value.trim();if(q)run(q)}});
@@ -4908,7 +4908,7 @@ Views.artifact=function(param){
     App.ctx={type:'artifact',id:param,label:legacy.name,go:['artifact',param]}; logJ('view','Archive · '+legacy.name,['artifact',param]);
     root.innerHTML='<div class="dossier-head"><div class="overline">Archive · real objects of this type</div>'
      +'<h2 class="sect" style="font-size:clamp(34px,4.5vw,54px)">'+esc(legacy.name)+'</h2>'
-     +'<div class="meta-row"><span class="chip acc">reference model retired — real objects below</span>'
+     +'<div class="meta-row"><span class="chip acc">reference model retired, real objects below</span>'
      +'<span class="chip" data-go="archive" style="cursor:pointer">← All collections</span></div></div>'
      +'<div class="small" id="aStat2" style="font:400 10.5px var(--mono);margin:14px 0">searching the real collections…</div>'
      +'<div class="grid g4" id="aRes2"></div>';
@@ -4931,7 +4931,7 @@ Views.artifact=function(param){
    +'<div id="oDesc"></div>'
    +'<div id="oCx"></div>'
    +'<div class="prose" style="margin-top:26px"><h3>Real 3D scans</h3>'
-   +'<p>Measured geometry from real photographs, streamed from Sketchfab — turn a related object in your hands:</p>'
+   +'<p>Measured geometry from real photographs, streamed from Sketchfab, understand the topology of artifacts:</p>'
    +'<div id="oScans"></div></div></div>'
    +'<aside><div class="side-card"><h4>Catalogue record</h4><div id="oFacts"></div>'
    +'<div style="margin-top:12px"><a class="btn small" id="oLink" target="_blank" rel="noopener">View at the museum ↗</a></div></div>'
@@ -4964,7 +4964,7 @@ Views.artifact=function(param){
       $('#oScans').innerHTML=rel.map(function(sd){
         return '<div class="scan-row"><div class="grow"><b style="color:var(--ink);font-weight:500">'+esc(sd.t)+'</b><div class="who2">'+esc(sd.by)+'</div></div>'
          +'<button class="btn small primary" data-scan="'+sd.uid+'">Turn it in your hands</button></div>'}).join('')
-        +'<div class="scan-row"><div class="grow"><b style="color:var(--ink);font-weight:500">Search the live scan index</b><div class="who2">Tropical-forest scans only — filtered</div></div>'
+        +'<div class="scan-row"><div class="grow"><b style="color:var(--ink);font-weight:500">Search the live scan index</b><div class="who2">Tropical-forest scans only, filtered</div></div>'
         +'<button class="btn small" id="oSfab">Search scans</button></div>';
       $('#oScans').querySelectorAll('[data-scan]').forEach(function(b){
         const sd=SCAN_SEEDS.find(function(x){return x.uid===b.dataset.scan});
@@ -4972,7 +4972,7 @@ Views.artifact=function(param){
       const ck=cultKeyOf(o);
       $('#oSfab').onclick=function(){sfabModal(ck==='khmer'?'Angkor scan':ck==='tairona'?'Tairona gold':ck==='xingu'?'Marajoara':'Maya stela')};
     }catch(e){
-      if(document.body.contains(root))$('#oT').textContent='This object could not be streamed — the museum API may be briefly unreachable.';
+      if(document.body.contains(root))$('#oT').textContent='This object could not be streamed, the museum API may be briefly unreachable.';
     }
   })();
   return function(){if(off)off()};
@@ -4998,17 +4998,17 @@ Views.site=function(id){
    +'<div class="hud-br"><button class="col-btn inline" id="siteCap">◈ Capture view</button></div>'
    +'<div class="hud-bl">drag — orbit · scroll / pinch — zoom</div></div>'
    +'<p class="small" style="margin:10px 0 26px"><b style="color:var(--cyan)">Real terrain</b>: measured elevation of these coordinates (SRTM/NASADEM) draped with © Esri/Maxar satellite imagery — 4 km of true ground, vertical ×2. <b style="color:var(--accent)">Reconstruction</b>: the labeled schematic of the published survey plans. Bare relief and point cloud derive from the real data.</p>'
-   +'<h3 style="font:400 24px var(--serif);margin:0 0 8px">Stand there — real 360°</h3>'
+   +'<h3 style="font:400 24px var(--serif);margin:0 0 8px">Stand there: real 360°</h3>'
    +svBlock(s)
-   +'<h3 style="font:400 24px var(--serif);margin:34px 0 2px">Photographs — the real place</h3>'
+   +'<h3 style="font:400 24px var(--serif);margin:34px 0 2px">Photographs: the place</h3>'
    +'<div class="ph-strip big" id="phStrip"><div class="small">streaming photographs…</div></div>'
    +'<div class="live-tag" style="margin-bottom:30px">live · Wikimedia Commons · credit &amp; licence on hover · click to open source</div>'
-   +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">What it may have looked like — published reconstructions</h3>'
+   +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">What it may have looked like: published reconstructions</h3>'
    +'<div class="ph-strip" id="thenStrip"><div class="small">searching published reconstruction imagery…</div></div>'
-   +'<p class="small" style="margin:4px 0 30px;font-size:11px">Only published reconstruction artwork by credited researchers and artists, streamed from Commons — The Rainforest generates nothing'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p>'
-   +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">Survey plates — real elevation, rendered</h3>'
+   +'<p class="small" style="margin:4px 0 30px;font-size:11px">Only published reconstruction artwork by credited researchers and artists, streamed from Commons'+(D.viz&&D.viz.length?'. More: '+D.viz.map(function(v){return '<a href="'+v.u+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(v.t)+' ↗</a>'}).join(' · '):'.')+'</p>'
+   +'<h3 style="font:400 24px var(--serif);margin:0 0 2px">Survey plates: real elevation, rendered</h3>'
    +'<div class="ph-strip" id="plates" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr))"><div class="small">rendering from the live elevation stream…</div></div>'
-   +'<p class="small" style="margin:6px 0 34px;font-size:11px">Computed in-app from real measured elevation (~30 m posting). The survey-grade archaeological lidar (0.5–1 m) is held by the projects — see the real thing: '
+   +'<p class="small" style="margin:6px 0 34px;font-size:11px">Computed in-app from real measured elevation (~30 m posting). The survey-grade archaeological lidar (0.5–1 m) is held by the projects, see: '
    +((LIDAR_LINKS[id]||[]).map(function(l){return '<a href="'+l[1]+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+l[0]+' ↗</a>'}).join(' · ')||'links in the Library')+'.</p>'
    +'<div class="dossier"><div class="prose selectable">'
    +'<h3>Overview</h3>'+s.overview.map(p=>'<p>'+p+'</p>').join('')
@@ -5022,7 +5022,7 @@ Views.site=function(id){
    +'<button class="btn small primary" id="siteSfab">Search live scan index</button></div></div>'
    +'<div class="side-card"><h4>Act</h4><div style="display:flex;flex-direction:column;gap:9px">'
    +(exp?'<button class="btn small" data-go="exped" data-param="'+exp.id+'">⤳ Walk this landscape</button>':'')
-   +(svLink(id)?'<a class="btn small" target="_blank" rel="noopener" href="'+svLink(id)+'">◎ Stand there — 360° ↗</a>':'')
+   +(svLink(id)?'<a class="btn small" target="_blank" rel="noopener" href="'+svLink(id)+'">◎ Stand there: 360° ↗</a>':'')
    +'<button class="btn small" data-collect data-ctype="site" data-cid="'+s.id+'" data-clabel="'+esc(s.name)+'">◈ Collect this site</button>'
    +'<button class="btn small" id="siteNote">✎ Note on '+esc(s.name)+'</button></div></div></aside></div>';
   $('#siteNote').onclick=()=>openNoteModal({});
@@ -5046,16 +5046,16 @@ Views.site=function(id){
     const bg=$('#dhBg');
     if(bg&&ps[0])bg.innerHTML='<img src="'+ps[0].thumb+'" alt=""><span class="cr">photo: '+esc(ps[0].credit)+'</span>';
   }catch(e){const strip=$('#phStrip');
-    if(strip)strip.innerHTML='<div class="small">photo stream blocked here — open the file directly in a browser.</div>'}})();
+    if(strip)strip.innerHTML='<div class="small">photo stream blocked here, open the file directly in a browser.</div>'}})();
   (async function(){try{
     const rec=await commonsPhotos(s.name+' reconstruction',4);
     const then=$('#thenStrip');if(!document.body.contains(then))return;
     then.innerHTML=rec.length?rec.map(function(p){
       return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr" style="opacity:1">PUBLISHED RECONSTRUCTION · '+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join('')
-     :'<div class="small">No openly licensed reconstruction imagery found for this site — the researchers’ own visualisations are linked below.</div>';
+     :'<div class="small">No openly licensed reconstruction imagery found for this site, the researchers’ visualisations are linked below.</div>';
     then.querySelectorAll('.ph').forEach(function(el){el.onclick=function(){window.open(el.dataset.u,'_blank')}});
   }catch(e){const then=$('#thenStrip');
-    if(then)then.innerHTML='<div class="small">stream blocked here — open the file directly in a browser.</div>'}})();
+    if(then)then.innerHTML='<div class="small">stream blocked here, open the file directly in a browser.</div>'}})();
   return function(){RECMIX.stop();viewer.dispose()};
 };
 
@@ -5079,7 +5079,7 @@ Views.void=function(){
   root.appendChild(hud);
   const panel=document.createElement('div');panel.className='void-panel';panel.hidden=true;root.appendChild(panel);
   const emptyEl=document.createElement('div');emptyEl.className='v-empty';
-  emptyEl.innerHTML='<b style="color:var(--dim)">Your database is empty — for now.</b> Collect anything marked <span style="color:var(--accent)">◈</span> — real museum objects, sites, findings, passages, captured views — and it drifts here. <button id="vEmX" style="margin-left:8px;color:var(--faint);cursor:pointer">✕</button>';
+  emptyEl.innerHTML='<b style="color:var(--dim)">Your database is empty for now.</b> Collect anything marked <span style="color:var(--accent)">◈</span>, real museum objects, sites, findings, passages, captured views, and it drifts here. <button id="vEmX" style="margin-left:8px;color:var(--faint);cursor:pointer">✕</button>';
   root.appendChild(emptyEl);
   let emptyDismissed=false;
   emptyEl.querySelector('#vEmX').onclick=function(){emptyDismissed=true;emptyEl.style.display='none'};
@@ -5183,19 +5183,19 @@ Views.void=function(){
   }catch(err){console.warn('void rebuild',err);emptyEl.style.display='none'}}
   function updFlag(){const f=hud.querySelector('#vFlag');
     if(mode==='connect'){f.hidden=false;
-      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” — choose the second object'):'Connect mode — choose the first object'}
+      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'”, choose the second object'):'Connect mode, choose the first object'}
     else f.hidden=true}
   hud.querySelectorAll('#vMode button').forEach(function(b){b.onclick=function(){
     hud.querySelectorAll('#vMode button').forEach(function(x){x.classList.toggle('on',x===b)});
     mode=b.dataset.m;armed=null;updFlag()}});
   hud.querySelector('#vNewCol').onclick=function(){
-    openModal({title:'New collection',sub:'A named hub in your database — assign items to it from their panels.',
+    openModal({title:'New collection',sub:'A named hub in your database, assign items to it from their panels.',
       body:'<input class="field" id="nc-name" placeholder="“Water management”, “Open questions”, “Obsidian trail”…">',
       actions:[{label:'Cancel',ghost:true},{label:'Create',primary:true,onClick:function(m){
         const v=m.querySelector('#nc-name').value.trim();if(!v){toast('Give it a name first.');return false}
         const palette=['#54e2a7','#7fd2ff','#dca868','#c9a2ff','#8fd45f','#ff9d8a'];
         S.d.collections.push({id:uid(),name:v,color:palette[S.d.collections.length%palette.length],ts:Date.now()});
-        markDirty();rebuild();toast('Collection created — a new hub burns in your database','ok')}}]});
+        markDirty();rebuild();toast('Collection created, a new hub burns in your database','ok')}}]});
     setTimeout(function(){const i=$('#nc-name');if(i)i.focus()},50)};
   function handleConnect(obj){
     if(!armed){armed=obj;updFlag();return}
