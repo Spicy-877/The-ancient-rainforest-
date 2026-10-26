@@ -449,7 +449,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
         <p class="hero-sub">Everything that happened leaves a trace; what we know of the past is what we can retrieve from those traces. Here, you will learn about the technology used to retrieve what we have so far about tropical rainforest civilizations: LIDAR, carbon dating, DNA analysis, photogrammetry, ground radar, palaeoecology, etc., but most importantly, when studying human civilizations, the layer of our own abstract contextualization. Propose new technology and methods, your own informational process, and abstract realizations.</p>
         <div class="hero-cta">
           <button class="btn primary" data-go="atlas">Enter the Atlas</button>
-          <button class="btn" data-go="exped">Walk an expedition</button>
+          <button class="btn" data-go="exped">Explore in 360°</button>
           <button class="btn ghost" id="howBtn">How this instrument works</button>
         </div>
       </div>
@@ -468,9 +468,9 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
       <p class="tag-src" style="margin-top:10px">Source: Canuto et al. 2018, <i>Science</i> 361, full citation in the dossiers and References.</p>
 
       <div style="height:70px"></div>
-      <div class="overline">The instrument, in six movements</div>
+      <div class="overline">The platform, in seven parts</div>
       <h2 class="sect">Everything here can be <em>collected</em>.</h2>
-      <p class="lede" style="margin-bottom:34px">Hover any object for the ◈ mark, or select any passage of text, and it enters your database, a private space where your finds, notes, captures and connections drift until you give them order.</p>
+      <p class="lede" style="margin-bottom:34px">Hover any object for the ◈ mark, or select any passage of text, and it enters your database, a private space where your finds, notes, captures and connections gather until you organise them.</p>
       <div class="grid g3" id="homeModules"></div>
 
       <div style="height:70px"></div>
@@ -483,7 +483,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
     <div class="wrap">
       <div class="overline">Atlas · seven sites across three continents</div>
       <h2 class="sect">Sites of the <em>tropical rainforests</em></h2>
-      <p class="lede">Each dossier holds the evidence, the story of how it was retrieved, and a navigable 3D survey built from the published findings, with the canopy yours to strip away.</p>
+      <p class="lede">Each dossier holds evidence, how it was retrieved, and a navigable 3D survey built from published findings, you can remove the canopy to see beneath.</p>
       <hr class="hair">
       <div class="grid g2" id="atlasGrid"></div>
     </div>
@@ -496,8 +496,8 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
   <section class="view" id="v-lab" hidden>
     <div class="wrap">
       <div class="overline cy">Laboratory · how information is retrieved</div>
-      <h2 class="sect">The instruments of <em>seeing</em></h2>
-      <p class="lede">Eight ways of asking the ground a question. Each explains the physics, the data it yields, and its limits, shown through real photographs of the equipment and the results it produces.</p>
+      <h2 class="sect">The instruments of <em>retrieval</em></h2>
+      <p class="lede">Eight methods for retrieving information from a site. Each explains the physics, the data it yields and its limits, with real photographs of the equipment and its results.</p>
       <hr class="hair">
       <div class="grid g3" id="labGrid"></div>
     </div>
@@ -514,7 +514,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
     <div class="wrap">
       <div class="overline">Archive · real objects only</div>
       <h2 class="sect">The <em>real</em> collections</h2>
-      <p class="lede">A live window into open-access museum collections and working archaeologists’ own scans. Every object here is a real, catalogued thing (the museum’s photograph, the scanner’s mesh) streamed straight from the source, credited and licensed. Nothing modelled, nothing invented.</p>
+      <p class="lede">These are open-access museum collections and 3D scans made by working archaeologists, shown live. Each object is a real, catalogued item, shown as the museum’s own photograph or the scanner’s mesh, with its credit and licence.</p>
       <hr class="hair">
       <div class="grid g3" id="archGrid"></div>
     </div>
@@ -667,7 +667,7 @@ const TECHS=[
     'Classification algorithms separate ground points from vegetation, and the ground points are interpolated into a digital terrain model (DTM).',
     'Archaeologists then relight that terrain (hillshading, sky-view factor, local relief models) until subtle earthworks a few decimetres high become legible.'],
   yields:['Point clouds (commonly 10–50+ points/m² in archaeological surveys)','Bare-earth terrain models at ~0.5–1 m resolution','Canopy-height models that capture the forest’s structure','Relief visualisations on which structures are mapped and ground-checked'],
-  limits:['Cannot penetrate solid foliage; dense, low, closed canopy degrades ground coverage','Reveals topography, not chronology: every mapped feature still needs dating and excavation to be understood','Costly at scale; flight planning and processing are specialist work'],
+  limits:['Cannot penetrate solid foliage; dense, low, closed canopy degrades ground coverage','Shows the shape of the ground but not its age; every mapped feature still needs dating and excavation to be understood','Costly at scale; flight planning and processing are specialist work'],
   casework:'The 2018 PACUNAM Lidar Initiative scanned 2,144 km² of the Maya Biosphere Reserve in Guatemala with a multi-channel Teledyne Optech Titan sensor and identified 61,480 ancient structures (houses, causeways, terraces, fortifications) supporting Late Classic lowland population estimates of 7–11 million. In the Maya Biosphere surveys the sensor recorded about 15 laser shots per square metre, dense enough to resolve earthworks only a few tens of centimetres high (LiDAR Magazine 2019).',
   ref:'Canuto et al. 2018, Science 361, eaau0137 · Chase et al. 2011, J. Archaeological Science 38 · LiDAR Magazine 2019 (Titan sensor specifications)',
   instrumentName:'Survey lidar pod (airborne unit)', instrumentNote:'Reference model of an airborne laser-scanning unit, the class of instrument flown over Guatemala and Angkor. Slide to open it up.' },
@@ -680,7 +680,7 @@ const TECHS=[
     'Ground-control points measured with survey GNSS pin the model to real-world coordinates at centimetre accuracy.',
     'Dense matching fills in millions of points; these are meshed and textured with the original photography.',
     'The result is a measurable digital twin: orthomosaics for mapping, meshes for analysis and archives.'],
-  yields:['Georeferenced orthophoto maps','Textured 3D meshes of monuments, trenches and objects','Digital surface models complementary to lidar','A permanent visual record of contexts destroyed by the act of excavation itself'],
+  yields:['Georeferenced orthophoto maps','Textured 3D meshes of monuments, trenches and objects','Digital surface models complementary to lidar','A permanent visual record of contexts that excavation destroys'],
   limits:['Needs visible surfaces; it cannot map ground under closed canopy from the air','Texture-poor or shiny surfaces match badly','Accuracy depends on control points and disciplined capture'],
   casework:'At Ciudad Perdida in Colombia’s Sierra Nevada de Santa Marta, drone and terrestrial photogrammetry underpin conservation monitoring of the terrace complexes, letting archaeologists and Indigenous stakeholders detect millimetre-scale change season to season.',
   ref:'Standard method: Westoby et al. 2012, Geomorphology 179 · site programme: ICANH / Global Heritage Fund reports',
@@ -802,7 +802,7 @@ const SITES=[
       {t:'pyr',x:-8,z:-24,b:20,h:9,steps:5,name:'North Acropolis'},
       {t:'pyr',x:-62,z:-10,b:25,h:26,steps:8,name:'Temple IV (≈65 m)',wp:true,fact:'Temple IV, ≈65 m, is among the tallest pre-Columbian structures in the Americas. Its roof comb rises above the forest canopy, while lidar maps what lies under the canopy.'},
       {t:'cause',x1:-44,z1:-8,x2:-2,z2:-14,w:7,h:1.2,name:'Causeway (sacbe)'},
-      {t:'res',x:-4,z:34,r:14,d:3,water:true,name:'Temple Reservoir',wp:true,fact:'Tikal had no river. Plastered plazas shed rain into engineered reservoirs like this one, sediment cores from them now serve as archives of drought and city life.'},
+      {t:'res',x:-4,z:34,r:14,d:3,water:true,name:'Temple Reservoir',wp:true,fact:'Tikal had no river. Its plastered plazas shed rainwater into built reservoirs like this one; sediment cores from them now record past droughts and the life of the city.'},
       {t:'res',x:44,z:36,r:10,d:2.4,water:true,name:'Palace Reservoir'},
       {t:'mound',x:70,z:-40,b:5,h:1.4},{t:'mound',x:82,z:-28,b:4,h:1.2},{t:'mound',x:64,z:-58,b:4,h:1.1},
       {t:'mound',x:-70,z:52,b:5,h:1.3},{t:'mound',x:-88,z:40,b:4,h:1.2},{t:'mound',x:-102,z:60,b:4,h:1},
@@ -830,7 +830,7 @@ const SITES=[
       {t:'pyr',x:0,z:-12,b:26,h:22,steps:7,name:'Caana, “Sky Palace” (~43 m)',wp:true,fact:'Caana rises about 43 m, with palace ranges and shrines built up in a single massive block of masonry. It remains among the largest structures, ancient or modern, in Belize.'},
       {t:'plat',x:2,z:18,w:48,d:30,h:2,name:'Central plaza group'},
       {t:'cause',x1:0,z1:0,x2:-140,z2:-70,w:7,h:1,name:'Radial causeway (west)'},
-      {t:'cause',x1:0,z1:0,x2:150,z2:-40,w:7,h:1,name:'Radial causeway (east)',wp:true,fact:'Caracol’s causeways run for kilometres, stitching outlying districts and markets to the core, urban planning legible from the air half a millennium after abandonment.'},
+      {t:'cause',x1:0,z1:0,x2:150,z2:-40,w:7,h:1,name:'Radial causeway (east)',wp:true,fact:'Caracol’s causeways run for kilometres, linking outlying districts and markets to the core; the planned layout is still clear in airborne lidar, half a millennium after the city was abandoned.'},
       {t:'cause',x1:0,z1:6,x2:30,z2:150,w:6,h:1,name:'Radial causeway (south)'},
       {t:'terr',x:-92,z:64,r:78,step:1.3,name:'Agricultural terraces'},
       {t:'terr',x:104,z:-78,r:68,step:1.3,name:'Terraced slopes'},
@@ -846,7 +846,7 @@ const SITES=[
   stats:[['2015 lidar campaign','1,910 km² (CALI)'],['Greater Angkor','~1,000 km² low-density city'],['Peak population','700–900,000 (13th c.)'],['West Baray','≈8 × 2 km reservoir'],['Mahendraparvata','Founded c. 802 CE']],
   overview:[
     'Angkor was the heart of the Khmer Empire and, at its height around the twelfth century, the most extensive urban complex of the pre-industrial world: a low-density city of house-mounds, ponds, canals and rice fields spread across roughly a thousand square kilometres, with stone temples (Angkor Wat above all) as its fixed stars.',
-    'Water was crucial to Angkor: its systems, power and growth depended on how it captured and moved water. Immense reservoirs (barays), canals and embankments moved the monsoon on demand. When climate lurched between mega-droughts and violent monsoons in the fourteenth–fifteenth centuries, the vast inherited network became a liability the state could not rebuild fast enough.'],
+    'Water was central to Angkor: its growth and power depended on capturing and moving it. Reservoirs (barays), canals and embankments stored and redistributed the monsoon rains. When the climate swung between severe droughts and heavy monsoons in the fourteenth and fifteenth centuries, the large inherited network became a liability the state could not repair fast enough.'],
   retrieval:[
     'The Cambodian Archaeological Lidar Initiative flew Angkor in 2012 and again in 2015, the second campaign covering 1,910 km². Beneath scrub and plantation the lasers exposed the city between the temples: street grids, house mounds, field walls, and “mysterious” geometric earthworks still under study.',
     'On the sacred plateau of Phnom Kulen, the surveys resolved Mahendraparvata (the capital where Jayavarman II was consecrated in 802 CE) as a true engineered city: an axial urban grid, dams and an unfinished reservoir, hidden under forest for a millennium. Sediment cores and dendro-climate records supply the timeline of drought that frames Angkor’s transformation.',
@@ -894,7 +894,7 @@ const SITES=[
       {t:'moat',x:0,z:0,r:64,w:7,d:1.6,name:'Inner moat'},
       {t:'ring',x:0,z:0,r:92,w:6,h:2,name:'Middle enclosure'},
       {t:'ring',x:0,z:0,r:126,w:5,h:1.5,hid:true,name:'Outer enclosure',fact:'Three nested enclosures ring Cotoca. The outermost, nearly invisible on the ground, appeared only in the lidar returns.'},
-      {t:'cause',x1:60,z1:16,x2:180,z2:44,w:6,h:1.6,name:'Raised causeway (north-east)',wp:true,fact:'Dead-straight causeways run kilometres across seasonally flooded savanna, linking Cotoca to subsidiary centres, engineered mobility through a wetland world.'},
+      {t:'cause',x1:60,z1:16,x2:180,z2:44,w:6,h:1.6,name:'Raised causeway (north-east)',wp:true,fact:'Straight causeways run for kilometres across the seasonally flooded savanna, linking Cotoca to smaller centres and keeping them connected through the flood season.'},
       {t:'cause',x1:-58,z1:-20,x2:-180,z2:-52,w:6,h:1.6,name:'Raised causeway (south-west)'},
       {t:'canal',x1:62,z1:26,x2:178,z2:54,w:3.5,d:1.2,hid:true,name:'Canal paired with causeway'},
       {t:'res',x:-100,z:70,r:11,d:1.8,water:true,name:'Water tank'},
@@ -952,7 +952,7 @@ const SITES=[
       {t:'cause',x1:52,z1:8,x2:180,z2:30,w:11,h:.7,name:'Curbed road (north-east)',wp:true,fact:'Xinguano roads run straight for kilometres and can be tens of metres wide, with raised earthen curbs, formal avenues, not forest paths.'},
       {t:'cause',x1:-52,z1:-8,x2:-180,z2:-30,w:11,h:.7,name:'Curbed road (south-west)'},
       {t:'cause',x1:-8,z1:52,x2:-26,z2:180,w:9,h:.6,hid:true,name:'Road to satellite village'},
-      {t:'res',x:78,z:-64,r:9,d:1.6,water:true,name:'Managed pond',wp:true,fact:'Ponds and wetland fish weirs formed part of the towns’ food infrastructure, aquaculture woven into the garden-city mosaic.'},
+      {t:'res',x:78,z:-64,r:9,d:1.6,water:true,name:'Managed pond',wp:true,fact:'Ponds and wetland fish weirs were part of the towns’ food supply.'},
       {t:'mound',x:-90,z:70,b:6,h:1.5,hid:true,name:'Dark-earth midden'}
     ], spawn:[40,150]} },
 
@@ -969,11 +969,11 @@ const SITES=[
   findings:[
     'Twenty-six walls are now known on the Guatemalan side (nineteen guarding the northern border, five at the capital), reframing a “peaceful” river kingdom as a landscape organised for defence.',
     'Dense floodplain settlement shows much of the polity’s population lived across the river from the monuments, on deep fluvial soils ideal then and now.',
-    'Monument forensics tie looted lintels back to specific buildings (Tecolote for the “Retalteco” fragment), turning stolen art into settlement evidence.'],
+    'Monument forensics tie looted lintels back to specific buildings (Tecolote, for the “Retalteco” fragment), so that even stolen pieces can serve as evidence about the settlements from which they came.'],
   refs:'Scherer, Golden et al. 2019, The PARI Journal 20(2) · Golden & Scherer 2013, Current Anthropology 54 · Scherer & Golden 2009, J. Field Archaeology 34',
   terrain:{seed:88, relief:13, freq:.010, palette:'peten',
     features:[
-      {t:'plat',x:-96,z:-6,w:26,d:74,h:1.6,name:'Main Plaza (river bank)',wp:true,fact:'Yaxchilan’s Main Plaza runs long and narrow along the Usumacinta. The river was highway, larder and first line of defence, and the reason the kingdom faced both banks.'},
+      {t:'plat',x:-96,z:-6,w:26,d:74,h:1.6,name:'Main Plaza (river bank)',wp:true,fact:'Yaxchilan’s Main Plaza runs long and narrow along the Usumacinta. The river was its transport route, food source and first line of defence, and the reason the kingdom faced both banks.'},
       {t:'tier',x:-120,z:36,r:9,h:6,name:'Temple 33 hill'},
       {t:'tier',x:-124,z:-44,r:8,h:5,name:'Small Acropolis'},
       {t:'canal',x1:-78,z1:-150,x2:-64,z2:150,w:9,d:2.6,name:'Usumacinta channel (schematic)'},
@@ -991,22 +991,22 @@ const SITES=[
 const ARTIFACTS=[
 { id:'celt', name:'Polished jade celt', culture:'Maya', period:'Preclassic–Classic', material:'Jadeitite', dims:'~14 cm',
   doc:['pXRF & density sourcing','Photogrammetric model','RTI surface capture'],
-  text:['Greenstone celts were wealth, tools and cosmology in one polished form, jade was breath, maize and rulership made mineral. Nearly all Mesoamerican jadeitite traces to the Motagua River valley of Guatemala, so a celt in a distant cache is a sentence in the story of exchange.',
+  text:['Greenstone celts were at once wealth, tools and sacred objects, linked in Maya thought to breath, maize and kingship. Nearly all Mesoamerican jadeite comes from the Motagua River valley of Guatemala, so a celt found in a distant cache is evidence of long-distance exchange.',
     'Composition is read non-destructively with pXRF and density measurement; use-wear along the bit distinguishes working axes from purely votive pieces.'],
   refs:'Taube 2005, Ancient Mesoamerica 16 · sourcing: Jaime-Riverón 2010' },
 { id:'vase', name:'Polychrome cylinder vase', culture:'Maya (Late Classic)', period:'~600–850 CE', material:'Slip-painted ceramic', dims:'~22 cm',
   doc:['Rollout photography','Photogrammetry','Pigment pXRF'],
-  text:['Court vases carried painted scenes of lords, tribute and myth, often with hieroglyphic dedication bands naming the vessel, its contents (commonly cacao) and its owner. They are the closest thing the Classic Maya left to signed pages.',
+  text:['Court vases carried painted scenes of lords, tribute and myth, often with hieroglyphic dedication bands naming the vessel, its contents (commonly cacao) and its owner, and sometimes the painter.',
     'Rollout photography unwraps the cylinder into a single readable scene; decoration on this model is schematic, standing in for painting styles documented across the corpus.'],
   refs:'Reents-Budet 1994, Painting the Maya Universe' },
 { id:'blade', name:'Obsidian prismatic blade', culture:'Mesoamerican', period:'Preclassic–Postclassic', material:'Volcanic glass', dims:'~9 cm',
   doc:['pXRF geochemical sourcing','Use-wear microscopy'],
-  text:['Pressure-flaked from prepared cores, prismatic blades were the razor edge of daily and ritual life. Each source flow is chemically distinct, so a sixty-second pXRF reading can send a blade home, to El Chayal, Ixtepeque or San Martín Jilotepeque in highland Guatemala.',
+  text:['Pressure-flaked from prepared cores, prismatic blades were the standard cutting edge of daily and ritual life. Each source flow is chemically distinct, so a sixty-second pXRF reading can trace a blade to its source, El Chayal, Ixtepeque or San Martín Jilotepeque in highland Guatemala.',
     'Distribution maps of sourced blades reconstruct trade routes and their reorganisation as political fortunes shifted.'],
   refs:'Moholy-Nagy et al. 2013, Latin American Antiquity 24' },
 { id:'stela', name:'Carved stela fragment', culture:'Maya', period:'Classic', material:'Limestone', dims:'~120 cm (fragment)',
   doc:['Photogrammetry','RTI raking-light capture','3D epigraphic archive'],
-  text:['Stelae are dynastic press releases in stone: a ruler’s portrait bound to Long Count dates and statements of accession, war and ritual. Weathering erases them by the decade, which makes capture urgent.',
+  text:['Stelae present a ruler’s portrait bound to Long Count dates and statements of accession, war and ritual. Weathering erases them by the decade, which makes capture urgent.',
     'Raking-light RTI and dense photogrammetry now recover glyph strokes invisible to the eye; carving on this model is schematic, indicating layout rather than reproducing a specific monument.'],
   refs:'Method: Earl et al. 2010, J. Archaeological Science 37' },
 { id:'lintel', name:'Sandstone lintel fragment', culture:'Khmer', period:'Angkorian, ~12th c. CE', material:'Sandstone', dims:'~180 cm',
@@ -1016,7 +1016,7 @@ const ARTIFACTS=[
   refs:'EFEO / APSARA conservation documentation' },
 { id:'pendant', name:'Tairona gold pendant', culture:'Tairona', period:'~900–1600 CE', material:'Tumbaga (gold-copper)', dims:'~8 cm',
   doc:['XRF alloy analysis','Micro-CT of casting'],
-  text:['Tairona smiths cast gold-copper tumbaga by lost wax, then brought pure gold to the surface by depletion gilding, chemistry as artistry. Figures fuse human and animal: bats, birds and beings of transformation worn as regalia.',
+  text:['Tairona smiths cast gold-copper tumbaga by lost wax, then brought pure gold to the surface by depletion gilding. Figures combine human and animal forms: bats, birds and composite beings worn as regalia.',
     'XRF quantifies the alloy without sampling; micro-CT reveals wax-work and casting channels frozen inside the metal.'],
   refs:'Falchetti 2003, Metallurgy in Ancient Colombia · Museo del Oro studies' },
 { id:'casarabe', name:'Casarabe incised vessel', culture:'Casarabe', period:'~500–1400 CE', material:'Ceramic', dims:'~26 cm',
@@ -1137,9 +1137,9 @@ const Cloud={ready:false,user:null,db:null,
   signOut(){return firebase.auth().signOut()},
   save(d){return this.db.collection('researchers').doc(this.user.uid).set({data:JSON.stringify(d),updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true})}
 };
-function friendlyAuthErr(e){const m={'auth/invalid-email':'That email doesn’t look right.','auth/email-already-in-use':'An account already exists for that email (sign in instead.','auth/weak-password':'Password needs at least 6 characters.','auth/wrong-password':'Wrong password for that account.','auth/user-not-found':'No account with that email) create one.','auth/invalid-credential':'Email or password didn’t match.'};return m[e.code]||'Sign-in failed: '+(e.message||e.code||'unknown error')}
+function friendlyAuthErr(e){const m={'auth/invalid-email':'That email doesn’t look right.','auth/email-already-in-use':'An account already exists for that email; sign in instead.','auth/weak-password':'Password needs at least 6 characters.','auth/wrong-password':'Wrong password for that account.','auth/user-not-found':'No account with that email; create one.','auth/invalid-credential':'Email or password didn’t match.'};return m[e.code]||'Sign-in failed: '+(e.message||e.code||'unknown error')}
 function renderAcctBtn(){const b=$('#acctBtn');const n=(S.d&&S.d.profile.name||'·').trim();b.textContent=(n[0]||'·').toUpperCase();
-  b.title=Cloud.user?('Signed in ('+n):(CLOUD_ENABLED?'Sign in':'Local mode) '+n)}
+  b.title=Cloud.user?('Signed in ('+n+')'):(CLOUD_ENABLED?'Sign in':'Local mode ('+n+')')}
 
 /* ════════════════ §ROUTER + journey ════════════════ */
 function logJ(kind,label,go){S.d.journey.push({id:uid(),ts:Date.now(),kind,label,go:go||null});
@@ -1359,7 +1359,7 @@ collections(body){
 },
 connections(body){
   const conns=S.d.connections; const nameOf=id=>{const i=S.d.collected.find(c=>c.id===id);return i?i.label:'(removed)'};
-  body.innerHTML='<p class="small">Connections are drawn in your database: switch to <b style="color:var(--cyan)">Connect</b> mode there and click two items. They appear here as your working web of evidence.</p>'
+  body.innerHTML='<p class="small">Connections are drawn in your database: switch to <b style="color:var(--cyan)">Connect</b> mode there and click two items. They appear here as the links between your items.</p>'
     +'<div style="margin-top:14px">'+(conns.length?conns.map(c=>'<div class="row-item"><span class="dot" style="background:var(--cyan)"></span><div class="grow"><div>'+esc(nameOf(c.a))+' ⟷ '+esc(nameOf(c.b))+'</div>'+(c.label?'<div class="sub">'+esc(c.label)+'</div>':'')+'</div><button class="act" data-del="'+c.id+'">✕</button></div>').join(''):'<div class="empty"><b>No connections yet.</b>Open your database, choose Connect, and link two finds.</div>')+'</div>'
     +'<button class="btn small" style="margin-top:12px" data-go="void">Open your database →</button>';
   body.querySelectorAll('[data-del]').forEach(b=>b.onclick=()=>{S.d.connections=S.d.connections.filter(c=>c.id!==b.dataset.del);markDirty();Drawers.connections(body);if(App.voidAPI)App.voidAPI.rebuild()});
@@ -1419,7 +1419,7 @@ backup(body){
     else{acct='<div class="note-card"><div class="tabs" style="margin-top:0"><button class="on" data-t="in">Sign in</button><button data-t="up">Create account</button></div>'
       +'<div id="ab-form" style="margin-top:6px"></div></div>'}
   } else {
-    acct='<div class="callout oc" style="margin-top:0"><b style="color:var(--ink)">Local mode.</b> Your work is saved in this browser and exportable below (but it can’t follow you to other devices yet. To switch on permanent private accounts (free, ~5 minutes, no servers to run), open this file and follow the 5 numbered steps at the top) search for <span class="mono">§CLOUD</span>.</div>'
+    acct='<div class="callout oc" style="margin-top:0"><b style="color:var(--ink)">Local mode.</b> Your work is saved in this browser and exportable below, but it can’t follow you to other devices yet. To switch on permanent private accounts (free, ~5 minutes, no servers to run), open this file and follow the 5 numbered steps at the top; search for <span class="mono">§CLOUD</span>.</div>'
       +'<label class="lb">Researcher name</label><div style="display:flex;gap:8px"><input class="field" id="ab-name" value="'+esc(S.d.profile.name)+'" style="flex:1"><button class="btn small" id="ab-savename">Save</button></div>';
   }
   body.innerHTML=acct+'<div class="d-group"><h5>Backup</h5></div>'
@@ -1452,7 +1452,7 @@ settings(body){
   body.innerHTML='<div class="d-group"><h5 style="margin-top:0">Accent, the canopy layer</h5></div>'
     +'<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">'+sw.map(c=>'<button data-acc="'+c+'" style="width:34px;height:34px;border-radius:50%;background:'+c+';border:2px solid '+(S.d.settings.accent===c?'#fff':'transparent')+'"></button>').join('')
     +'<label class="btn small" style="cursor:pointer">Custom<input type="color" id="st-cust" value="'+S.d.settings.accent+'" style="width:0;height:0;opacity:0;position:absolute"></label></div>'
-    +'<div class="d-group"><h5>Rendering</h5></div><label class="lb" style="margin-top:0">3D quality</label><select class="field" id="st-q"><option value="high" '+(S.d.settings.quality==='high'?'selected':'')+'>High (full forest</option><option value="low" '+(S.d.settings.quality==='low'?'selected':'')+'>Light) for modest hardware</option></select>'
+    +'<div class="d-group"><h5>Rendering</h5></div><label class="lb" style="margin-top:0">3D quality</label><select class="field" id="st-q"><option value="high" '+(S.d.settings.quality==='high'?'selected':'')+'>High (full forest)</option><option value="low" '+(S.d.settings.quality==='low'?'selected':'')+'>Light (for modest hardware)</option></select>'
     +'<label style="display:flex;gap:10px;align-items:center;margin-top:16px;font-size:14px"><input type="checkbox" id="st-m" '+(S.d.settings.motion?'checked':'')+'> Ambient motion (idle rotation, drift)</label>'
     +'<p class="small" style="margin-top:18px">Quality changes apply next time a 3D scene opens.</p>';
   body.querySelectorAll('[data-acc]').forEach(b=>b.onclick=()=>{S.d.settings.accent=b.dataset.acc;applySettings();markDirty();Drawers.settings(body)});
@@ -1499,7 +1499,7 @@ Views.home=function(){
     {go:'archive',t:'The Archive',d:'Live search of real museum collections (thousands of photographed objects) plus real 3D scans made by working archaeologists.',icon:MOD_ICON.archive,tag:'Objects'},
     {go:'codex',t:'The Codex',d:'A deep cultural database (science, medicine, arts, adornment, materials, foods, religion, language, music) for every culture here, sourced line by line.',icon:MOD_ICON.codex,tag:'Cultures'},
     {go:'library',t:'The Library',d:'The research itself: key papers with links, real field reports as published, primary sources, and documented moments from the field.',icon:MOD_ICON.library,tag:'Sources'},
-    {go:'void',t:'Your Database',d:'Your private knowledge space. Everything you collect drifts here until you cluster it, connect it, and argue with it.',icon:MOD_ICON.void,tag:'Yours'},
+    {go:'void',t:'Your Database',d:'Your private knowledge space. Everything you collect gathers here for you to cluster, connect and build on.',icon:MOD_ICON.void,tag:'Yours'},
     {go:null,t:'The Field Kit',d:'Notes anywhere (attached or loose), hypotheses, journey trail, backup, quiet in the rail at the edge until called.',icon:MOD_ICON.kit,tag:'Tools'}];
   $('#homeModules').innerHTML=mods.map(m=>'<div class="card click" '+(m.go?'data-go="'+m.go+'"':'data-kit="1"')+'>'
     +'<div class="glyph">'+m.icon+'</div><div class="eyebrow" style="margin-top:14px">'+m.tag+'</div><h3>'+m.t+'</h3><p>'+m.d+'</p>'
@@ -1917,45 +1917,45 @@ function geoOf(g){const t=g[0],a=g.slice(1);
   return new THREE.BoxGeometry(.2,.2,.2)}
 const INSTRUMENT_PARTS={
 lidar:{parts:[
- {n:'Mounting plate',d:'Vibration-isolated plate bolting the pod into the aircraft’s survey bay, optics can’t shake if points are to land where they should.',g:['box',1.5,.07,.9],p:[0,.62,0],c:'#26332c',ex:[0,1.0,0]},
+ {n:'Mounting plate',d:'Vibration-isolated plate bolting the pod into the aircraft’s survey bay; it keeps the optics steady so the points land accurately.',g:['box',1.5,.07,.9],p:[0,.62,0],c:'#26332c',ex:[0,1.0,0]},
  {n:'Stabilising gimbal',d:'Keeps the optical head level while the aircraft banks and bumps through thermals.',g:['tor',.45,.04,48],p:[0,.44,0],r:[1.5708,0,0],c:'#5a6a61',met:.7,rgh:.35,ex:[0,.5,0]},
- {n:'Laser emitter',d:'Pulsed near-infrared laser, hundreds of thousands of shots per second, each a question asked of the ground.',g:['cyl',.085,.085,.36],p:[-.24,.06,0],c:'#dfe5df',met:.8,rgh:.25,em:'#54e2a7',ex:[-.9,0,0]},
- {n:'Scan mirror',d:'Oscillating mirror sweeping the beam side-to-side across the flight line, painting a corridor of points.',g:['cyl',.17,.17,.045],p:[0,-.1,0],r:[.6,0,.2],c:'#bcd2e2',met:.95,rgh:.08,ex:[0,-.3,.9]},
+ {n:'Laser emitter',d:'Pulsed near-infrared laser firing hundreds of thousands of shots per second.',g:['cyl',.085,.085,.36],p:[-.24,.06,0],c:'#dfe5df',met:.8,rgh:.25,em:'#54e2a7',ex:[-.9,0,0]},
+ {n:'Scan mirror',d:'Oscillating mirror sweeping the beam side-to-side across the flight line to cover a corridor of ground.',g:['cyl',.17,.17,.045],p:[0,-.1,0],r:[.6,0,.2],c:'#bcd2e2',met:.95,rgh:.08,ex:[0,-.3,.9]},
  {n:'Receiver telescope',d:'Collects the handful of photons that make it back, larger aperture, fainter echoes, deeper reach through canopy gaps.',g:['cyl',.15,.19,.42],p:[.26,.06,0],c:'#1c2622',rgh:.5,ex:[.95,0,0]},
  {n:'Inertial unit (IMU)',d:'Logs pitch, roll and yaw hundreds of times a second, so every echo can be traced back through the aircraft’s exact attitude.',g:['box',.2,.15,.2],p:[0,.3,.27],c:'#b07b4a',ex:[0,.3,.95]},
  {n:'GNSS antenna',d:'Survey-grade satellite positioning. An echo becomes a 3D point only because the sensor knows precisely where it was.',g:['sph',.1,24,16],p:[.5,.92,0],s:[1,.55,1],c:'#e8e2d0',ex:[.5,1.1,0]},
  {n:'Antenna mast',d:'Rigid standoff lifting the antenna clear of electronic noise from the pod.',g:['cyl',.022,.022,.5],p:[.5,.64,0],c:'#39443e',ex:[.5,.8,0]},
  {n:'Ranging & data unit',d:'Times each pulse’s flight to nanoseconds and streams the result to storage, terabytes per survey day.',g:['box',.5,.22,.34],p:[0,-.34,0],c:'#2c3a33',ex:[0,-1.05,0]}]},
 photo:{parts:[
- {n:'Airframe hull',d:'Weatherproof body carrying flight computer and radios, the part that files the flight plan and holds the hover.',g:['box',.62,.16,.42],p:[0,.32,0],c:'#2b3630',ex:[0,.75,0]},
+ {n:'Airframe hull',d:'Weatherproof body carrying the flight computer and radios.',g:['box',.62,.16,.42],p:[0,.32,0],c:'#2b3630',ex:[0,.75,0]},
  {n:'Motor arm (A)',d:'Carbon crossbar carrying two of the four motors.',g:['box',1.3,.05,.08],p:[0,.34,0],r:[0,.785,0],c:'#20291f',ex:[.55,.25,.55]},
- {n:'Motor arm (B)',d:'The opposing crossbar, the X that makes a quadcopter.',g:['box',1.3,.05,.08],p:[0,.34,0],r:[0,-.785,0],c:'#20291f',ex:[-.55,.25,.55]},
+ {n:'Motor arm (B)',d:'The opposing crossbar; the two arms form the quadcopter’s X.',g:['box',1.3,.05,.08],p:[0,.34,0],r:[0,-.785,0],c:'#20291f',ex:[-.55,.25,.55]},
  {n:'Rotor',d:'Fixed-pitch propeller; the flight controller balances all four hundreds of times a second.',g:['cyl',.27,.27,.014,20],p:[.46,.42,.46],c:'#141b16',op:.6,ex:[.35,.7,.35]},
  {n:'Rotor',d:'Fixed-pitch propeller; the flight controller balances all four hundreds of times a second.',g:['cyl',.27,.27,.014,20],p:[-.46,.42,.46],c:'#141b16',op:.6,ex:[-.35,.7,.35]},
  {n:'Rotor',d:'Fixed-pitch propeller; the flight controller balances all four hundreds of times a second.',g:['cyl',.27,.27,.014,20],p:[-.46,.42,-.46],c:'#141b16',op:.6,ex:[-.35,.7,-.35]},
  {n:'Rotor',d:'Fixed-pitch propeller; the flight controller balances all four hundreds of times a second.',g:['cyl',.27,.27,.014,20],p:[.46,.42,-.46],c:'#141b16',op:.6,ex:[.35,.7,-.35]},
  {n:'Camera gimbal',d:'Three-axis stabiliser holding the camera steady and pointed, usually straight down, at a fixed overlap.',g:['sph',.1,20,14],p:[0,.16,.12],c:'#1a231e',ex:[0,-.55,.45]},
- {n:'Mapping camera',d:'The survey instrument itself: a calibrated lens and sensor firing on a metronome so every photo overlaps the last by 60–80%.',g:['cyl',.05,.06,.11],p:[0,.11,.24],r:[1.5708,0,0],c:'#0e1512',em:'#7fd2ff',ex:[0,-.7,.95]},
+ {n:'Mapping camera',d:'The survey instrument itself: a calibrated lens and sensor firing at a fixed interval so every photo overlaps the last by 60–80%.',g:['cyl',.05,.06,.11],p:[0,.11,.24],r:[1.5708,0,0],c:'#0e1512',em:'#7fd2ff',ex:[0,-.7,.95]},
  {n:'RTK antenna',d:'Real-time-kinematic GNSS, centimetre positions stamped into every frame, so the model needs fewer ground targets.',g:['cyl',.075,.075,.035,24],p:[0,.5,-.1],c:'#e8e2d0',ex:[0,.85,-.2]},
- {n:'Battery',d:'The whole mission budget in one brick: minutes aloft traded against sensors carried.',g:['box',.3,.1,.2],p:[0,.24,-.06],c:'#3a2f22',ex:[0,-.25,-.95]}]},
+ {n:'Battery',d:'Limits flight time: minutes aloft against the weight of sensors carried.',g:['box',.3,.1,.2],p:[0,.24,-.06],c:'#3a2f22',ex:[0,-.25,-.95]}]},
 gpr:{parts:[
- {n:'Push frame',d:'The surveyor’s handle, lines are walked at an even pace, again and again, a grid of patience.',g:['cyl',.028,.028,1.05],p:[0,.58,-.34],r:[.55,0,0],c:'#4a554d',met:.6,ex:[0,.55,-.5]},
- {n:'Handlebar',d:'Where the operator steers and watches the ground scroll by as echoes.',g:['cyl',.035,.035,.44],p:[0,.9,-.62],r:[0,0,1.5708],c:'#1c241f',ex:[0,.9,-.75]},
- {n:'Chassis deck',d:'Low cart deck keeping the antenna a constant whisker above the surface.',g:['box',.6,.05,.8],p:[0,.3,.02],c:'#333f38',ex:[0,.75,0]},
+ {n:'Push frame',d:'The surveyor’s handle; lines are walked at an even pace, one after another.',g:['cyl',.028,.028,1.05],p:[0,.58,-.34],r:[.55,0,0],c:'#4a554d',met:.6,ex:[0,.55,-.5]},
+ {n:'Handlebar',d:'Where the operator steers and watches the live radar trace.',g:['cyl',.035,.035,.44],p:[0,.9,-.62],r:[0,0,1.5708],c:'#1c241f',ex:[0,.9,-.75]},
+ {n:'Chassis deck',d:'Low cart deck keeping the antenna a constant small distance above the surface.',g:['box',.6,.05,.8],p:[0,.3,.02],c:'#333f38',ex:[0,.75,0]},
  {n:'Wheel',d:'Soft tyre for rough ground, the antenna must ride smoothly to keep traces clean.',g:['cyl',.16,.16,.06,24],p:[.34,.16,.3],r:[0,0,1.5708],c:'#151b17',ex:[.7,0,.2]},
  {n:'Wheel',d:'Soft tyre for rough ground, the antenna must ride smoothly to keep traces clean.',g:['cyl',.16,.16,.06,24],p:[-.34,.16,.3],r:[0,0,1.5708],c:'#151b17',ex:[-.7,0,.2]},
  {n:'Odometer wheel',d:'Clicks off distance so every radar trace is pinned to its position along the line.',g:['cyl',.09,.09,.045,20],p:[0,.09,-.4],r:[0,0,1.5708],c:'#1d2622',ex:[0,-.15,-.8]},
  {n:'Shielded antenna',d:'Transmit and receive antennas in one screened box. Its centre frequency is the survey’s core trade: lower reaches deeper, higher sees finer.',g:['box',.5,.18,.6],p:[0,.155,.05],c:'#c56a32',rgh:.6,ex:[0,-.6,.15]},
- {n:'Control console',d:'Displays each trace live, hyperbolas blooming where something buried says hello.',g:['box',.34,.22,.06],p:[0,.78,-.42],r:[-.5,0,0],c:'#1a231e',ex:[0,1.05,-.55]},
+ {n:'Control console',d:'Displays each trace live, with hyperbolas where something is buried.',g:['box',.34,.22,.06],p:[0,.78,-.42],r:[-.5,0,0],c:'#1a231e',ex:[0,1.05,-.55]},
  {n:'Console screen',d:'The radargram, scrolling: two-way travel time down the page, the walked line across it.',g:['box',.27,.15,.012],p:[0,.795,-.393],r:[-.5,0,0],c:'#0a1410',em:'#7fd2ff',ex:[0,1.2,-.62]},
  {n:'Battery pack',d:'A day of survey per charge, slung low for balance.',g:['box',.26,.12,.16],p:[0,.36,-.2],c:'#3a2f22',ex:[0,.25,-.95]}]},
 mag:{parts:[
- {n:'Carbon crossbar',d:'Rigid, strictly non-magnetic frame, the instrument must not hear itself.',g:['cyl',.03,.03,1.2],p:[0,1.02,0],r:[0,0,1.5708],c:'#dfe3dc',ex:[0,.55,0]},
+ {n:'Carbon crossbar',d:'Rigid, strictly non-magnetic frame, so it does not register in the readings.',g:['cyl',.03,.03,1.2],p:[0,1.02,0],r:[0,0,1.5708],c:'#dfe3dc',ex:[0,.55,0]},
  {n:'Sensor tube (left)',d:'Vertical tube holding a fluxgate pair a fixed distance apart.',g:['cyl',.05,.05,1.1],p:[-.5,.55,0],c:'#e8e2d0',ex:[-.55,0,0]},
  {n:'Sensor tube (right)',d:'The twin tube, two channels walked at once doubles ground covered.',g:['cyl',.05,.05,1.1],p:[.5,.55,0],c:'#e8e2d0',ex:[.55,0,0]},
  {n:'Fluxgate (upper)',d:'Reads the total field a metre up…',g:['cyl',.03,.03,.12],p:[.5,1.0,0],c:'#b07b4a',em:'#dca868',ex:[.85,.4,0]},
  {n:'Fluxgate (lower)',d:'…while its partner reads it near the ground. Subtracting the two cancels Earth’s field and leaves the archaeology.',g:['cyl',.03,.03,.12],p:[.5,.14,0],c:'#b07b4a',em:'#dca868',ex:[.85,-.4,0]},
- {n:'Carry harness',d:'Loops over the shoulders; the operator becomes the survey vehicle, in clean clothing with no steel.',g:['tor',.3,.03,40,3.1416],p:[0,1.06,-.14],r:[1.5708,0,0],c:'#2c2c2c',ex:[0,.7,-.45]},
+ {n:'Carry harness',d:'Loops over the shoulders; the operator carries the instrument, wearing nothing made of steel.',g:['tor',.3,.03,40,3.1416],p:[0,1.06,-.14],r:[1.5708,0,0],c:'#2c2c2c',ex:[0,.7,-.45]},
  {n:'Data logger',d:'Timestamps every reading against a walked grid, greyscale plans emerge line by line.',g:['box',.2,.14,.06],p:[0,.88,-.26],c:'#1a231e',em:'#54e2a7',ex:[0,.5,-.85]}]},
 multi:{parts:[
  {n:'Camera body',d:'Five imagers in one weatherproof block, ready to bolt beneath a mapping drone.',g:['box',.34,.12,.24],p:[0,.3,0],c:'#22302a',ex:[0,.55,0]},
@@ -1964,38 +1964,38 @@ multi:{parts:[
  {n:'Band lens, green',d:'The green band: healthy-canopy baseline.',g:['cyl',.026,.026,.05,18],p:[0,.21,.05],c:'#0d1411',em:'#54e2a7',ex:[0,-.7,.25]},
  {n:'Band lens, red',d:'Red: what chlorophyll absorbs when plants are thriving.',g:['cyl',.026,.026,.05,18],p:[.1,.21,.05],c:'#0d1411',em:'#ff8d7d',ex:[.35,-.65,.2]},
  {n:'Band lens, red edge',d:'The red-edge: the sharpest early signal of vegetation stress.',g:['cyl',.026,.026,.05,18],p:[-.05,.21,-.05],c:'#0d1411',em:'#dca868',ex:[-.2,-.75,-.25]},
- {n:'Band lens, near-infrared',d:'Near-infrared, where buried walls betray themselves through the plants above them.',g:['cyl',.026,.026,.05,18],p:[.05,.21,-.05],c:'#0d1411',em:'#e8e2d0',ex:[.2,-.75,-.25]},
+ {n:'Band lens, near-infrared',d:'Near-infrared, where buried walls show through the plants growing above them.',g:['cyl',.026,.026,.05,18],p:[.05,.21,-.05],c:'#0d1411',em:'#e8e2d0',ex:[.2,-.75,-.25]},
  {n:'Sunlight sensor',d:'Sky-facing cell logging incoming light, so ground readings can be corrected for every passing cloud.',g:['sph',.055,20,14],p:[0,.5,-.02],s:[1,.55,1],c:'#e8e2d0',ex:[0,.85,-.05]},
  {n:'Drone mount',d:'Quick-release shoe with power and trigger lines to the aircraft.',g:['box',.1,.09,.1],p:[0,.41,0],c:'#39443e',ex:[0,.45,.6]}]},
 pxrf:{parts:[
- {n:'Housing',d:'Rugged shell in the shape the work demands: point, press, read. Slides open here to show what a lab-in-a-pistol contains.',g:['box',.55,.26,.14],p:[.05,.6,0],c:'#2e3a33',ex:[0,.85,0]},
+ {n:'Housing',d:'Rugged shell shaped for one-handed use: point, press, read. Slides open here to show the components inside.',g:['box',.55,.26,.14],p:[.05,.6,0],c:'#2e3a33',ex:[0,.85,0]},
  {n:'Grip & trigger guard',d:'Everything balances over the hand, readings take thirty to ninety steady seconds.',g:['box',.14,.4,.12],p:[-.1,.32,0],r:[0,0,-.22],c:'#22302a',ex:[-.2,-.5,0]},
  {n:'Nose',d:'Tapers to meet the object flush; stray geometry ruins quantification.',g:['cone',.1,.2,24],p:[.43,.6,0],r:[0,0,-1.5708],c:'#39443e',met:.4,ex:[.7,0,0]},
  {n:'Measurement window',d:'A film thinner than paper, X-rays out, fluorescence back, the artifact untouched.',g:['cyl',.045,.045,.014,24],p:[.54,.6,0],r:[0,0,1.5708],c:'#d8d2c0',op:.85,ex:[.95,0,0]},
  {n:'X-ray tube',d:'Miniature source firing the primary beam that knocks inner electrons loose.',g:['cyl',.05,.05,.3],p:[.1,.64,0],r:[0,0,1.5708],c:'#b07b4a',em:'#dca868',ex:[.15,.75,.4]},
  {n:'Silicon drift detector',d:'Counts returning photons and sorts them by energy, each element’s lines unmistakable.',g:['box',.1,.1,.06],p:[.28,.52,0],r:[0,0,.5],c:'#8fa79b',em:'#7fd2ff',ex:[.3,-.55,.5]},
- {n:'Spectrum display',d:'Peaks rise as the seconds pass: iron, strontium, zirconium, a fingerprint assembling live.',g:['box',.22,.15,.014],p:[-.15,.79,0],r:[-.45,0,0],c:'#0a1410',em:'#54e2a7',ex:[-.3,1.0,0]},
- {n:'Trigger',d:'Held for the full reading; a safety interlock keeps the beam honest.',g:['box',.035,.09,.03],p:[.0,.46,0],c:'#141b16',ex:[.1,-.55,.3]},
+ {n:'Spectrum display',d:'Peaks rise as the seconds pass: iron, strontium, zirconium.',g:['box',.22,.15,.014],p:[-.15,.79,0],r:[-.45,0,0],c:'#0a1410',em:'#54e2a7',ex:[-.3,1.0,0]},
+ {n:'Trigger',d:'Held for the full reading; a safety interlock controls the beam.',g:['box',.035,.09,.03],p:[.0,.46,0],c:'#141b16',ex:[.1,-.55,.3]},
  {n:'Battery',d:'A field day of readings in the grip.',g:['box',.1,.22,.09],p:[-.14,.24,0],r:[0,0,-.22],c:'#3a2f22',ex:[-.4,-.85,0]}]},
 core:{parts:[
  {n:'Tripod leg',d:'One of three, the rig stands over lake or wetland on a platform or the sediment itself.',g:['cyl',.03,.03,2.3],p:[0,1.1,.62],r:[.5,0,0],c:'#5a6a61',met:.5,ex:[0,.1,.6]},
  {n:'Tripod leg',d:'One of three, the rig stands over lake or wetland on a platform or the sediment itself.',g:['cyl',.03,.03,2.3],p:[.54,1.1,-.31],r:[.5,2.0944,0],c:'#5a6a61',met:.5,ex:[.55,.1,-.3]},
  {n:'Tripod leg',d:'One of three, the rig stands over lake or wetland on a platform or the sediment itself.',g:['cyl',.03,.03,2.3],p:[-.54,1.1,-.31],r:[.5,-2.0944,0],c:'#5a6a61',met:.5,ex:[-.55,.1,-.3]},
- {n:'Pulley block',d:'Ropes and patience: the barrel is driven down and hauled back one metre-long drive at a time.',g:['tor',.1,.028,36],p:[0,2.18,0],c:'#5a6a61',met:.6,ex:[0,.5,0]},
+ {n:'Pulley block',d:'The barrel is driven down and hauled back one metre-long drive at a time.',g:['tor',.1,.028,36],p:[0,2.18,0],c:'#5a6a61',met:.6,ex:[0,.5,0]},
  {n:'Drive rod',d:'Extension rods stack as the hole deepens, ten metres of mud is ten thousand years in many basins.',g:['cyl',.02,.02,1.9],p:[0,1.2,0],c:'#8b949c',met:.8,ex:[0,.85,0]},
  {n:'Core barrel',d:'The sampling chamber. Shown clear here for teaching; in the field, steel with a polycarbonate liner.',g:['cyl',.07,.07,1.1],p:[0,.62,0],c:'#cfd8d2',op:.3,ex:[0,.55,0]},
- {n:'Sediment core',d:'The prize: laminated mud, oldest at the bottom, pollen, phytoliths, charcoal and time, in order.',g:['cyl',.054,.054,1.04],p:[0,.6,0],tex:'core',c:'#ffffff',ex:[0,-1.25,0]},
+ {n:'Sediment core',d:'Laminated mud, oldest at the bottom: pollen, phytoliths and charcoal in stratigraphic order.',g:['cyl',.054,.054,1.04],p:[0,.6,0],tex:'core',c:'#ffffff',ex:[0,-1.25,0]},
  {n:'Piston',d:'Holds suction above the sample so soft sediment enters undisturbed instead of smearing.',g:['cyl',.05,.05,.09],p:[0,1.16,0],c:'#b07b4a',ex:[0,1.15,0]},
  {n:'Cutting shoe',d:'Sharpened ring that shaves the column cleanly as the barrel descends.',g:['cyl',.075,.06,.09],p:[0,.05,0],c:'#5a6a61',met:.7,ex:[0,-.4,0]}]},
 adna:{parts:[
  {n:'Instrument bench',d:'A schematic of an isotope-ratio mass spectrometer, the far end of a chain that begins with a clean-room and a fragment of tooth enamel.',g:['box',2.1,.06,1.15],p:[-.05,.26,.22],c:'#1c2622',ex:[0,-.6,0]},
  {n:'Ion source',d:'The prepared sample is ionised here, atoms given charge, so that fields can steer them.',g:['box',.34,.32,.3],p:[-.92,.52,0],c:'#2e3a33',em:'#dca868',ex:[-.6,.3,0]},
  {n:'Accelerator column',d:'A voltage gradient hurls the ions down the flight path at a precisely known energy.',g:['cyl',.07,.07,.6],p:[-.45,.52,0],r:[0,0,1.5708],c:'#8b949c',met:.8,ex:[-.3,.6,0]},
- {n:'Flight tube',d:'High vacuum all the way, a single air molecule is a roadblock at this scale.',g:['cyl',.05,.05,.5],p:[-.02,.52,.02],r:[0,-.2,1.5708],c:'#9aa5ad',met:.8,ex:[0,.7,-.1]},
- {n:'Bending magnet',d:'The heart of the trick: heavy isotopes curve less, light ones more. One beam enters; siblings leave.',g:['tor',.4,.13,48,1.5708],p:[.2,.52,.42],r:[1.5708,0,-.35],c:'#39443e',met:.6,em:'#7fd2ff',ex:[.35,.45,.35]},
- {n:'Collector tube',d:'One isotope’s private lane to its detector.',g:['cyl',.038,.038,.5],p:[.5,.52,.72],r:[0,.5,1.5708],c:'#9aa5ad',met:.8,ex:[.5,.65,.4]},
- {n:'Collector tube',d:'One isotope’s private lane to its detector.',g:['cyl',.038,.038,.5],p:[.44,.52,.86],r:[0,.9,1.5708],c:'#9aa5ad',met:.8,ex:[.4,.65,.6]},
- {n:'Faraday collectors',d:'Three cups counting three beams at once; the ratios (⁸⁷Sr/⁸⁶Sr, ¹⁸O/¹⁶O) are the biography.',g:['box',.26,.12,.1],p:[.68,.52,.95],r:[0,.7,0],c:'#b07b4a',em:'#54e2a7',ex:[.7,.6,.75]},
+ {n:'Flight tube',d:'High vacuum throughout; even trace air would disrupt the beam.',g:['cyl',.05,.05,.5],p:[-.02,.52,.02],r:[0,-.2,1.5708],c:'#9aa5ad',met:.8,ex:[0,.7,-.1]},
+ {n:'Bending magnet',d:'Heavy isotopes curve less than light ones, so a single beam enters and separates by mass.',g:['tor',.4,.13,48,1.5708],p:[.2,.52,.42],r:[1.5708,0,-.35],c:'#39443e',met:.6,em:'#7fd2ff',ex:[.35,.45,.35]},
+ {n:'Collector tube',d:'Each isotope’s path to its own detector.',g:['cyl',.038,.038,.5],p:[.5,.52,.72],r:[0,.5,1.5708],c:'#9aa5ad',met:.8,ex:[.5,.65,.4]},
+ {n:'Collector tube',d:'Each isotope’s path to its own detector.',g:['cyl',.038,.038,.5],p:[.44,.52,.86],r:[0,.9,1.5708],c:'#9aa5ad',met:.8,ex:[.4,.65,.6]},
+ {n:'Faraday collectors',d:'Three cups counting three beams at once; the ratios (⁸⁷Sr/⁸⁶Sr, ¹⁸O/¹⁶O) record origin and diet.',g:['box',.26,.12,.1],p:[.68,.52,.95],r:[0,.7,0],c:'#b07b4a',em:'#54e2a7',ex:[.7,.6,.75]},
  {n:'Turbo pump',d:'Keeps the whole path at hard vacuum, humming day and night.',g:['cyl',.1,.1,.2,24],p:[-.4,.12,.35],c:'#39443e',ex:[-.3,-.6,.45]},
  {n:'Turbo pump',d:'Keeps the whole path at hard vacuum, humming day and night.',g:['cyl',.1,.1,.2,24],p:[.25,.12,.6],c:'#39443e',ex:[.25,-.6,.7]}]}
 };
@@ -2576,7 +2576,7 @@ Views.void=function(){
   }
   function updFlag(){const f=hud.querySelector('#vFlag');
     if(mode==='connect'){f.hidden=false;
-      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode) choose the first object'}
+      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode: choose the first object'}
     else f.hidden=true}
   hud.querySelectorAll('#vMode button').forEach(function(b){b.onclick=function(){
     hud.querySelectorAll('#vMode button').forEach(function(x){x.classList.toggle('on',x===b)});
@@ -2588,7 +2588,7 @@ Views.void=function(){
         const v=m.querySelector('#nc-name').value.trim();if(!v){toast('Give it a name first.');return false}
         const palette=['#54e2a7','#7fd2ff','#dca868','#c9a2ff','#8fd45f','#ff9d8a'];
         S.d.collections.push({id:uid(),name:v,color:palette[S.d.collections.length%palette.length],ts:Date.now()});
-        markDirty();rebuild();toast('Collection created, a new hub burns in your database','ok')}}]});
+        markDirty();rebuild();toast('Collection created, a new hub added to your database','ok')}}]});
     setTimeout(function(){const i=$('#nc-name');i&&i.focus()},50)};
   function handleConnect(obj){
     if(!armed){armed=obj;updFlag();return}
@@ -3230,7 +3230,7 @@ function entityMeta(type,id){
 
 /* ── §FIELD field senses, foods, species, climate, sound (all sourced) ── */
 const FIELD_SENSES={
-tikal:{climate:'Tropical monsoon: roughly 1,900 mm of rain, most of it May–January, then a punishing dry season the reservoir system existed to outlast.',climSrc:'Scarborough et al. 2012',
+tikal:{climate:'Tropical monsoon: roughly 1,900 mm of rain, most of it May–January, then a long dry season the reservoir system was built to outlast.',climSrc:'Scarborough et al. 2012',
  foods:[{n:'Maize',note:'The staple in every Maya bone-isotope study, nixtamalized with lime into tamales and atole; faintly sweet, with a mineral finish.',src:'isotope studies'},
   {n:'Cacao',note:'Frothed with water, chile and honey: bitter, floral, peppery. Residues chemically confirmed in Petén drinking vessels.',src:'Hurst et al., residue chemistry'},
   {n:'Ramón (breadnut)',note:'Roasted seeds with a chestnut-like taste; forest staple or famine fallback, still argued.',src:'palaeoethnobotany'},
@@ -3240,7 +3240,7 @@ tikal:{climate:'Tropical monsoon: roughly 1,900 mm of rain, most of it May–Jan
  birds:[['Ocellated turkey','Meleagris ocellata'],['Keel-billed toucan','Ramphastos sulfuratus'],['Montezuma oropendola','Psarocolius montezuma']],
  snd:{wet:.75,insects:.85},
  viz:[{t:'PACUNAM lidar programme',u:'https://www.pacunam.org/'}]},
-caracol:{climate:'Vaca Plateau at ~500 m: cooler nights than the lowland Petén, ~1,500–2,000 mm of rain, the terraces farmed it where it fell.',climSrc:'Chase & Chase programme',
+caracol:{climate:'Vaca Plateau at ~500 m: cooler nights than the lowland Petén, ~1,500–2,000 mm of rain, the terraces captured the rain where it fell.',climSrc:'Chase & Chase programme',
  foods:[{n:'Maize & beans',note:'Terrace agriculture’s pairing; the agronomic reason the hillsides were rebuilt.',src:'A. & D. Chase'},
   {n:'Cacao',note:'Vessels in Caracol tombs carry the chemical fingerprint of chocolate.',src:'residue chemistry'},
   {n:'Game & orchard fruit',note:'Household groups kept orchard trees among the causeway districts.',src:'settlement archaeology'}],
@@ -3248,8 +3248,8 @@ caracol:{climate:'Vaca Plateau at ~500 m: cooler nights than the lowland Petén,
  animals:['Great curassow','Ocelot','Howler monkey'],
  birds:[['Great curassow','Crax rubra'],['Black-headed trogon','Trogon melanocephalus'],['Crested guan','Penelope purpurascens']],
  snd:{wet:.7,insects:.8},viz:[]},
-angkor:{climate:'Tropical savanna: ~1,400 mm falling almost entirely in the May–October monsoon. The barays turned that single pulse into a year of water.',climSrc:'Buckley et al. 2010; CALI',
- foods:[{n:'Rice',note:'Bunded-field rice was the empire’s calorie base; Zhou Daguan (1296) marvels at multiple harvests a year.',src:'Zhou Daguan 1296'},
+angkor:{climate:'Tropical savanna: ~1,400 mm falling almost entirely in the May–October monsoon. The barays stored that seasonal rainfall to provide water through the rest of the year.',climSrc:'Buckley et al. 2010; CALI',
+ foods:[{n:'Rice',note:'Bunded-field rice was the empire’s calorie base; Zhou Daguan (1296) reported multiple harvests a year.',src:'Zhou Daguan 1296'},
   {n:'Tonle Sap fish',note:'Fresh and fermented into pungent, salty pastes, the protein of Angkor; the Bayon reliefs show the catch being hauled and grilled.',src:'Bayon reliefs · zooarchaeology'},
   {n:'Palm sugar & wine',note:'Tapped from sugar palms: smoky caramel sweetness, and a lightly sour toddy.',src:'Zhou Daguan 1296'}],
  plants:['Sugar palm (Borassus)','Lotus','Rice','Sandalwood & aromatics on the mounds'],
@@ -3257,17 +3257,17 @@ angkor:{climate:'Tropical savanna: ~1,400 mm falling almost entirely in the May�
  birds:[['Greater coucal','Centropus sinensis'],['Asian koel','Eudynamys scolopaceus'],['Oriental magpie-robin','Copsychus saularis']],
  snd:{wet:.6,insects:.7},
  viz:[{t:'Monash Univ. visualisations of daily life (CC, in Klassen & Carter’s article)',u:'https://theconversation.com/a-metropolis-arose-in-medieval-cambodia-new-research-shows-how-many-people-lived-in-the-angkor-empire-over-time-157573'}]},
-cotoca:{climate:'Llanos de Mojos: fiercely seasonal, savanna half the year, a shallow inland sea in flood; ~1,800 mm.',climSrc:'Lombardo et al.',
+cotoca:{climate:'Llanos de Mojos: strongly seasonal, savanna for half the year and widely flooded for the other half; ~1,800 mm.',climSrc:'Lombardo et al.',
  foods:[{n:'Manioc',note:'Cultivated here ~10,350 years ago, among the world’s oldest; earthy, starchy flatbreads.',src:'Lombardo et al. 2020'},
   {n:'Squash',note:'Grown on the forest islands by ~10,200 years ago.',src:'Lombardo et al. 2020'},
   {n:'Maize',note:'By Casarabe times, the isotopic staple of the mound-builders.',src:'diet studies'},
-  {n:'Fish',note:'Weirs strung across the flooding savanna harvested the water itself.',src:'Erickson'}],
+  {n:'Fish',note:'Weirs across the flooding savanna caught fish as the water drained.',src:'Erickson'}],
  plants:['Motacú palm (forest islands)','Maize','Squash'],
  animals:['Capybara','Hoatzin','Blue-and-yellow macaw'],
  birds:[['Hoatzin','Opisthocomus hoazin'],['Southern lapwing','Vanellus chilensis'],['Blue-and-yellow macaw','Ara ararauna']],
  snd:{wet:.8,insects:.9},
  viz:[{t:'DAI lidar animation of Cotoca (Prümers)',u:'https://www.dainst.org/'}]},
-teyuna:{climate:'Sierra Nevada flank, 1,000–1,300 m: one of the wettest coasts of the Americas, here, architecture is drainage first.',climSrc:'ICANH programme',
+teyuna:{climate:'Sierra Nevada flank, 1,000–1,300 m: one of the wettest parts of the Americas, where the need to drain water shaped the architecture.',climSrc:'ICANH programme',
  foods:[{n:'Maize & beans',note:'Terraced staples of the slope towns.',src:'Giraldo'},
   {n:'Manioc & fruit',note:'Lower-slope gardens fed the stair-linked settlements.',src:'ethnobotany'},
   {n:'Coca leaf',note:'Ceremonial then and now for Kogi, Wiwa and Arhuaco, a living practice of the Sierra, noted with respect.',src:'living tradition'}],
@@ -3278,12 +3278,12 @@ teyuna:{climate:'Sierra Nevada flank, 1,000–1,300 m: one of the wettest coasts
 kuhikugu:{climate:'Upper Xingu: ~1,700 mm with a marked wet season; the towns sat in mosaics of orchard, garden and wetland weir.',climSrc:'Heckenberger et al.',
  foods:[{n:'Manioc beiju',note:'Great flat breads of bitter manioc, the Xinguano staple, a thousand years ago and today.',src:'Heckenberger'},
   {n:'Pequi',note:'Orchard fruit, oily, intensely aromatic; the ancient orchards still shape the forest.',src:'historical ecology'},
-  {n:'Fish',note:'Weir-caught at scale: the plaza towns were, functionally, fish-farming towns.',src:'Heckenberger et al. 2008'}],
+  {n:'Fish',note:'Weir-caught in quantity; fish were a mainstay of the plaza towns’ diet.',src:'Heckenberger et al. 2008'}],
  plants:['Pequi orchards','Bitter manioc','Buriti palm'],
  animals:['Giant otter','Tapir','Screaming piha (the voice of Amazonia)'],
  birds:[['Screaming piha','Lipaugus vociferans'],['White-throated toucan','Ramphastos tucanus'],['Undulated tinamou','Crypturellus undulatus']],
  snd:{wet:.8,insects:.95},viz:[]},
-yaxchilan:{climate:'Usumacinta corridor: 2,000+ mm; the river is highway, larder and moat in one.',climSrc:'Scherer et al. 2019',
+yaxchilan:{climate:'Usumacinta corridor: 2,000+ mm; the river served as transport route, food source and defensive barrier.',climSrc:'Scherer et al. 2019',
  foods:[{n:'River fish & mollusks',note:'The Usumacinta’s protein, thick in the middens of both banks.',src:'zooarchaeology'},
   {n:'Maize',note:'Grown on deep fluvial soils, ideal farmland then as now.',src:'Scherer et al. 2019'},
   {n:'Cacao',note:'Moved along the river trade route the kingdom taxed and guarded.',src:'epigraphy & trade studies'}],
@@ -3579,7 +3579,7 @@ Views.void=function(){
   }
   function updFlag(){const f=hud.querySelector('#vFlag');
     if(mode==='connect'){f.hidden=false;
-      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode) choose the first object'}
+      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode: choose the first object'}
     else f.hidden=true}
   hud.querySelectorAll('#vMode button').forEach(function(b){b.onclick=function(){
     hud.querySelectorAll('#vMode button').forEach(function(x){x.classList.toggle('on',x===b)});
@@ -3591,7 +3591,7 @@ Views.void=function(){
         const v=m.querySelector('#nc-name').value.trim();if(!v){toast('Give it a name first.');return false}
         const palette=['#54e2a7','#7fd2ff','#dca868','#c9a2ff','#8fd45f','#ff9d8a'];
         S.d.collections.push({id:uid(),name:v,color:palette[S.d.collections.length%palette.length],ts:Date.now()});
-        markDirty();rebuild();toast('Collection created, a new hub burns in your database','ok')}}]});
+        markDirty();rebuild();toast('Collection created, a new hub added to your database','ok')}}]});
     setTimeout(function(){const i=$('#nc-name');i&&i.focus()},50)};
   function handleConnect(obj){
     if(!armed){armed=obj;updFlag();return}
@@ -4160,9 +4160,9 @@ const LIB_PRIMARY=[
  {t:'Bernal Díaz del Castillo — True History of the Conquest of New Spain (1568/1632)',n:'Conquest-era description of Maya barricade warfare, quoted by Scherer et al. to interpret Yaxchilan’s walls.',u:'https://en.wikipedia.org/wiki/Bernal_D%C3%ADaz_del_Castillo'},
  {t:'The four surviving Maya codices',n:'Dresden, Madrid, Paris, Grolier/Maya Codex of Mexico — the astronomical books that survived the fires.',u:'https://commons.wikimedia.org/wiki/Category:Dresden_Codex'}];
 const LIB_NOTES=[
- {w:'Tom Garrison, on the El Zotz causeway',b:'Standing with survey-grade GPS on a causeway the lidar had just revealed, he could barely convince himself it was there — “Well, I guess I’m on it.” Ground truth, in the jungle, is an act of faith in the data.',s:'CWA / The Past, 2019'},
+ {w:'Tom Garrison, on the El Zotz causeway',b:'Standing with survey-grade GPS on a causeway the lidar had just revealed, he could barely convince himself it was there: “Well, I guess I’m on it.”',s:'CWA / The Past, 2019'},
  {w:'Heiko Prümers, on first seeing Cotoca',b:'A site his team had trenched for years was, on the lidar, suddenly a city: ramparts, radiating causeways, a civic core. What pedestrian survey read as scattered mounds resolved into planning.',s:'CWA 115 / The Past, 2022'},
- {w:'Roland Fletcher, inside Angkor Wat’s enclosure',b:'The lidar found a formal grid of mounds and 250–300 household ponds inside the temple’s own walls — and “spiral” earthworks no one yet fully explains. The precinct of a god-king was also a neighbourhood.',s:'CWA / The Past, 2016'},
+ {w:'Roland Fletcher, inside Angkor Wat’s enclosure',b:'The lidar found a formal grid of mounds and 250–300 household ponds inside the temple’s own walls, along with “spiral” earthworks no one yet fully explains; people evidently lived within the temple’s own enclosure.',s:'CWA / The Past, 2016'},
  {w:'Scherer & Golden’s crew, at La Bestia',b:'The site is named for the vines of an abandoned field that grabbed at the surveyors’ feet — settlement archaeology at machete pace, GPS point by GPS point, racing nightfall back to camp.',s:'PARI Journal 20(2), 2019'},
  {w:'Zhou Daguan, in the markets of Angkor (1296)',b:'He records women running the commerce, mats spread at dawn, rents paid to officials, and a river-lake world of fish — the living city the temples only imply. (Paraphrased; the original is public domain.)',s:'Zhou Daguan, 1296–97'}];
 Views.library=function(){
@@ -4170,7 +4170,7 @@ Views.library=function(){
   $('#libraryBody').innerHTML=
    '<div class="overline">Library · the research itself</div>'
    +'<h2 class="sect">Papers, reports &amp; <em>field notes</em></h2>'
-   +'<p class="lede">Every claim in The Rainforest descends from work like this. The papers link to the journals; the field reports are the real documents projects file at season’s end; the notes are documented moments, sourced.</p>'
+   +'<p class="lede">Every claim in The Rainforest comes from work like this: the papers link to the journals, the field reports are the actual documents projects file at the end of a season, and the notes are sourced records of specific moments.</p>'
    +'<hr class="hair">'
    +'<h3 style="font:400 26px var(--serif);margin:6px 0 14px">Key papers</h3>'
    +'<div class="grid g2">'+LIB_PAPERS.map(function(p){
@@ -4683,7 +4683,7 @@ function matchCodex(o){const ck=cultKeyOf(o);if(!ck||!CODEX[ck])return null;
 
 /* ── the real instruments in the field, actual devices & platforms ── */
 const REAL_KIT={
- lidar:[['Teledyne Optech Titan (the PACUNAM sensor','https://www.teledyneoptech.com/'],['RIEGL airborne scanners','http://www.riegl.com/'],['NCALM) the lab that flew the Maya surveys','https://ncalm.cive.uh.edu/']],
+ lidar:[['Teledyne Optech Titan (the PACUNAM sensor)','https://www.teledyneoptech.com/'],['RIEGL airborne scanners','http://www.riegl.com/'],['NCALM (the lab that flew the Maya surveys)','https://ncalm.cive.uh.edu/']],
  photo:[['DJI enterprise RTK platforms','https://enterprise.dji.com/'],['Agisoft Metashape (SfM software)','https://www.agisoft.com/']],
  gpr:[['GSSI SIR systems','https://www.geophysical.com/'],['Sensors & Software Noggin','https://www.sensoft.ca/']],
  mag:[['Bartington Grad601 gradiometer','https://www.bartington.com/'],['SENSYS MAGNETO arrays','https://sensysmagnetometer.com/']],
@@ -4694,7 +4694,7 @@ const REAL_KIT={
 const EMERGING=[
  ['Muon tomography','Cosmic-ray muons can image the internals of a structure through metres of solid stone. It has been used inside the Great Pyramid and at Teotihuacan. Could it be used in the Maya pyramids?','Morishima et al. 2017, Nature'],
  ['Sediment ancient DNA','DNA shed into lake mud can allow for the recovery of entire ecosystems, including crops, animals, and human presence, with no bones.','Kjær et al. 2022, Nature'],
- ['Palaeoproteomics & ZooMS','Proteins leave a molecular fingerprint, not a literal one, that identifies a species and sometimes sex from a fragment of bone too small for the eye to place.','Welker et al.'],
+ ['Palaeoproteomics & ZooMS','Proteins carry a molecular signature that identifies a species, and sometimes sex, from a fragment of bone too small to identify by eye.','Welker et al.'],
  ['AI structure detection','A neural net can now pick out vaulted elite architecture across 110,000 lidar structures at 93% accuracy. That study is in the Library.','Estrada-Belli et al. 2023, JAS'],
  ['Residue chemistry','Lipids and starches trapped in pot walls can identify a meal cooked a thousand years ago. Cacao at Tikal was confirmed this way.','Hurst et al.'],
  ['Portable Raman & hyperspectral','Pigments and minerals identified on the spot, with nothing removed for sampling. Maya Blue reads in seconds on a temple wall.','conservation science'],
@@ -4711,7 +4711,7 @@ Views.home=function(){
     {go:'archive',t:'The Archive',d:'Live museum collections, narrowed to tropical-forest societies, plus real photogrammetry scans you can turn in your hands.',icon:MOD_ICON.archive,tag:'Objects'},
     {go:'codex',t:'The Codex',d:'Five culture worlds to explore: Maya, Khmer, Casarabe, Tairona and Xingu. Their foods, wildlife, technology, art, belief, language and sound, and how we know.',icon:MOD_ICON.codex,tag:'Cultures'},
     {go:'library',t:'The Library',d:'The research itself: the key papers, the field reports as they were filed, primary sources, and documented moments from the field.',icon:MOD_ICON.library,tag:'Sources'},
-    {go:'void',t:'Your Database',d:'Your private knowledge space. Everything you collect drifts here until you cluster it, connect it, and argue with it.',icon:MOD_ICON.void,tag:'Yours'},
+    {go:'void',t:'Your Database',d:'Your private knowledge space. Everything you collect gathers here for you to cluster, connect and build on.',icon:MOD_ICON.void,tag:'Yours'},
     {go:null,t:'The Field Kit',d:'Notes anywhere, hypotheses, a journey trail, and backup, in the rail at the edge until you open it.',icon:MOD_ICON.kit,tag:'Tools'}];
   $('#homeModules').innerHTML=mods.map(m=>'<div class="card click" '+(m.go?'data-go="'+m.go+'"':'data-kit="1"')+'>'
     +'<div class="glyph">'+m.icon+'</div><div class="eyebrow" style="margin-top:14px">'+m.tag+'</div><h3>'+m.t+'</h3><p>'+m.d+'</p>'
@@ -4751,9 +4751,9 @@ Views.lab=function(){
   $('#labGrid').innerHTML=TECHS.map(t=>'<div class="card click" data-go="tech" data-param="'+t.id+'">'+colBtn('tech',t.id,t.name)
     +'<div class="glyph" style="color:var(--cyan);border-color:color-mix(in oklab,var(--cyan) 35%,transparent)">'+TECH_GLYPH[t.id]+'</div>'
     +'<h3>'+esc(t.name)+'</h3><p>'+esc(t.tagline)+'</p><div class="foot"><span class="go">Open instrument →</span></div></div>').join('')
-   +'<div style="grid-column:1/-1;margin-top:44px"><div class="overline cy">The frontier, methods being born right now</div>'
-   +'<h2 class="sect">The next way of <em>listening</em></h2>'
-   +'<p class="lede" style="margin-bottom:20px">Each of the eight instruments above was once impossible. These are the ones becoming possible, and an open seat for the one after that.</p>'
+   +'<div style="grid-column:1/-1;margin-top:44px"><div class="overline cy">The frontier, methods now emerging</div>'
+   +'<h2 class="sect">What comes <em>next</em></h2>'
+   +'<p class="lede" style="margin-bottom:20px">Each of the eight instruments above was once impossible. These are the ones becoming possible now, with room for the ones still to be invented.</p>'
    +'<div class="grid g2">'+EMERGING.map(function(e){return '<div class="emg selectable"><b>'+esc(e[0])+'.</b> <span style="color:var(--dim);font-size:14px">'+esc(e[1])+'</span><div class="live-tag" style="margin-top:8px;color:var(--faint)">'+(/\d{4}|et al/.test(e[2])?'<a href="https://scholar.google.com/scholar?q='+encodeURIComponent(e[2])+'" target="_blank" rel="noopener" style="color:var(--cyan)">'+esc(e[2])+' ↗</a>':esc(e[2]))+'</div></div>'}).join('')+'</div></div>';
 };
 
@@ -5268,7 +5268,7 @@ Views.void=function(){
         const v=m.querySelector('#nc-name').value.trim();if(!v){toast('Give it a name first.');return false}
         const palette=['#54e2a7','#7fd2ff','#dca868','#c9a2ff','#8fd45f','#ff9d8a'];
         S.d.collections.push({id:uid(),name:v,color:palette[S.d.collections.length%palette.length],ts:Date.now()});
-        markDirty();rebuild();toast('Collection created, a new hub burns in your database','ok')}}]});
+        markDirty();rebuild();toast('Collection created, a new hub added to your database','ok')}}]});
     setTimeout(function(){const i=$('#nc-name');if(i)i.focus()},50)};
   function handleConnect(obj){
     if(!armed){armed=obj;updFlag();return}
@@ -5494,15 +5494,15 @@ Views.exped=function(){
   const root=$('#expedRoot');
   App.ctx={type:'view',id:'exped',label:'Presence',go:['exped']}; logJ('view','Presence · 360°',['exped']);
   root.innerHTML='<div class="wrap">'
-   +'<div class="overline">Presence · stand in the actual places</div>'
-   +'<h2 class="sect">The real ground, <em>embedded</em></h2>'
-   +'<p class="lede">No simulation. These windows are live Google Street View and contributor photospheres of the actual ruins, walk the causeways, turn under the doorways, look up at the real canopy. Where a site is too remote even for Google, we say so and hand you the live satellite instead.</p>'
+   +'<div class="overline">Presence · the real sites in 360°</div>'
+   +'<h2 class="sect">The actual sites, <em>in 360°</em></h2>'
+   +'<p class="lede">These panels embed live Google Street View and contributor photospheres of the ruins themselves. Where a site has no public 360° imagery, a live satellite view of the exact coordinates is linked instead.</p>'
    +'<hr class="hair"><div class="grid g2">'
    +SITES.map(function(s){const sv=SV[s.id];
      return '<div class="card">'+colBtn('site',s.id,s.name)
       +'<div class="eyebrow">'+esc(s.region)+' · '+esc(s.culture)+'</div><h3>'+esc(s.name)+'</h3>'
-      +(sv?'<div class="sv-slot" data-site="'+s.id+'" style="margin-top:10px"><button class="btn small primary" data-svload>◎ Stand there, load the real 360°</button></div>'
-          :'<p class="small" style="margin-top:10px">No public 360° exists yet, genuinely unphotographed ground. <a target="_blank" rel="noopener" style="color:var(--cyan)" href="'+svSat(s)+'">Live satellite of the exact coordinates ↗</a></p>')
+      +(sv?'<div class="sv-slot" data-site="'+s.id+'" style="margin-top:10px"><button class="btn small primary" data-svload>◎ Load the live 360°</button></div>'
+          :'<p class="small" style="margin-top:10px">No public 360° imagery exists for this site yet. <a target="_blank" rel="noopener" style="color:var(--cyan)" href="'+svSat(s)+'">Live satellite of the exact coordinates ↗</a></p>')
       +'<div class="foot">'+(sv?'<a class="btn small ghost" target="_blank" rel="noopener" href="'+svLink(s.id)+'">Full screen ↗</a>':'')
       +'<span class="chip" data-go="site" data-param="'+s.id+'" style="cursor:pointer">Open the full dossier →</span></div></div>'}).join('')
    +'</div></div>';
@@ -5519,7 +5519,7 @@ Views.site=function(id){
   const scans=SCAN_SEEDS.filter(function(sd){return sd.sites.indexOf(id)>=0});
   const D=FIELD_SENSES[id]||{};
   const CULTQ={tikal:'Maya',caracol:'Maya',yaxchilan:'Maya',angkor:'Khmer',cotoca:'Amazonia',teyuna:'Tairona gold',kuhikugu:'Marajoara'};
-  const secs=[['sv','Stand there (360°'],['survey','Survey) real terrain'],['photos','Photographs'],['then','What it looked like'],['life','Ancient life, the evidence'],['objects','Objects & 3D scans'],['sound','Sound']];
+  const secs=[['sv','Stand there (360°)'],['survey','Survey (real terrain)'],['photos','Photographs'],['then','What it looked like'],['life','Ancient life, the evidence'],['objects','Objects & 3D scans'],['sound','Sound']];
   $('#siteBody').innerHTML=
    '<div class="dossier-head" style="position:relative">'
    +'<div class="dhead-bg" id="dhBg"></div>'
@@ -5645,7 +5645,7 @@ Views.codex=function(){
           +'<div class="sp-grid" id="cxWild"><div class="small">streaming iNaturalist…</div></div>'
           +'<div class="live-tag" style="margin-top:8px">live · iNaturalist research-grade · © each observer</div>';
         else if(dk==='music')body=(C.d.music?'<div class="grid g3">'+C.d.music.map(function(e,i){return cxEntryCard(cul,'music',e,i)}).join('')+'</div>':'')
-          +'<div class="senses"><div class="overline">The forest’s own voice, real recordings only</div>'
+          +'<div class="senses"><div class="overline">Regional soundscape, real recordings only</div>'
           +'<div class="snd-bar"><button class="btn small primary" id="cxSnd">▶ Compose the chorus</button><span class="chip" id="cxSt" hidden></span></div><div id="cxMix" style="margin-top:6px"></div>'
           +'<p class="small" style="margin-top:8px;font-size:11.5px">Layered live from credited iNaturalist field recordings of the documented species, modern recordings, the same voices the ancient city heard. Where no open recording exists, a xeno-canto link stands in. Nothing synthesized.</p></div>';
         else if(dk==='scan')body=(seeds.length?'<div class="grid g3" id="cxScan">'+seeds.map(scanCardHTML).join('')+'</div>':'')
@@ -5826,7 +5826,7 @@ Views.void=function(){
   }catch(err){console.warn('void rebuild',err)}}
   function updFlag(){const f=hud.querySelector('#vFlag');
     if(mode==='connect'){f.hidden=false;
-      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode) choose the first object'}
+      f.textContent=armed?('Linking from “'+shortL(armed.userData.it.label,22)+'” (choose the second object'):'Connect mode: choose the first object'}
     else f.hidden=true}
   hud.querySelectorAll('#vMode button').forEach(function(b){b.onclick=function(){
     hud.querySelectorAll('#vMode button').forEach(function(x){x.classList.toggle('on',x===b)});
@@ -5838,7 +5838,7 @@ Views.void=function(){
         const v=m.querySelector('#nc-name').value.trim();if(!v){toast('Give it a name first.');return false}
         const palette=['#54e2a7','#7fd2ff','#dca868','#c9a2ff','#8fd45f','#ff9d8a'];
         S.d.collections.push({id:uid(),name:v,color:palette[S.d.collections.length%palette.length],ts:Date.now()});
-        markDirty();rebuild();toast('Collection created, a new hub burns in your database','ok')}}]});
+        markDirty();rebuild();toast('Collection created, a new hub added to your database','ok')}}]});
     setTimeout(function(){const i=$('#nc-name');if(i)i.focus()},50)};
   function handleConnect(obj){
     if(!armed){armed=obj;updFlag();return}
