@@ -12,8 +12,8 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Rainforest · Field Edition — Real-Data Tropical-Forest Archaeology</title>
-<meta name="description" content="A research instrument for tropical-forest archaeology: survey real sites in 3D, examine the instruments of information retrieval, walk the forest, and build your own knowledge void.">
+<title>The Rainforest · Tropical Rainforest Archaeology</title>
+<meta name="description" content="A research platform for tropical rainforest archaeology: explore the real sites in 3D, explore instruments that retrieve information from past happenings, and build your own database and specific record of what you find, think and propose.">
 
 <!-- ════════════════════════════════════════════════════════════════════════
      The Rainforest  · single-file research platform
@@ -444,9 +444,9 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
     <div id="hero">
       <canvas id="heroCanvas"></canvas>
       <div class="hero-inner">
-        <div class="overline">An interface for tracking your exploation, notes, thought processes and ideas while navigating a database of tropical rainforest archaeology</div>
-        <h1 class="display">An ancient physical anomaly.<br><em>The Tropical Rainforest.<br><em>Explore its information, technology, principles of life, and mysteries to be discovered.</em></h1>
-        <p class="hero-sub">The universe is information; what we know is simply the retrieval. Here, you will learn about the technology used to retrieve what we have so far about tropical rainforest civilizations: LIDAR, carbon dating, DNA analysis, photogrammetry, ground radar, palaeoecology, etc., but most importantly, when studying human civilizations, the layer of our own abstract contextualization. Propose new technology and methods, your own informational process, and abstract realizations.</p>
+        <div class="overline">An interface for tracking your exploration, notes, thought processes and ideas while navigating a database of tropical rainforest archaeology</div>
+        <h1 class="display"><em>The Tropical Rainforest.</em><br>Explore its unique ancient environments, technologies, principles of life, and mysteries.</h1>
+        <p class="hero-sub">Everything that happened leaves a trace; what we know of the past is what we can retrieve from those traces. Here, you will learn about the technology used to retrieve what we have so far about tropical rainforest civilizations: LIDAR, carbon dating, DNA analysis, photogrammetry, ground radar, palaeoecology, etc., but most importantly, when studying human civilizations, the layer of our own abstract contextualization. Propose new technology and methods, your own informational process, and abstract realizations.</p>
         <div class="hero-cta">
           <button class="btn primary" data-go="atlas">Enter the Atlas</button>
           <button class="btn" data-go="exped">Walk an expedition</button>
@@ -481,8 +481,8 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
   <!-- ═══ ATLAS ═══ -->
   <section class="view" id="v-atlas" hidden>
     <div class="wrap">
-      <div class="overline">Atlas · six landscapes, four continents’ worth of forest</div>
-      <h2 class="sect">Sites of the <em>forested world</em></h2>
+      <div class="overline">Atlas · seven sites across three continents</div>
+      <h2 class="sect">Sites of the <em>tropical rainforests</em></h2>
       <p class="lede">Each dossier holds the evidence, the story of how it was retrieved, and a navigable 3D survey built from the published findings, with the canopy yours to strip away.</p>
       <hr class="hair">
       <div class="grid g2" id="atlasGrid"></div>
@@ -531,7 +531,7 @@ footer .fin{max-width:1220px;margin:0 auto;display:flex;gap:28px;flex-wrap:wrap;
 
 <footer>
   <div class="fin">
-    <div>The Rainforest, a research platform for tropical-forest archaeology.<br>Reference reconstructions; all factual claims cited to peer-reviewed sources.<br><span style="font:500 9px var(--mono);letter-spacing:.16em;color:var(--faint)">BUILD F4 · 2026-08-10</span></div>
+    <div>The Rainforest, a research platform for tropical-forest archaeology.<br>Reference reconstructions; all factual claims cited to peer-reviewed sources.</div>
     <div>Your data is yours: private by default, exportable any time.<br><span class="linkline" id="refsFootLink">References &amp; methodology</span></div>
   </div>
 </footer>
@@ -658,7 +658,7 @@ const TYPE_NAMES={site:'Site',tech:'Instrument',artifact:'Object',text:'Passage'
    parts      : the 3D instrument recipe (see §3D:INSTRUMENTS)
    ════════════════════════════════════════════════════════════════════ */
 const TECHS=[
-{ id:'lidar', name:'Airborne lidar', tagline:'Laser light through the gaps in the leaves',
+{ id:'lidar', name:'Airborne lidar', tagline:'Airborne laser scanning that maps the bare ground beneath the forest canopy',
   summary:'A survey aircraft or drone sweeps the forest with hundreds of thousands of laser pulses per second. Most strike the canopy, but enough slip through gaps between leaves to touch the ground. Keeping only those last returns yields a bare-earth model of high precision, with every ancient platform, causeway and canal thrown into relief.',
   how:[
     'A scanner fires 100,000–900,000 near-infrared pulses per second while a mirror sweeps them across the flight path.',
@@ -667,13 +667,13 @@ const TECHS=[
     'Classification algorithms separate ground points from vegetation, and the ground points are interpolated into a digital terrain model (DTM).',
     'Archaeologists then relight that terrain (hillshading, sky-view factor, local relief models) until subtle earthworks a few decimetres high become legible.'],
   yields:['Point clouds (commonly 10–50+ points/m² in archaeological surveys)','Bare-earth terrain models at ~0.5–1 m resolution','Canopy-height models that capture the forest’s structure','Relief visualisations on which structures are mapped and ground-checked'],
-  limits:['Cannot penetrate solid foliage, dense, low, closed canopy degrades ground coverage','Reveals topography, not chronology: every mapped feature still needs dating and excavation to be understood','Costly at scale; flight planning and processing are specialist work'],
-  casework:'The 2018 PACUNAM Lidar Initiative scanned 2,144 km² of the Maya Biosphere Reserve in Guatemala with a multi-channel Teledyne Optech Titan sensor and identified 61,480 ancient structures (houses, causeways, terraces, fortifications) supporting Late Classic lowland population estimates of 7–11 million.',
-  ref:'Canuto et al. 2018, Science 361, eaau0137 · Chase et al. 2011, J. Archaeological Science 38',
+  limits:['Cannot penetrate solid foliage; dense, low, closed canopy degrades ground coverage','Reveals topography, not chronology: every mapped feature still needs dating and excavation to be understood','Costly at scale; flight planning and processing are specialist work'],
+  casework:'The 2018 PACUNAM Lidar Initiative scanned 2,144 km² of the Maya Biosphere Reserve in Guatemala with a multi-channel Teledyne Optech Titan sensor and identified 61,480 ancient structures (houses, causeways, terraces, fortifications) supporting Late Classic lowland population estimates of 7–11 million. In the Maya Biosphere surveys the sensor recorded about 15 laser shots per square metre, dense enough to resolve earthworks only a few tens of centimetres high (LiDAR Magazine 2019).',
+  ref:'Canuto et al. 2018, Science 361, eaau0137 · Chase et al. 2011, J. Archaeological Science 38 · LiDAR Magazine 2019 (Titan sensor specifications)',
   instrumentName:'Survey lidar pod (airborne unit)', instrumentNote:'Reference model of an airborne laser-scanning unit, the class of instrument flown over Guatemala and Angkor. Slide to open it up.' },
 
-{ id:'photo', name:'Drone photogrammetry', tagline:'A thousand photographs become one solid object',
-  summary:'Structure-from-Motion turns overlapping photographs into measurable 3D geometry. The same mathematics documents a temple façade, an excavation trench at end of day, or a single sherd on a turntable, making photogrammetry the workhorse of modern field recording.',
+{ id:'photo', name:'Drone photogrammetry', tagline:'Overlapping photographs combined into measurable 3D models',
+  summary:'Structure-from-Motion turns overlapping photographs into measurable 3D geometry. The same mathematics documents a temple façade, an excavation trench at end of day, or a single sherd on a turntable, which makes photogrammetry a standard tool in modern fieldwork.',
   how:[
     'A drone (or a person with a camera) captures hundreds of photos with 60–80% overlap, each pixel seeing every surface from many angles.',
     'Software detects matching features across images and solves, simultaneously, for every camera position and a sparse cloud of 3D points.',
@@ -681,13 +681,13 @@ const TECHS=[
     'Dense matching fills in millions of points; these are meshed and textured with the original photography.',
     'The result is a measurable digital twin: orthomosaics for mapping, meshes for analysis and archives.'],
   yields:['Georeferenced orthophoto maps','Textured 3D meshes of monuments, trenches and objects','Digital surface models complementary to lidar','A permanent visual record of contexts destroyed by the act of excavation itself'],
-  limits:['Needs visible surfaces, it cannot map ground under closed canopy from the air','Texture-poor or shiny surfaces match badly','Accuracy depends on control points and disciplined capture'],
+  limits:['Needs visible surfaces; it cannot map ground under closed canopy from the air','Texture-poor or shiny surfaces match badly','Accuracy depends on control points and disciplined capture'],
   casework:'At Ciudad Perdida in Colombia’s Sierra Nevada de Santa Marta, drone and terrestrial photogrammetry underpin conservation monitoring of the terrace complexes, letting archaeologists and Indigenous stakeholders detect millimetre-scale change season to season.',
   ref:'Standard method: Westoby et al. 2012, Geomorphology 179 · site programme: ICANH / Global Heritage Fund reports',
   instrumentName:'Survey quadcopter with mapping camera', instrumentNote:'Reference model of a small mapping drone, RTK positioning, gimballed camera. Slide to separate its systems.' },
 
-{ id:'gpr', name:'Ground-penetrating radar', tagline:'Echoes from beneath the floor',
-  summary:'GPR transmits radio pulses into the soil and listens for reflections where the ground changes, a buried floor, a tomb void, a filled ditch. Pushed along a grid of survey lines, it builds slice-by-slice images of what lies below, without moving a single trowel of earth.',
+{ id:'gpr', name:'Ground-penetrating radar', tagline:'Radar pulses sent into the ground to find buried structures without digging',
+  summary:'GPR transmits radio pulses into the soil and listens for reflections where the ground changes: a buried floor, a tomb void, a filled ditch. Pushed along a grid of survey lines, it builds slice-by-slice images of what lies below, without excavation.',
   how:[
     'An antenna against the ground emits electromagnetic pulses, typically 100–900 MHz for archaeology.',
     'Each boundary between materials of different electrical properties reflects part of the pulse back; travel time gives depth.',
@@ -700,7 +700,7 @@ const TECHS=[
   ref:'Conyers 2013, Ground-Penetrating Radar for Archaeology · tropical caveats: Conyers 2016, Archaeological Prospection 23',
   instrumentName:'GPR survey cart', instrumentNote:'Reference model of a cart-mounted GPR, shielded antenna, odometer wheel, control console. Slide to lift the deck.' },
 
-{ id:'mag', name:'Magnetometry', tagline:'The ground’s own magnetic memory',
+{ id:'mag', name:'Magnetometry', tagline:'Detecting buried walls, hearths and ditches by the magnetism of the soil',
   summary:'Fired clay, cut-and-filled pits and certain soils carry faint magnetic contrasts against the Earth’s field. A gradiometer walked in close-spaced lines senses differences of a fraction of a nanotesla, enough to plan hearths, kilns, ditches and house floors without breaking the surface. The method is passive: it reads the ground’s own magnetism rather than sending a signal into it.',
   how:[
     'Two sensors a fixed distance apart read the field at the same instant; subtracting them cancels the Earth’s field and its daily drift, leaving only shallow anomalies. Fluxgate gradiometers and alkali-vapour (caesium) magnetometers are the usual instruments (Eastaugh 2021).',
@@ -714,8 +714,8 @@ const TECHS=[
   ref:'Aspinall, Gaffney & Schmidt 2008, Magnetometry for Archaeologists · Eastaugh (CAA) 2021, magnetometer field-method guideline · Ortt 2026, thesis, Univ. of Maryland · Creekmore 2023, Biblical Archaeology Review 49(2) · dark earths: Glaser & Birk 2012, Geochim. Cosmochim. Acta 82',
   instrumentName:'Fluxgate gradiometer', instrumentNote:'Reference model of a carried dual-sensor gradiometer. Slide to separate the sensor tubes from the frame.' },
 
-{ id:'multi', name:'Satellite & multispectral sensing', tagline:'The view from orbit, in more colours than the eye',
-  summary:'Sensors on satellites and drones record light the eye cannot see. Vegetation growing over buried stone or moist ditch fill stresses or thrives differently, and those differences glow in the near-infrared, turning whole regions into a first-pass survey.',
+{ id:'multi', name:'Satellite & multispectral sensing', tagline:'Satellite and drone imaging beyond visible light',
+  summary:'Sensors on satellites and drones record light the eye cannot see. Vegetation growing over buried stone or moist ditch fill stresses or thrives differently, and those differences show up strongly in the near-infrared, so a single image can screen whole regions for likely sites.',
   how:[
     'Multispectral instruments image discrete bands, blue through near- and shortwave-infrared; hyperspectral sensors record hundreds of narrow bands.',
     'Band arithmetic such as NDVI quantifies plant vigour pixel by pixel.',
@@ -723,12 +723,12 @@ const TECHS=[
     'Radar satellites (SAR) add their own channel, sensitive to surface roughness and moisture, and see through cloud, a real advantage in the tropics.',
     'Detections are candidate sites: they direct lidar, fieldwork and coring, never replace them.'],
   yields:['Region-scale site prospection at low cost','Vegetation-stress and soil-moisture proxies','Time series, change detection, looting and deforestation monitoring'],
-  limits:['Closed canopy hides the ground from optical sensors, in deep forest this finds edges, clearings and large earthworks, not house floors','Spatial resolution limits small-feature detection','Ground truthing is mandatory'],
-  casework:'In Acre, Brazil, deforestation exposed geometric ditched enclosures (geoglyphs) first recognised at scale in satellite imagery; hundreds are now documented, rewriting assumptions about pre-Columbian south-west Amazonia.',
+  limits:['Closed canopy hides the ground from optical sensors; in deep forest it finds edges, clearings and large earthworks rather than individual house floors','Spatial resolution limits small-feature detection','Ground truthing is mandatory'],
+  casework:'In Acre, Brazil, deforestation exposed geometric ditched enclosures (geoglyphs) first recognised at scale in satellite imagery; hundreds are now documented across south-west Amazonia.',
   ref:'Pärssinen, Schaan & Ranzi 2009, Antiquity 83 · method: Lasaponara & Masini 2012, Satellite Remote Sensing',
   instrumentName:'Drone multispectral camera', instrumentNote:'Reference model of a five-band mapping camera with sunlight sensor. Slide to fan out the lens array.' },
 
-{ id:'pxrf', name:'Portable X-ray fluorescence', tagline:'An elemental fingerprint in sixty seconds',
+{ id:'pxrf', name:'Portable X-ray fluorescence', tagline:'A handheld X-ray beam that identifies an object’s composition, without damaging it',
   summary:'Point the instrument at stone, ceramic or metal; an X-ray beam makes the atoms inside fluoresce at energies unique to each element. In a minute, without a scratch, you obtain the object’s composition, and often the source it came from.',
   how:[
     'A miniature X-ray tube irradiates a spot on the object’s surface.',
@@ -737,12 +737,12 @@ const TECHS=[
     'Trace-element ratios are matched against reference libraries of known geological sources.',
     'Because obsidian flows are chemically distinctive, a blade can be assigned to its source with high confidence.'],
   yields:['Non-destructive elemental composition, in the field or museum','Obsidian, ceramic-paste and pigment sourcing','Exchange-network maps built from hundreds of rapid readings'],
-  limits:['Reads the surface only, burial coatings and corrosion mislead','Light elements (below ~magnesium) are poorly detected','Sourcing is only as good as the reference database'],
+  limits:['Reads the surface only; burial coatings and corrosion can mislead','Light elements (below ~magnesium) are poorly detected','Sourcing is only as good as the reference database'],
   casework:'Across the Maya lowlands, pXRF assigns obsidian artifacts to highland sources (El Chayal, Ixtepeque, San Martín Jilotepeque) letting researchers trace how exchange routes shifted as cities rose and fell.',
   ref:'Method & sourcing: Glascock 2011; Moholy-Nagy et al. 2013, Latin American Antiquity 24',
   instrumentName:'Handheld pXRF analyser', instrumentNote:'Reference model of a pistol-grip analyser. Slide to open the housing, tube, detector and shielding inside.' },
 
-{ id:'core', name:'Sediment coring & palaeoecology', tagline:'The landscape’s diary, read one layer at a time',
+{ id:'core', name:'Sediment coring & palaeoecology', tagline:'Reading past climate, vegetation and farming from layered lake and wetland mud',
   summary:'Lakes and wetlands archive whatever falls into them, layer upon layer for millennia. A core of that mud, read for pollen, phytoliths and charcoal and pinned in time by radiocarbon, tells you when people cleared forest, planted maize and manioc, and when the forest returned.',
   how:[
     'A piston corer driven from a platform or tripod extracts intact sediment columns metres long.',
@@ -751,12 +751,12 @@ const TECHS=[
     'Charcoal counts reveal burning; geochemistry adds erosion and land-use signals.',
     'AMS radiocarbon dates on seeds and charcoal turn depth into calendar time.'],
   yields:['Vegetation and fire histories at century (sometimes decadal) resolution','Direct evidence of cultivation: crop pollen and phytoliths','Chronologies that anchor lidar-mapped landscapes in time'],
-  limits:['One core is one point, basins record their own catchments','Deposition gaps and mixing complicate reading','Radiocarbon carries real uncertainty; models, not single dates, carry the argument'],
+  limits:['One core is one point; each basin records only its own catchment','Deposition gaps and mixing complicate reading','Radiocarbon carries real uncertainty; models, not single dates, carry the argument'],
   casework:'In the Llanos de Mojos, Bolivia, cores from forest islands document squash cultivation by ~10,200 years ago and manioc by ~10,350 years ago, placing south-west Amazonia among the world’s earliest centres of plant domestication.',
   ref:'Lombardo et al. 2020, Nature 581 · regional synthesis: Iriarte et al. 2020, Quaternary Science Reviews 248',
   instrumentName:'Piston coring rig', instrumentNote:'Reference model of a tripod piston-corer, barrel loaded with a laminated core. Slide to withdraw the sample.' },
 
-{ id:'adna', name:'Ancient DNA & isotope analysis', tagline:'Biography written in bone',
+{ id:'adna', name:'Ancient DNA & isotope analysis', tagline:'Ancestry, diet and migration read from bone and teeth',
   summary:'Teeth and the densest bone of the skull preserve molecules for centuries to millennia even in the tropics’ hostile chemistry. Isotope ratios record where a person’s food and water came from; surviving DNA records ancestry and kinship: the lives of individuals within larger populations.',
   how:[
     'Strontium and oxygen isotopes lock into tooth enamel in childhood, stamping it with the geology and water of where a person grew up; mismatches with the burial place reveal migrants.',
@@ -765,8 +765,8 @@ const TECHS=[
     'In dedicated clean labs, damaged DNA fragments are sequenced and compared across individuals and populations.',
     'Kinship, ancestry, mobility and even pathogen genomes emerge, always alongside, never instead of, archaeological context.'],
   yields:['Individual life histories: local or migrant, diet through life','Genetic kinship within cemeteries; population movements across regions','Pathogen and domesticate histories'],
-  limits:['Tropical heat and acid soils destroy most biomolecules, success is the exception, and every sample is finite','Destructive, however minimal: ethics and stewardship come first','Requires meaningful consultation and consent of descendant communities'],
-  casework:'Isotopic studies across the Maya region (including sacrificial deposits at Chichén Itzá analysed with ancient DNA in 2024) have identified non-local individuals and close kin among the interred, reshaping how ritual, mobility and lineage are understood.',
+  limits:['Tropical heat and acid soils destroy most biomolecules, well-preserved samples are rare, and testing consumes what little survives','Destructive, however minimal: ethics and stewardship come first','Requires meaningful consultation and consent of descendant communities'],
+  casework:'Isotopic studies across the Maya region (including sacrificial deposits at Chichén Itzá analysed with ancient DNA in 2024) have identified non-local individuals and close kin among the interred, enlightening how ritual, mobility and lineage are understood.',
   ref:'Price et al. 2010, J. Anthropological Archaeology 29 · Barquera et al. 2024, Nature 630',
   instrumentName:'Isotope-ratio mass spectrometer (schematic)', instrumentNote:'Schematic reference model, ion source, bending magnet, triple collectors. Slide to trace the flight path.' }
 ];
@@ -780,13 +780,13 @@ const TECHS=[
 const SITES=[
 { id:'tikal', name:'Tikal', region:'Petén, Guatemala', culture:'Classic Maya', period:'~600 BCE – ~900 CE',
   coordsLabel:'17.22° N · 89.62° W', coords:[17.2220,-89.6237], techs:['lidar','photo','gpr','pxrf','core'],
-  blurb:'A Maya superpower whose temples still break the canopy, and whose true extent, reservoirs and fortifications only lasers finally revealed.',
+  blurb:'A major Maya capital whose temples still rise above the canopy. Airborne lidar revealed its full extent, its reservoir system, and the earthworks that defended it.',
   stats:[['Peak era','Late Classic, c. 600–850 CE'],['Tallest temple','Temple IV, ≈65 m'],['Water system','Engineered reservoirs & dams'],['2018 survey','Within 2,144 km² lidar block'],['Structures (block-wide)','61,480 identified']],
   overview:[
-    'Tikal was one of the most powerful kingdoms of the Classic Maya world: a dynastic capital of causeway-linked temple complexes, palaces and plazas rising out of the Petén forest. Its rulers warred and allied across the lowlands for centuries; its Temple IV, at roughly 65 metres, remains among the tallest structures ever raised in the pre-Columbian Americas.',
-    'The city thrived without rivers or lakes. Plastered plazas and causeways doubled as rain-catchment surfaces feeding a chain of engineered reservoirs, a water system that sustained tens of thousands of residents through seasonal drought, and whose stresses are part of the story of the city’s ninth-century unravelling.'],
+    'Tikal was one of the most powerful kingdoms of the Classic Maya world: a dynastic capital of causeway-linked temple complexes, palaces and plazas rising out of the Petén forest. Its rulers warred and allied across the lowlands for centuries; its Temple IV, at roughly 65 metres, remains among the tallest structures ever raised in the pre-Columbian Americas. In 378 CE an intervention tied to distant Teotihuacan installed a new royal line, a turning point recorded on Tikal’s own monuments.',
+    'The city thrived without rivers or lakes. Plastered plazas and causeways doubled as rain-catchment surfaces feeding a chain of engineered reservoirs, a water system that sustained tens of thousands of residents through seasonal drought, and whose strain contributed to the city’s decline in the ninth century.'],
   retrieval:[
-    'Tikal has been mapped by hand since the nineteenth century, but the 2018 PACUNAM Lidar Initiative changed the scale of the question. Flying a multi-channel laser scanner over 2,144 km² of the Maya Biosphere Reserve, the consortium identified 61,480 structures, and around Tikal specifically, previously unrecognised earthworks, ditches and ramparts that reframe the city’s defensive landscape.',
+    'Tikal has been mapped by hand since the nineteenth century, but the 2018 PACUNAM Lidar Initiative changed the scale in question. Flying a multi-channel laser scanner over 2,144 km² of the Maya Biosphere Reserve, the consortium identified 61,480 structures, and around Tikal specifically, previously unrecognised earthworks, ditches and ramparts that reframe the city’s defensive landscape.',
     'On the ground, that map guides everything else: excavation targets sub-floor deposits located by ground-penetrating radar; portable XRF traces the city’s obsidian back to highland sources such as El Chayal; sediment records from the reservoirs and surrounding bajos track drought, erosion and land use across the city’s rise and fall.',
     'Further results followed. Over 13 km of earthworks ring Tikal itself (a third of it ramparted) and two “hills” beside the famous plazas proved to be unmapped pyramids; between Tikal and El Zotz the survey’s edge caught La Cuernavilla, a ditch-and-rampart ridge fortress of a type never before documented. A 2023 follow-up then taught computers to recognise vaulted masonry (the elite signature) across 110,000 lidar-mapped structures over 2,500 km², at 93% accuracy against excavated ground truth at Tikal.'],
   findings:[
@@ -800,7 +800,7 @@ const SITES=[
       {t:'plat',x:6,z:2,w:64,d:44,h:2.4,name:'Great Plaza precinct'},
       {t:'pyr',x:26,z:0,b:15,h:17,steps:9,name:'Temple I',wp:true,fact:'Temple I, the funerary pyramid of ruler Jasaw Chan K’awiil I (dedicated c. 734 CE). Its nine stepped terraces are thought to echo the levels of the underworld.'},
       {t:'pyr',x:-8,z:-24,b:20,h:9,steps:5,name:'North Acropolis'},
-      {t:'pyr',x:-62,z:-10,b:25,h:26,steps:8,name:'Temple IV (≈65 m)',wp:true,fact:'Temple IV, ≈65 m, among the tallest pre-Columbian structures in the Americas. From its roof comb, the forest reads as an unbroken green sea; lidar reads what the sea conceals.'},
+      {t:'pyr',x:-62,z:-10,b:25,h:26,steps:8,name:'Temple IV (≈65 m)',wp:true,fact:'Temple IV, ≈65 m, is among the tallest pre-Columbian structures in the Americas. Its roof comb rises above the forest canopy, while lidar maps what lies under the canopy.'},
       {t:'cause',x1:-44,z1:-8,x2:-2,z2:-14,w:7,h:1.2,name:'Causeway (sacbe)'},
       {t:'res',x:-4,z:34,r:14,d:3,water:true,name:'Temple Reservoir',wp:true,fact:'Tikal had no river. Plastered plazas shed rain into engineered reservoirs like this one, sediment cores from them now serve as archives of drought and city life.'},
       {t:'res',x:44,z:36,r:10,d:2.4,water:true,name:'Palace Reservoir'},
@@ -812,22 +812,22 @@ const SITES=[
 
 { id:'caracol', name:'Caracol', region:'Cayo District, Belize', culture:'Classic Maya', period:'~600 BCE – ~900 CE',
   coordsLabel:'16.76° N · 89.12° W', coords:[16.7637,-89.1177], techs:['lidar','photo','pxrf'],
-  blurb:'The city that beat Tikal, and the survey that, in four days of laser flight, rewrote thirty years of machete-cut mapping.',
+  blurb:'The Maya city that defeated Tikal in 562 CE. In 2009, four days of airborne lidar covered more ground than thirty years of mapping on foot.',
   stats:[['Signature building','Caana, ~43 m'],['2009 lidar block','~200 km² in ~4 days'],['Urban footprint','Continuous terraced sprawl'],['Population estimate','~100,000 at peak'],['Recorded triumph','Defeat of Tikal, 562 CE']],
   overview:[
     'Caracol sprawls across Belize’s Vaca Plateau: a low-density metropolis of causeways, residential groups and agricultural terraces radiating from a monumental core. Its central palace-pyramid, Caana (the “Sky Palace”) still stands about 43 metres tall and remains one of the largest ancient buildings in Belize.',
     'Inscriptions record Caracol’s victory over mighty Tikal in 562 CE, an event that opened more than a century of Caracol ascendancy and Tikal silence. The city’s wealth shows in its tombs, its markets, and above all in the engineered landscape that fed it.'],
   retrieval:[
-    'Arlen and Diane Chase mapped Caracol on foot for a quarter century, kilometres of transects cut through forest. In 2009, working with NASA-funded engineers at NCALM, they flew the first archaeological airborne-lidar survey of the tropics: roughly 200 km² captured in about four days of flying.',
+    'Arlen and Diane Chase mapped Caracol on foot for a quarter century, cutting kilometres of transects through the forest. In 2009, working with NASA-funded engineers at NCALM, they flew the first archaeological airborne-lidar survey of the tropics: roughly 200 km² captured in about four days of flying.',
     'The lasers confirmed the field maps and exceeded their scope: agricultural terracing covering essentially every workable slope, new causeways, and thousands of unrecorded residential groups. The findings and their use at Caracol led the way to airborne lidar as the standard for forested archaeology.'],
   findings:[
     'The 2009 survey demonstrated a continuously urbanised, terraced landscape sustaining an estimated ~100,000 people at the city’s height.',
-    'Radial causeways bind distant districts to the core, planned integration at a metropolitan scale.',
+    'Radial causeways connect distant districts to the core, showing planning on a city-wide scale.',
     'The project established airborne lidar as the discipline-changing survey method for forested archaeology.'],
   refs:'Chase, Chase et al. 2011, J. Archaeological Science 38 · Chase & Chase 2017, Res. Reports Belizean Arch.',
   terrain:{seed:23, relief:11, freq:.011, palette:'peten',
     features:[
-      {t:'pyr',x:0,z:-12,b:26,h:22,steps:7,name:'Caana, “Sky Palace” (~43 m)',wp:true,fact:'Caana rises ~43 m: palace ranges and shrines stacked into one mountain of masonry. It is still among the largest structures, ancient or modern, in Belize.'},
+      {t:'pyr',x:0,z:-12,b:26,h:22,steps:7,name:'Caana, “Sky Palace” (~43 m)',wp:true,fact:'Caana rises about 43 m, with palace ranges and shrines built up in a single massive block of masonry. It remains among the largest structures, ancient or modern, in Belize.'},
       {t:'plat',x:2,z:18,w:48,d:30,h:2,name:'Central plaza group'},
       {t:'cause',x1:0,z1:0,x2:-140,z2:-70,w:7,h:1,name:'Radial causeway (west)'},
       {t:'cause',x1:0,z1:0,x2:150,z2:-40,w:7,h:1,name:'Radial causeway (east)',wp:true,fact:'Caracol’s causeways run for kilometres, stitching outlying districts and markets to the core, urban planning legible from the air half a millennium after abandonment.'},
@@ -842,11 +842,11 @@ const SITES=[
 
 { id:'angkor', name:'Angkor & Mahendraparvata', region:'Siem Reap, Cambodia', culture:'Khmer Empire', period:'~800 – ~1450 CE',
   coordsLabel:'13.43° N · 103.84° E', coords:[13.4125,103.8667], techs:['lidar','photo','core','multi'],
-  blurb:'Beneath Cambodian forest, lasers traced an engineered water-city the size of a modern metropolis, and found the empire’s lost first capital in the hills.',
+  blurb:'Beneath the Cambodian forest, lidar traced a vast low-density water-city, and on the plateau above it, the Khmer Empire’s first capital.',
   stats:[['2015 lidar campaign','1,910 km² (CALI)'],['Greater Angkor','~1,000 km² low-density city'],['Peak population','700–900,000 (13th c.)'],['West Baray','≈8 × 2 km reservoir'],['Mahendraparvata','Founded c. 802 CE']],
   overview:[
     'Angkor was the heart of the Khmer Empire and, at its height around the twelfth century, the most extensive urban complex of the pre-industrial world: a low-density city of house-mounds, ponds, canals and rice fields spread across roughly a thousand square kilometres, with stone temples (Angkor Wat above all) as its fixed stars.',
-    'Water was crucial to Angkor: its systems, power and growth were connected to water sources and their utilization. Immense reservoirs (barays), canals and embankments moved the monsoon on demand. When climate lurched between mega-droughts and violent monsoons in the fourteenth–fifteenth centuries, the vast inherited network became a liability the state could not rebuild fast enough.'],
+    'Water was crucial to Angkor: its systems, power and growth depended on how it captured and moved water. Immense reservoirs (barays), canals and embankments moved the monsoon on demand. When climate lurched between mega-droughts and violent monsoons in the fourteenth–fifteenth centuries, the vast inherited network became a liability the state could not rebuild fast enough.'],
   retrieval:[
     'The Cambodian Archaeological Lidar Initiative flew Angkor in 2012 and again in 2015, the second campaign covering 1,910 km². Beneath scrub and plantation the lasers exposed the city between the temples: street grids, house mounds, field walls, and “mysterious” geometric earthworks still under study.',
     'On the sacred plateau of Phnom Kulen, the surveys resolved Mahendraparvata (the capital where Jayavarman II was consecrated in 802 CE) as a true engineered city: an axial urban grid, dams and an unfinished reservoir, hidden under forest for a millennium. Sediment cores and dendro-climate records supply the timeline of drought that frames Angkor’s transformation.',
@@ -863,7 +863,7 @@ const SITES=[
       {t:'canal',x1:-150,z1:34,x2:150,z2:34,w:4,d:1.4,name:'Urban grid, axis'},
       {t:'canal',x1:-58,z1:-150,x2:-58,z2:150,w:4,d:1.4,name:'Urban grid, north axis'},
       {t:'canal',x1:46,z1:-150,x2:46,z2:150,w:4,d:1.4,name:'Urban grid, axis'},
-      {t:'res',x:96,z:78,r:26,d:2.6,water:true,name:'Reservoir (baray)',wp:true,fact:'Khmer barays moved the monsoon on demand, West Baray at Angkor spans ≈8 × 2 km. This unfinished highland reservoir shows the system being invented.'},
+      {t:'res',x:96,z:78,r:26,d:2.6,water:true,name:'Reservoir (baray)',wp:true,fact:'Khmer barays stored and redistributed monsoon water; the West Baray at Angkor spans ≈8 × 2 km. This unfinished highland reservoir shows the system at an early stage.'},
       {t:'cause',x1:-104,z1:84,x2:18,z2:112,w:8,h:2.4,name:'Earthen dam',wp:true,fact:'Lidar traced dams and channels across Phnom Kulen, hydraulic engineering begun here was later scaled up to water a metropolis on the plain below.'},
       {t:'mound',x:-90,z:-20,b:4,h:1.1,hid:true,name:'House-mound field'},{t:'mound',x:-78,z:-8,b:4,h:1.1,hid:true},{t:'mound',x:-98,z:2,b:3.5,h:1,hid:true},{t:'mound',x:-70,z:-30,b:3.5,h:1,hid:true},
       {t:'plat',x:80,z:-90,w:22,d:16,h:2,hid:true,name:'Temple platform (unexcavated)'},
@@ -882,7 +882,7 @@ const SITES=[
     'The wider case rests on decades of complementary retrieval: sediment coring and phytolith work dating early cultivation; soil science on anthropogenic dark earths and raised fields; magnetometry tracing settlement extents beneath the grass. Together they document a landscape engineered for millennia.',
     'The mapped picture is a four-tier settlement hierarchy across the ~4,500 km² Casarabe territory: Landívar sprawls over 315 ha astride a river, Cotoca over 147 ha; a 7-km canal reaches from Cotoca toward the San Pablo, and where causeways pierce the ramparts, built platforms mark what look like formal gates, engineered access to an engineered wetland (Prümers, CWA 115).'],
   findings:[
-    'Cotoca and Landívar anchor a four-tier settlement hierarchy, planned regional organisation, not scattered villages.',
+    'Cotoca and Landívar sit at the top of a four-tier settlement hierarchy, demonstrating how the region was planned and organised at scale.',
     'Monumental civic architecture (platform mounds, 22-m conical pyramids) stood in the Amazon centuries before European contact.',
     'South-west Amazonia now ranks among the earliest centres of plant cultivation on Earth.'],
   refs:'Prümers et al. 2022, Nature 606 · Lombardo et al. 2020, Nature 581 · Erickson 2008, Handbook of South American Archaeology',
@@ -903,7 +903,7 @@ const SITES=[
 
 { id:'teyuna', name:'Ciudad Perdida (Teyuna)', region:'Sierra Nevada de Santa Marta, Colombia', culture:'Tairona', period:'~800 – ~1600 CE',
   coordsLabel:'11.04° N · 73.93° W', coords:[11.0381,-73.9250], techs:['photo','multi','pxrf'],
-  blurb:'A stone-terraced city on a knife-edge ridge, reached by 1,200 steps, still sacred ground to the peoples who never forgot it was there.',
+  blurb:'A stone-terraced city on a steep ridge, reached by 1,200 steps, still sacred ground to the peoples who never forgot it was there.',
   stats:[['Founded','c. 800 CE'],['Terraces','~170 on the ridge'],['Approach','~1,200 stone steps'],['Elevation','~950–1,300 m'],['Stewards','Kogi, Wiwa, Arhuaco, Kankuamo']],
   overview:[
     'On a ridge above the Buritaca River, the Tairona cut a city into the mountain: some 170 stone-faced terraces linked by stairways and paved paths, carrying round timber houses above the flood and the slope. Founded around 800 CE, Teyuna flourished for centuries as a node in a network of Tairona towns across the Sierra Nevada de Santa Marta.',
@@ -933,7 +933,7 @@ const SITES=[
   blurb:'Garden cities of the southern Amazon: plaza towns, ditches and broad curbed roads, mapped in partnership with the Kuikuro, whose ancestors built them.',
   stats:[['Settlement clusters','Planned town networks'],['Ditched villages','Up to ~50 ha'],['Roads','Broad, straight, earthen-curbed'],['Regional population','Tens of thousands'],['Research model','Kuikuro partnership']],
   overview:[
-    'At the headwaters of the Xingu, archaeology and Indigenous knowledge together revealed a pre-Columbian landscape of “garden cities”: circular plaza villages up to about fifty hectares, ringed by defensive ditches and palisades, connected by unerringly straight roads with earthen curbs, some tens of metres wide.',
+    'At the headwaters of the Xingu, archaeology and Indigenous knowledge together revealed a pre-Columbian landscape of “garden cities”: circular plaza villages up to about fifty hectares, ringed by defensive ditches and palisades, connected by remarkably straight roads with earthen curbs, some tens of metres wide.',
     'Between the towns lay a managed mosaic of orchards, manioc gardens, wetland fish weirs and ponds. When European-introduced epidemics swept the basin in the sixteenth–seventeenth centuries, populations collapsed and forest closed over the earthworks, but the Kuikuro remained, and their oral geography maps precisely onto the archaeology.'],
   retrieval:[
     'Michael Heckenberger’s long-term collaboration with the Kuikuro community combined excavation, surface survey, GPS road-tracing and satellite imagery to document the settlement clusters around Kuhikugu (site X11). Kuikuro elders guided teams to ditches and causeways the forest had swallowed.',
@@ -958,7 +958,7 @@ const SITES=[
 
 { id:'yaxchilan', name:'Yaxchilan & its river border', region:'Usumacinta River, Mexico–Guatemala', culture:'Classic Maya', period:'~350 – ~810 CE apex',
   coordsLabel:'16.90° N · 90.96° W', coords:[16.8963,-90.9645], techs:['photo','pxrf','multi'],
-  blurb:'A riverine kingdom on the Usumacinta’s great omega bend, its barricades, border fortresses and looted monuments mapped by boots, machetes and GPS.',
+  blurb:'A riverine kingdom on the Usumacinta’s omega bend, its barricades, border fortresses and looted monuments mapped by boots, machetes and GPS.',
   stats:[['Dynastic apex','c. 680–810 CE'],['Known walls (Guatemala side)','26 barricade foundations'],['At the northern border','19 walls'],['At the capital itself','5 walls, found 2016–17'],['La Bestia main plaza','~400 m², five structures']],
   overview:[
     'Yaxchilan commands an omega-shaped bend of the Usumacinta: a Main Plaza strung along the Mexican bank, temple-crowned hills behind it, and (across the water in Guatemala) the open floodplain heartland that fed the kingdom. Under Shield Jaguar III, Bird Jaguar IV and Shield Jaguar IV (c. 680–810 CE), its rulers pushed the polity’s borders deep into today’s Sierra del Lacandón, governing through border lords (sajal) whose loyalty was carved in stone.',
@@ -967,9 +967,9 @@ const SITES=[
     'Here, survey proceeds at machete pace. In 2016–17, opportunistic pedestrian survey with GPS (resumed after years when the zone was inaccessible) recorded settlement clusters (Ixim’s string of 24 mound groups; La Bestia’s plaza; Petem’s patio groups), terraced hillsides, and five newly identified walls in the kingdom’s very heartland: first evidence the capital itself was fortified. Lidar is planned; until then, feet and river levels set the resolution.',
     'The other retrieval is forensic. Looters sawed Yaxchilan-style lintels from border sites like La Pasadita and Tecolote; matching museum-held carvings to the sawn “carcasses” left behind (and to first-hand local testimony) slowly restores provenance. A drum altar of 764 CE, surfacing in a private collection, is now the earliest Yaxchilan-style monument known from Guatemala.'],
   findings:[
-    'Twenty-six walls are now known on the Guatemalan side (nineteen guarding the northern border, five at the capital) reframing a “peaceful” river kingdom as a landscape organised for defence.',
+    'Twenty-six walls are now known on the Guatemalan side (nineteen guarding the northern border, five at the capital), reframing a “peaceful” river kingdom as a landscape organised for defence.',
     'Dense floodplain settlement shows much of the polity’s population lived across the river from the monuments, on deep fluvial soils ideal then and now.',
-    'Monument forensics tie looted lintels back to specific buildings (Tecolote for the “Retalteco” fragment) turning stolen art into settlement evidence.'],
+    'Monument forensics tie looted lintels back to specific buildings (Tecolote for the “Retalteco” fragment), turning stolen art into settlement evidence.'],
   refs:'Scherer, Golden et al. 2019, The PARI Journal 20(2) · Golden & Scherer 2013, Current Anthropology 54 · Scherer & Golden 2009, J. Field Archaeology 34',
   terrain:{seed:88, relief:13, freq:.010, palette:'peten',
     features:[
@@ -1072,6 +1072,7 @@ const REFS=[
 'Fletcher, R. (int. B. Fagan & N. Durrani) 2016. “The secrets of Angkor Wat.” Current World Archaeology / The Past.',
 'The Guardian, 12 Feb 2026. “Apocalypse no: how almost everything we thought we knew about the Maya is wrong” — the collapse-to-survival reframing, with F. Estrada-Belli.',
 'Live data streamed, with credit, from: Wikimedia Commons · The Met Open Access · Cleveland Museum of Art Open Access · Sketchfab (each scan © its author) · iNaturalist observers · xeno-canto recordists · Mapzen/AWS Terrain Tiles (SRTM/NASADEM) · Esri World Imagery · Open-Meteo.',
+'Moller, A., with J. C. Fernández-Díaz. 2019. “Airborne LiDAR for Archaeology in Central and South America.” LiDAR Magazine — trade technical note (airborne-scanner specifications and point densities).',
 'Eastaugh, E., for the CAA Working Group on Unmarked Graves. 2021. “Recommended Data Collection Procedures for Locating Unmarked Graves: Magnetometer,” v1.0. Canadian Archaeological Association — field-method guideline (fluxgate vs. alkali-vapour instruments; ~0.1 nT sensitivity; survey-grid densities; ~3,000–6,000 m²/day).',
 'Creekmore, A. 2023. “Seeing into the Ground.” Biblical Archaeology Review 49(2); summarised by M. Dospěl, Biblical Archaeology Society, 23 Aug 2023 — outreach article (magnetometry to ~6 ft depth; fired features; the Tell es-Safi/Gath survey).',
 'Ortt, I. K. 2026. “Magnetic Prospecting in Archaeology: A Calculus of the Detection of Precontact Archaeological Features with Magnetometry.” Thesis, Dept. of Anthropology, University of Maryland (adv. M. Palus) — on how magnetometer transect spacing (0.25–1.0 m) affects feature detection.',
@@ -1230,11 +1231,10 @@ function openAsk(ctx){
   ctx=ctx||App.ctx||{};
   const where=ctx.label?('About: '+ctx.label):'A general question';
   openModal({title:'Ask a question', sub:esc(where)+'. It goes to the people who maintain this site.',
-    body:'<label class="lb">Your question</label><textarea class="field" id="ask-q" placeholder="What would you like to know about this?"></textarea>'
-      +'<label class="lb">Your email (optional, so they can reply)</label><input class="field" id="ask-em" type="email" placeholder="you@example.com">',
-    actions:[{label:'Cancel',ghost:true},{label:'Send question',primary:true,onClick:function(m){
+    body:'<label class="lb">Your question</label><textarea class="field" id="ask-q" placeholder="What would you like to know about this?"></textarea>',
+    actions:[{label:'Cancel',ghost:true},{label:'Submit question',primary:true,onClick:function(m){
       const q=(m.querySelector('#ask-q').value||'').trim(); if(!q){toast('Write your question first.');return false}
-      const em=(m.querySelector('#ask-em').value||'').trim();
+      const em='';
       const pl={question:q,email:em,context:ctx.label||'',go:ctx.go||null,page:(ctx.go?ctx.go.join('/'):''),ts:new Date().toISOString()};
       if(ASK_CONFIG.endpoint){
         fetch(ASK_CONFIG.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(pl)})
@@ -1465,12 +1465,12 @@ function applySettings(){document.documentElement.style.setProperty('--accent',S
 
 /* ════════════════ help / field manual / references ════════════════ */
 function openHelp(){
-  openModal({wide:true,title:'Field manual',sub:'Everything here is an instrument. Here is how to hold it.',
+  openModal({wide:true,title:'Field manual',sub:'How to move through the site, collect what you find, and build your database.',
     body:'<div class="prose selectable" style="max-width:none">'
     +'<h3 style="font-size:22px">Moving</h3><p><b>Atlas → dossiers → 3D surveys.</b> In any survey: drag to orbit, scroll or pinch to zoom. Use the mode switch to strip the canopy to bare earth or a point cloud. In <b>expeditions</b>: click the scene, then <span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span> to walk, mouse to look, <span class="kbd">E</span> at a beacon to read it, <span class="kbd">F</span> to fire a scan pulse. On touch, use the on-screen controls.</p>'
     +'<h3 style="font-size:22px">Collecting</h3><p>Hover anything for the <b style="color:var(--accent)">◈</b> mark, sites, instruments, objects, expedition finds, even a framed 3D view (<b>Capture</b>). Select any passage of text for the floating <b>Collect / Note</b> bar. Everything lands in your <b>database</b>.</p>'
     +'<h3 style="font-size:22px">Your Database</h3><p>Your private knowledge-space. <b>Navigate</b> to fly and inspect; <b>Connect</b> to click two items and bind them with a thread; create <b>collections</b> to gather items around named hubs. Notes attach to anything, or to nothing, as loose thoughts in your notebook (<span class="kbd">N</span> anywhere).</p>'
-    +'<h3 style="font-size:22px">Honesty rules</h3><p>Facts are cited to the peer-reviewed record. Terrains and objects are <b>reference reconstructions</b> from published data, schematic where noted, never fake museum scans. Your notes and hypotheses are yours alone, stored privately, exportable always.</p>'
+    +'<h3 style="font-size:22px">Honesty rules</h3><p>Facts are cited to the peer-reviewed record. Terrains and objects are <b>reference reconstructions</b> from published data, schematic where noted. Your notes and hypotheses are yours alone, stored privately, exportable always.</p>'
     +'<h3 style="font-size:22px">Keys</h3><p><span class="kbd">N</span> note · <span class="kbd">H</span> this manual · <span class="kbd">Esc</span> close</p>'
     +'<h3 style="font-size:22px">References</h3><p class="refs" style="font-size:11.5px">'+REFS.map(esc).join('<br>')+'</p></div>',
     actions:[{label:'Back to the forest',primary:true}]});
@@ -4223,175 +4223,175 @@ const CODEX={
 maya:{name:'Classic Maya',where:'Petén, Belize, Usumacinta, Tikal · Caracol · Yaxchilan',d:{
  sci:[
   {n:'The Long Count & zero',b:'A day-count from a fixed era (3114 BCE) written positionally with a true zero sign, centuries before zero reached Europe.',s:'epigraphy',q:'Maya Long Count stela'},
-  {n:'Base-20 arithmetic',b:'Bars (5) and dots (1) in a vigesimal place system let scribes add spans of days across millennia without error.',s:'Dresden Codex mathematics',q:'Maya numerals'},
-  {n:'The Venus table',b:'The Dresden Codex tracks Venus’s 584-day cycle against the solar year, with correction factors, predictive astronomy on bark paper.',s:'Dresden Codex pp.24–29',q:'Dresden Codex Venus'},
+  {n:'Base-20 arithmetic',b:'Bars (5) and dots (1) in a vigesimal place system let scribes record and add spans of days across millennia.',s:'Dresden Codex mathematics',q:'Maya numerals'},
+  {n:'The Venus table',b:'The Dresden Codex tracks Venus’s 584-day cycle against the solar year and includes correction factors to keep the predictions accurate over long periods.',s:'Dresden Codex pp.24–29',q:'Dresden Codex Venus'},
   {n:'Eclipse warning tables',b:'Lunar tables flag danger windows for eclipses across 33 years, assembled from generations of naked-eye records.',s:'Dresden Codex',q:'Dresden Codex eclipse'},
-  {n:'E-Group observatories',b:'Plaza complexes aligned so sunrise sweeps a long eastern platform between solstice temples, architecture as instrument.',s:'excavated E-Groups, Petén',q:'Maya E-Group Uaxactun'}],
+  {n:'E-Group observatories',b:'Plaza complexes arranged so that, viewed from a western structure, sunrise moves along a long eastern platform, reaching marked points at the solstices.',s:'excavated E-Groups, Petén',q:'Maya E-Group Uaxactun'}],
  med:[
   {n:'Sweatbaths (pib naah)',b:'Masonry steam baths excavated at Tikal, Piedras Negras and beyond, hygiene, midwifery and ritual purification in one building.',s:'excavations; Child 2006',q:'Maya sweatbath'},
   {n:'A written pharmacopoeia',b:'Colonial-era Maya texts like the Ritual of the Bacabs record chants and plant remedies; ethnobotany confirms deep plant knowledge.',s:'Ritual of the Bacabs; ethnobotany',q:'Maya medicinal plants'},
-  {n:'Dental inlays',b:'Teeth drilled with tubular bits and set with jade or pyrite discs, seated so precisely most held for a lifetime.',s:'bioarchaeology',q:'Maya dental inlay jade'},
+  {n:'Dental inlays',b:'Teeth drilled with tubular bits and set with jade or pyrite discs, fitted well so that many stayed in place for life.',s:'bioarchaeology',q:'Maya dental inlay jade'},
   {n:'Trauma & care',b:'Healed fractures and survived trepanations in skeletons show effective setting, wound care and convalescence.',s:'osteology',q:'Maya skeleton bioarchaeology'}],
  art:[
   {n:'Codex-style vases',b:'Court painters signed cylinder vessels with fine-line palace scenes and texts, some name the artist and his royal patron.',s:'Kerr archive; epigraphy',q:'Maya codex style vase'},
-  {n:'Murals: San Bartolo to Bonampak',b:'From ~100 BCE creation scenes to 8th-century battle, tribute and orchestra walls, painting carried narrative for a millennium.',s:'San Bartolo; Bonampak',q:'Bonampak mural'},
-  {n:'Stucco portraiture',b:'Lime-plaster portrait heads from Palenque render individual rulers with startling naturalism.',s:'Palenque excavations',q:'Palenque stucco head'},
-  {n:'Carved narrative lintels',b:'Yaxchilan’s door lintels (Lady K’abal Xook drawing a thorned rope through her tongue) are stone pages of dynastic ritual.',s:'Yaxchilan Lintels 24–26',q:'Yaxchilan lintel 24'}],
+  {n:'Murals: San Bartolo to Bonampak',b:'The San Bartolo murals in Guatemala, painted around 100 BCE, depict the Maya maize deity and the crowning of a king; the Bonampak murals in Mexico, around 790 CE, record a royal ceremony with musicians, a battle, and the presentation of captives. Together they span nearly nine centuries of Maya wall painting.',s:'San Bartolo; Bonampak',q:'Bonampak mural'},
+  {n:'Stucco portraiture',b:'Lime-plaster portrait heads from Palenque portray individual rulers with close attention to their features.',s:'Palenque excavations',q:'Palenque stucco head'},
+  {n:'Carved narrative lintels',b:'Yaxchilan’s door lintels record dynastic rituals in carved stone, among them Lady K’abal Xook drawing a thorned cord through her tongue.',s:'Yaxchilan Lintels 24–26',q:'Yaxchilan lintel 24'}],
  adorn:[
-  {n:'Jadeite of the Motagua',b:'All Maya jade traces to the Motagua valley; worked without metal by cord-and-abrasive sawing, drilling and endless polish.',s:'geochemistry; lapidary studies',q:'Maya jade'},
-  {n:'Spondylus & shell',b:'The thorny oyster’s red shell, dived from deep water, ranked with jade as elite currency of adornment.',s:'zooarchaeology',q:'Spondylus Maya'},
-  {n:'Pyrite mirrors',b:'Mosaic iron-pyrite mirrors (polished to a bright, dark reflection) were worn, wielded and read as portals.',s:'excavated mirrors',q:'Maya pyrite mirror'},
-  {n:'Quetzal-feather regalia',b:'Iridescent tail feathers traded up from cloud forests crowned royal headdresses; the bird itself was protected value.',s:'iconography; trade studies',q:'resplendent quetzal'}],
+  {n:'Jadeite of the Motagua',b:'Maya jade is sourced to the Motagua valley in Guatemala, and was worked without metal tools by sawing with cord and abrasive, drilling and prolonged polishing.',s:'geochemistry; lapidary studies',q:'Maya jade'},
+  {n:'Spondylus & shell',b:'The thorny oyster’s red shell, collected from deep water, was valued alongside jade in elite ornament and exchange.',s:'zooarchaeology',q:'Spondylus shell'},
+  {n:'Pyrite mirrors',b:'Mosaic iron-pyrite mirrors, polished to a dark reflective surface, were worn, carried and used in divination.',s:'excavated mirrors',q:'Maya pyrite mirror'},
+  {n:'Quetzal-feather regalia',b:'Iridescent tail feathers traded up from the cloud forests crowned royal headdresses; the birds were a protected, high-value resource.',s:'iconography; trade studies',q:'resplendent quetzal'}],
  mat:[
-  {n:'Lime plaster economics',b:'Burning limestone for plaster consumed forests of fuel, a material both brilliant and ecologically expensive.',s:'plaster studies',q:'Maya stucco architecture'},
-  {n:'Maya Blue',b:'Indigo locked into palygorskite clay makes a pigment that shrugs off acid and centuries, a genuine nano-material.',s:'materials science',q:'Maya blue pigment'},
-  {n:'Obsidian pressure blades',b:'Cores from El Chayal and Pachuca yielded razor blades struck by the hundred, the lowlands’ everyday cutting edge.',s:'lithics; sourcing',q:'obsidian prismatic blade'},
+  {n:'Lime plaster economics',b:'Burning limestone for plaster consumed large quantities of fuel wood, making it costly to produce at scale.',s:'plaster studies',q:'Maya stucco architecture'},
+  {n:'Maya Blue',b:'Indigo bonded to palygorskite clay makes a pigment highly resistant to acid, weathering and age, studied today as an unusually stable organic-mineral hybrid.',s:'materials science',q:'Maya blue pigment'},
+  {n:'Obsidian pressure blades',b:'Cores from El Chayal and Pachuca yielded sharp blades in large numbers, the common cutting tool of the lowlands.',s:'lithics; sourcing',q:'obsidian prismatic blade'},
   {n:'Bark-paper books',b:'Amate bark, beaten, gessoed and folded into screenfold codices, four survive of thousands.',s:'codicology',q:'amate bark paper'},
-  {n:'Rubber, vulcanized early',b:'Latex blended with morning-glory juice made bouncing balls and bindings, process chemistry a millennium before Goodyear.',s:'MIT materials study',q:'Mesoamerican rubber ball'},
-  {n:'The corbel vault',b:'Stone courses stepped inward to a capstone roofed the palaces, the elite signature lidar now finds by shape.',s:'architecture; Estrada-Belli 2023',q:'Maya corbel vault'}],
+  {n:'Processed rubber',b:'Latex blended with morning-glory (Ipomoea) juice produced rubber with different degrees of bounce and durability for balls and bindings, thousands of years before comparable processes elsewhere.',s:'MIT materials study',q:'Mesoamerican rubber ball'},
+  {n:'The corbel vault',b:'A corbel vault roofs a room by stacking stone courses that each project inward until they nearly meet, then closing the gap with a capstone. The Maya used it mainly for palaces and other elite buildings, and its distinctive shape is what machine learning now uses to pick those buildings out in lidar.',s:'architecture; Estrada-Belli 2023',q:'Maya corbel vault'}],
  food:[
-  {n:'Nixtamalization',b:'Boiling maize with lime frees niacin and amino acids, the chemistry that let maize be a civilization’s staple.',s:'nutritional chemistry',q:'nixtamal maize'},
+  {n:'Nixtamalization',b:'Cooking and steeping maize in lime (calcium hydroxide) frees niacin that the body cannot otherwise absorb, improves the grain’s protein, and softens the kernels so they can be ground into dough. Without it, a maize-heavy diet causes niacin-deficiency disease, which is why the process made maize dependable as a staple.',s:'nutritional chemistry',q:'nixtamal maize'},
   {n:'Cacao, frothed',b:'Ground cacao whipped to foam with water, chile, honey or vanilla, bitter, floral, peppery; residues prove it in Petén vessels.',s:'Hurst residue studies',q:'Maya cacao vessel'},
   {n:'Melipona honey',b:'Stingless-bee honey (thin, citrus-bright) kept in log hives; the bee remains sacred in Yucatán.',s:'Madrid Codex; apiculture',q:'Melipona beecheii'},
-  {n:'Balché',b:'A mead of honey fermented with balché bark, drunk ritually, colonial sources describe it vividly.',s:'colonial accounts',q:'balche drink'},
+  {n:'Balché',b:'A mead of honey fermented with the bark of the balché tree, consumed in ritual and described in colonial-era sources.',s:'colonial accounts',q:'Lonchocarpus violaceus'},
   {n:'Chile & achiote',b:'Capsaicin heat and annatto’s earthy red colored and preserved the cuisine; both appear in vessel residues.',s:'residue chemistry',q:'achiote annatto'}],
  rel:[
-  {n:'K’uh, sacred essence',b:'A divine charge inhering in gods, kings, blood and maize; kingship meant managing its flow.',s:'epigraphy; iconography',q:'Maya maize god'},
+  {n:'K’uh, sacred essence',b:'A divine charge inhering in gods, kings, blood and maize; kingship meant managing its flow.',s:'epigraphy; iconography',q:'Palenque incense burner'},
   {n:'The Maize God’s cycle',b:'Death, journey and resurrection of the Maize God, the Popol Vuh preserves the arc the Classic vases paint.',s:'Popol Vuh; vase corpus',q:'Maya maize god resurrection'},
   {n:'Bloodletting',b:'Kings and queens drew blood with stingray spines and obsidian lancets to open the ancestor world, Yaxchilan carved it in stone.',s:'Yaxchilan lintels; lancets',q:'Maya bloodletting stingray spine'},
   {n:'Caves & cenotes as portals',b:'Offerings carried into deep caves and sinkholes mark the watery underworld’s doors, archaeology maps the pilgrimages.',s:'cave archaeology',q:'Actun Tunichil Muknal'},
-  {n:'Ancestors kept close',b:'Burials beneath house floors and re-entered royal tombs kept the dead in the household’s working present.',s:'household archaeology',q:'Maya tomb'}],
+  {n:'Ancestors kept close',b:'The Maya often buried their dead beneath the floors of their houses, and royal tombs were reopened for later ceremonies. Both practices kept ancestors a continuing presence in family and dynastic life.',s:'household archaeology',q:'Maya tomb'}],
  lang:[
   {n:'A living language family',b:'About thirty Mayan languages (K’iche’, Yukatek, Q’eqchi’, Ch’ol and more) are spoken by ~6 million people today.',s:'linguistics',q:'Mayan languages map'},
-  {n:'A logosyllabic script',b:'~800 signs mixing word-glyphs and syllables wrote full grammar, one of five independent inventions of writing.',s:'epigraphy',q:'Maya glyphs'},
-  {n:'The decipherment',b:'Knorozov’s syllables plus Proskouriakoff’s dynastic histories cracked the code, the texts turned out to be history, not omens.',s:'history of decipherment',q:'Maya decipherment'},
+  {n:'A logosyllabic script',b:'~800 signs combining word-glyphs and syllables could write the full language, one of the few scripts known to have been invented independently.',s:'epigraphy',q:'Maya glyphs'},
+  {n:'The decipherment',b:'Maya glyphs went undeciphered for decades. In the 1950s Yuri Knorozov showed that the script spelled words syllabically, and Tatiana Proskouriakoff showed that many inscriptions record the reigns of specific rulers. Together these breakthroughs made it possible to read the texts as dynastic history.',s:'history of decipherment',q:'Maya decipherment'},
   {n:'Scribes as nobility',b:'Ah tz’ib (“he of the writing”) signed works and held court rank; some vases show scribal gods at their brushes.',s:'vase corpus',q:'Maya scribe vase'}],
  music:[
-  {n:'The Bonampak orchestra',b:'Room 1’s procession (long wooden trumpets, rattles, turtle-shell drums, ocarinas) is a painted score of court sound.',s:'Bonampak murals',q:'Bonampak musicians'},
+  {n:'The Bonampak orchestra',b:'Room 1’s procession, with long trumpets, rattles, turtle-shell drums and ocarinas, is a detailed depiction of court music.',s:'Bonampak murals',q:'Bonampak musicians'},
   {n:'Clay whistles & ocarinas',b:'Jaina figurines double as whistles; replicas play scales we can still sound today.',s:'Jaina corpus',q:'Maya ocarina figurine'},
-  {n:'Conch trumpets',b:'Strombus shells cut as trumpets, depicted in hunts and rituals; their low blast carries kilometres.',s:'iconography; surviving shells',q:'Maya conch trumpet'}]}},
+  {n:'Conch trumpets',b:'Strombus shells cut as trumpets, shown in hunts and rituals; their low note carries over long distances.',s:'iconography; surviving shells',q:'Maya conch trumpet'}]}},
 khmer:{name:'Khmer / Angkor',where:'Cambodia, Greater Angkor & Phnom Kulen',d:{
  sci:[
   {n:'A written zero, 683 CE',b:'Inscription K-127 carries a dot-zero in a date, among the world’s earliest surviving written zeros.',s:'K-127; Ifrah/Aczel',q:'Khmer inscription K-127'},
-  {n:'Angkor Wat’s solar axis',b:'At equinox the sun rises over the central tower from the west causeway, calendar built at the scale of a horizon.',s:'archaeoastronomy',q:'Angkor Wat equinox sunrise'},
-  {n:'Hydraulic engineering',b:'The West Baray alone impounds tens of millions of cubic metres; canals moved a monsoon across a plain for six centuries.',s:'Greater Angkor Project',q:'West Baray Angkor'}],
+  {n:'Angkor Wat’s solar axis',b:'At the spring equinox the sun rises directly behind the central tower, seen from the western entrance, this alignment built into the temple’s plan.',s:'archaeoastronomy',q:'Angkor Wat equinox sunrise'},
+  {n:'Hydraulic engineering',b:'The West Baray alone holds tens of millions of cubic metres of water; a network of canals and reservoirs managed the monsoon across the plain for six centuries.',s:'Greater Angkor Project',q:'West Baray Angkor'}],
  med:[
   {n:'102 hospitals by decree',b:'Jayavarman VII’s ārogyaśālā edicts founded 102 hospitals; the Say Fong stele lists staff, rice and medicines per house.',s:'Say Fong inscription',q:'Jayavarman VII hospital chapel'},
-  {n:'An imported pharmacology',b:'Hospital lists name camphor, honey, spices, an Ayurvedic-inflected pharmacy running on empire logistics.',s:'hospital edicts',q:'Neak Pean Angkor'},
-  {n:'Neak Pean, the healing pool',b:'A temple-island of four chained basins where water itself was the treatment.',s:'inscriptions; site',q:'Neak Pean'}],
+  {n:'An imported pharmacology',b:'Hospital inscriptions name medicines such as camphor, honey, cardamom, pepper and pine resin, a pharmacy drawing on Indian (Ayurvedic) tradition. The hospitals were staffed with physicians and assistants, supplied with rice and medicines by royal decree, and dedicated to Bhaiṣajyaguru, the Buddha of healing.',s:'hospital edicts',q:'Jayavarman VII statue'},
+  {n:'Neak Pean, the healing pool',b:'Built under Jayavarman VII on an island in the northern baray, Neak Pean has a central pool and temple surrounded by four smaller pools linked by conduits with carved stone spouts. It represents Anavatapta, a sacred Himalayan lake whose waters were believed to heal, and was thought to have been used for ritual bathing. Two entwined serpents around its base give it its modern name, “coiled serpents.”',s:'inscriptions; site',q:'Neak Pean'}],
  art:[
-  {n:'Narrative bas-relief at scale',b:'Angkor Wat’s galleries run history and myth for half a kilometre, the Churning of the Ocean of Milk alone spans 49 m.',s:'Angkor Wat reliefs',q:'Churning of the Ocean of Milk Angkor'},
-  {n:'Bronze at monumental size',b:'The West Mebon Vishnu (a reclining bronze once metres long) shows lost-wax casting at state scale.',s:'West Mebon Vishnu',q:'West Mebon Vishnu bronze'},
-  {n:'The apsara corpus',b:'~1,800 celestial dancers at Angkor Wat, no two coiffures alike, a sculpted inventory of court fashion.',s:'Angkor Wat reliefs',q:'apsara Angkor Wat relief'}],
+  {n:'Narrative bas-relief at scale',b:'The outer walls of Angkor Wat’s covered corridors, its galleries, are carved in continuous low relief for hundreds of metres with scenes from history and Hindu mythology. One panel, the Churning of the Ocean of Milk, runs for about 49 metres.',s:'Angkor Wat reliefs',q:'Churning of the Ocean of Milk Angkor'},
+  {n:'Bronze at monumental size',b:'The West Mebon Vishnu was a large bronze statue of the Hindu god Vishnu, shown reclining, made for a temple on an island in the West Baray. Only fragments survive, but it was originally several metres long, cast by the lost-wax method, and is among the largest bronzes known from Angkor.',s:'West Mebon Vishnu',q:'West Mebon Vishnu bronze'},
+  {n:'The apsara corpus',b:'Angkor Wat carries roughly 1,800 carved female figures. Most are devata, standing divinities shown singly or in groups, while the apsara are dancers; between them they display a wide range of hairstyles, headdresses, jewellery and dress, which has made them a source for studying Angkorian costume.',s:'Angkor Wat reliefs',q:'apsara Angkor Wat relief'}],
  adorn:[
-  {n:'Gold regalia',b:'Diadems, armlets and earrings heavy in the reliefs match hoard finds, goldwork as the grammar of rank.',s:'reliefs; hoards',q:'Khmer gold jewelry Angkor'},
-  {n:'Stretched earlobes',b:'Elite ears carry heavy plugs in nearly every carved face, status worn in the body itself.',s:'sculpture corpus',q:'Bayon face tower'},
-  {n:'Beads of the sea trade',b:'Carnelian, agate and glass beads rode maritime routes from India, Angkor dressed in the Indian Ocean economy.',s:'bead archaeology',q:'carnelian beads Southeast Asia'}],
+  {n:'Gold regalia',b:'Diadems, armlets, earrings and finger-rings appear on the carved figures and are matched by gold objects recovered from temple foundation deposits and caches. Zhou Daguan, visiting in 1296, described the king wearing a gold diadem and heavy gold ornaments.',s:'reliefs; hoards',q:'Khmer gold jewelry Angkor'},
+  {n:'Stretched earlobes',b:'Nearly every elite figure in the carvings wears heavy ear ornaments that stretched the lobes, a marker of status.',s:'sculpture corpus',q:'Angkor Wat devata'},
+  {n:'Beads of the sea trade',b:'Carnelian, agate and glass beads reached Angkor along maritime routes from India, evidence of its place in Indian Ocean trade.',s:'bead archaeology',q:'carnelian beads Southeast Asia'}],
  mat:[
-  {n:'Sandstone from Kulen',b:'Quarries on Phnom Kulen fed the temples; provenance chemistry and canal routes trace each block’s journey.',s:'Uchida provenance studies',q:'Angkor sandstone quarry Kulen'},
-  {n:'Laterite bones',b:'Iron-rich laterite, soft to cut and iron-hard in air, forms the hidden cores beneath the carved skins.',s:'architecture studies',q:'laterite Angkor'},
-  {n:'An iron industry',b:'Smelting fields at Preah Khan of Kompong Svay ran at industrial scale, the empire’s tools and weapons had a factory.',s:'INDAP / Hendrickson',q:'Preah Khan Kompong Svay'},
-  {n:'The Kulen kilns',b:'Stoneware kilns on the plateau fired green-glazed jars and roof tiles, an Angkorian ceramics industry rediscovered.',s:'Anlong Thom kilns',q:'Khmer green glazed ceramics'}],
+  {n:'Sandstone from Kulen',b:'Most of the sandstone for Angkor’s temples was quarried at Phnom Kulen, about 35 km away. By matching the chemistry of blocks to specific quarries and mapping the canals, researchers have worked out that the stone was floated to the temples by boat along a canal network.',s:'Uchida provenance studies',q:'Angkor sandstone quarry Kulen'},
+  {n:'Laterite cores',b:'Iron-rich laterite, soft to cut and hard once exposed to air, forms the structural cores behind the carved sandstone facing.',s:'architecture studies',q:'laterite Angkor'},
+  {n:'An iron industry',b:'Smelting sites at Preah Khan of Kompong Svay produced iron on a large scale, supplying tools and weapons across the empire.',s:'INDAP / Hendrickson',q:'Preah Khan Kompong Svay'},
+  {n:'The Kulen kilns',b:'Stoneware kilns on the plateau fired green-glazed jars and roof tiles, part of an Angkorian ceramics industry identified there.',s:'Anlong Thom kilns',q:'Khmer green glazed ceramics'}],
  food:[
-  {n:'Rice, multiplied',b:'Bunded fields off the barays cropped more than once a year, Zhou Daguan counted the harvests with astonishment.',s:'Zhou Daguan 1296',q:'Cambodia rice paddy aerial'},
-  {n:'The fermented catch',b:'Tonle Sap’s pulse of fish, salted and fermented into pungent pastes, protein engineered to keep.',s:'Zhou Daguan; zooarchaeology',q:'Tonle Sap fishing'},
-  {n:'Palm sugar & toddy',b:'The sugar palm gave smoky caramel sugar and a same-day wine, the tree Zhou Daguan saw at every house.',s:'Zhou Daguan 1296',q:'palm sugar Cambodia'}],
+  {n:'Rice, multiplied',b:'Rice paddies enclosed by low earthen banks, fed from the reservoirs and canals, could be harvested more than once a year in places. The Chinese visitor Zhou Daguan reported multiple rice harvests in a single year in 1296, a productivity that helped support Angkor’s large population.',s:'Zhou Daguan 1296',q:'Cambodia rice paddy aerial'},
+  {n:'The fermented catch',b:'Fish from the Tonle Sap, salted and fermented into pastes such as prahok, preserved protein through the year.',s:'Zhou Daguan; zooarchaeology',q:'Tonle Sap fishing'},
+  {n:'Palm sugar & toddy',b:'The sugar palm yielded palm sugar and a quickly fermented palm wine; Zhou Daguan noted the trees around houses in 1296.',s:'Zhou Daguan 1296',q:'palm sugar Cambodia'}],
  rel:[
-  {n:'The god-king idea',b:'Devarāja ritual bound each king to Śiva or Viṣṇu; temples were state theology in stone.',s:'inscriptions',q:'Angkor Wat aerial'},
-  {n:'From Śiva to the Buddha’s face',b:'Angkor Wat turns to Viṣṇu; a generation later the Bayon’s towers wear the compassionate face of Mahāyāna, then Theravāda quietly takes the plain.',s:'architectural sequence',q:'Bayon face towers'},
-  {n:'Neak ta, spirits that stayed',b:'Local guardian spirits absorbed every doctrinal turn; their shrines still stand among the ruins.',s:'ethnography',q:'neak ta shrine Cambodia'}],
+  {n:'The god-king idea',b:'Khmer kingship was tied to the gods. From about 802 CE, a royal cult known as the devarāja linked the reigning king to Śiva, and later Viṣṇu, as protector of the kingdom. Each important king built his own great temple as the religious centre of the state; Angkor Wat and the Bayon are the largest of these.',s:'inscriptions',q:'Angkor Wat aerial'},
+  {n:'From Śiva to the Buddha’s face',b:'Angkor’s official religion shifted over time. Early kings favoured Śiva; Suryavarman II dedicated Angkor Wat to Viṣṇu in the twelfth century; his successor Jayavarman VII made Mahāyāna Buddhism the state religion and built the Bayon, whose towers carry large carved faces. From the fourteenth century Theravāda Buddhism, still dominant in Cambodia today, became the main religion.',s:'architectural sequence',q:'Bayon face towers'},
+  {n:'Neak ta, spirits that stayed',b:'Local guardian spirits (neak ta) persisted through each change of official religion, and their shrines still stand among the ruins.',s:'ethnography',q:'neak ta shrine Cambodia'}],
  lang:[
   {n:'Two scripts, one chancery',b:'~1,300 inscriptions alternate Sanskrit verse for the gods and Old Khmer prose for land, labor and law.',s:'epigraphic corpus',q:'Old Khmer inscription'},
-  {n:'A Pallava-born alphabet',b:'The script that arrived with Indian trade evolved straight into the Khmer written today.',s:'palaeography',q:'Khmer script inscription'},
-  {n:'The outsider’s notebook',b:'Zhou Daguan’s 1296 Chinese account (markets, slang, houses, scandal) is the empire’s only surviving eyewitness portrait.',s:'Zhou Daguan',q:'Zhou Daguan Cambodia'}],
+  {n:'A Pallava-derived alphabet',b:'The script that arrived through contact with India developed into the Khmer alphabet used today.',s:'palaeography',q:'Khmer script inscription'},
+  {n:'A foreign eyewitness account',b:'Zhou Daguan, an envoy sent from the Chinese Yuan court, lived at Angkor for about a year in 1296–97 and wrote the report known today as “The Customs of Cambodia.” It describes houses, clothing, markets, farming, religious life and royal processions, and remains the only detailed eyewitness description of the city at its height.',s:'Zhou Daguan',q:'Zhou Daguan Cambodia'}],
  music:[
-  {n:'The relief orchestras',b:'Bayon walls carry gong-chimes, drums, and the pin harp, the pinpeat ensemble’s ancestors, mid-performance since 1200.',s:'Bayon reliefs',q:'Bayon relief musicians'},
+  {n:'The relief orchestras',b:'Bayon wall reliefs show gong-chimes, drums and the arched harp, early forms of the instruments in the Cambodian pinpeat ensemble, carved around 1200.',s:'Bayon reliefs',q:'Bayon relief musicians'},
   {n:'The harp reborn',b:'The arched pin harp vanished for centuries; Cambodian musicians have now rebuilt and replayed it from the carvings.',s:'music archaeology',q:'Khmer harp pin'}]}},
 casarabe:{name:'Casarabe culture',where:'Llanos de Mojos, Bolivia, Cotoca · Landívar',d:{
  sci:[
-  {n:'Planned to the compass',b:'Civic cores and causeways hold a shared N-NW orientation across ~4,500 km², regional planning without stone or writing.',s:'Prümers et al. 2022',q:'Llanos de Mojos aerial'},
-  {n:'Water as infrastructure',b:'Canals (one 7 km to the San Pablo), weirs and reservoirs turned seasonal flood into a managed asset.',s:'Prümers 2022; Erickson',q:'Llanos de Mojos canals'},
-  {n:'A four-tier network',b:'From 315-ha Landívar down to hamlets and camps, a settlement hierarchy lidar made legible in one pass.',s:'Prümers et al. 2022',q:'Cotoca lidar Bolivia'}],
+  {n:'Planned to the compass',b:'Civic cores and causeways share a north-northwest orientation across roughly 4,500 km², evidence of regional planning achieved without stone or writing.',s:'Prümers et al. 2022',q:'Llanos de Mojos aerial'},
+  {n:'Water as infrastructure',b:'Canals (one running 7 km to the San Pablo), weirs and reservoirs managed the seasonal floodwater for use through the year.',s:'Prümers 2022; Erickson',q:'Llanos de Mojos canals'},
+  {n:'A four-tier network',b:'From the 315-hectare site of Landívar down to small hamlets and camps, lidar revealed a four-level settlement hierarchy.',s:'Prümers et al. 2022',q:'Cotoca lidar Bolivia'}],
  med:[
-  {n:'An honest gap',b:'No medical texts, no preserved pharmacopoeia, acidic soils ate the organics. Future coring for parasites and plants may speak where objects cannot.',s:'research frontier',q:'Amazon archaeology excavation'}],
+  {n:'An honest gap',b:'No medical texts or preserved remedies survive; the acidic soils destroyed the organic evidence. Future coring for parasites and plant remains may recover what artefacts cannot.',s:'research frontier',q:'Amazon archaeology excavation'}],
  art:[
-  {n:'Painted & incised ceramics',b:'Casarabe potters worked incision and paint into styles that date the mounds’ phases.',s:'Prümers, Loma Salvatierra',q:'Casarabe ceramics Bolivia'},
-  {n:'Monumental earth as form',b:'Stepped platforms, U-shaped courts, 22-m cones, sculpture at landscape scale, in the only medium the plain offered.',s:'lidar survey',q:'Cotoca mound Bolivia'}],
+  {n:'Painted & incised ceramics',b:'Casarabe potters decorated vessels with incision and paint; their changing styles help date the phases of the mounds.',s:'Prümers, Loma Salvatierra',q:'Casarabe ceramics Bolivia'},
+  {n:'Monumental earthworks',b:'Stepped platforms, U-shaped courts and cones up to 22 m tall were built as monumental architecture in earth, the region’s only available building material.',s:'lidar survey',q:'Cotoca mound Bolivia'}],
  adorn:[
-  {n:'Ornament in the burials',b:'Platform-mound burials at Loma Salvatierra include ornaments of shell and bone, rank travelling into the ground.',s:'Prümers excavations',q:'Loma Salvatierra'}],
+  {n:'Ornament in the burials',b:'Burials in the platform mounds at Loma Salvatierra include ornaments of shell and bone, which may indicate differences in rank.',s:'Prümers excavations',q:'Loma Salvatierra'}],
  mat:[
-  {n:'Earth, the only stone',b:'No quarry within reach: everything monumental is engineered soil, rammed, faced, maintained against a flooding plain.',s:'geoarchaeology',q:'earthwork mound Amazon'},
-  {n:'Wood, bone & shell toolkits',b:'Tools of hard palm wood, bone and shell did the work metal did elsewhere; almost all of it survives only as traces.',s:'excavation reports',q:'Amazonian bone tools'}],
+  {n:'Building in earth',b:'With no stone quarry within reach, every monument was built from compacted and faced earth, maintained against the seasonal floods.',s:'geoarchaeology',q:'earthwork mound Amazon'},
+  {n:'Wood, bone & shell toolkits',b:'Tools of hard palm wood, bone and shell did the jobs that metal did in other regions; most survive only as traces in the soil.',s:'excavation reports',q:'Amazonian bone tools'}],
  food:[
-  {n:'Manioc, ~10,350 years',b:'Forest-island phytoliths put manioc cultivation here near the dawn of the Holocene, among the world’s first farming.',s:'Lombardo et al. 2020',q:'manioc cassava plant'},
-  {n:'Squash, ~10,200 years',b:'Squash joins manioc on the earliest forest islands, a founding garden pair.',s:'Lombardo et al. 2020',q:'squash plant field'},
-  {n:'Maize at the centre',b:'By Casarabe times isotopes make maize the staple of the mound towns.',s:'diet studies',q:'maize field Bolivia'},
-  {n:'Fish from the flood',b:'Weirs strung across the savanna harvested the water’s own pulse, protein by landscape design.',s:'Erickson fish weirs',q:'fish weir Bolivia Amazon'}],
+  {n:'Manioc, ~10,350 years',b:'Phytoliths from forest islands date manioc cultivation here to about 10,350 years ago, among the earliest farming known anywhere.',s:'Lombardo et al. 2020',q:'manioc cassava plant'},
+  {n:'Squash, ~10,200 years',b:'Squash appears alongside manioc on the earliest forest islands, about 10,200 years ago.',s:'Lombardo et al. 2020',q:'squash plant field'},
+  {n:'Maize at the centre',b:'By Casarabe times, isotope studies show maize had become the dietary staple of the mound towns.',s:'diet studies',q:'maize field Bolivia'},
+  {n:'Fish from the flood',b:'Weirs built across the savanna caught fish as the floodwaters drained each year.',s:'Erickson fish weirs',q:'fish weir Bolivia Amazon'}],
  rel:[
-  {n:'U-shaped precincts',b:'Enclosed U-platforms atop terraces read as ceremonial cores, architecture orienting gatherings, contents still unknown.',s:'Prümers et al. 2022',q:'Llanos de Mojos earthworks aerial'},
-  {n:'Ancestors in the platform',b:'Burials seated within the mounds keep the dead literally underfoot of civic life.',s:'Loma Salvatierra burials',q:'Amazon burial urn'}],
+  {n:'U-shaped precincts',b:'Enclosed U-shaped platforms on the terraces are interpreted as ceremonial spaces, though what took place in them is still unknown.',s:'Prümers et al. 2022',q:'Llanos de Mojos earthworks aerial'},
+  {n:'Ancestors in the platform',b:'Burials set within the mounds placed the dead beneath the civic and ceremonial centres.',s:'Loma Salvatierra burials',q:'Amazon burial urn'}],
  lang:[
-  {n:'Voices inferred',b:'The plains later speak Arawakan, Mojo, Baure. Whether Casarabe people did is genuinely open; earthworks carry no words.',s:'linguistics; debated',q:'Mojos Bolivia mission'}],
+  {n:'Voices inferred',b:'Later inhabitants of the plains spoke Arawakan languages such as Mojo and Baure. Whether the Casarabe people did is unknown, since the earthworks preserve no writing.',s:'linguistics; debated',q:'Mojos Bolivia mission'}],
  music:[
-  {n:'Silence in the record',b:'No instruments yet recovered, organics again. The gap is itself a finding, and a target for the next excavations.',s:'research frontier',q:'Llanos de Mojos landscape'}]}},
+  {n:'Silence in the record',b:'No musical instruments have been recovered, again because organic materials rarely survive here. The gap marks a target for future excavation.',s:'research frontier',q:'Llanos de Mojos landscape'}]}},
 tairona:{name:'Tairona → Kogi',where:'Sierra Nevada de Santa Marta, Teyuna / Ciudad Perdida',d:{
  sci:[
-  {n:'Engineering for rain',b:'Ring terraces, buried drains and 1,200 stone stairs manage one of the wettest coasts in the Americas, the city is a drainage machine.',s:'ICANH; Giraldo',q:'Ciudad Perdida terraces'},
-  {n:'Paths that stitch a range',b:'Flagged stone roads link dozens of slope towns, movement engineered into vertical forest.',s:'survey',q:'Ciudad Perdida stone path'}],
+  {n:'Engineering for rain',b:'Ring terraces, buried drains and about 1,200 stone steps manage the runoff on some of the wettest slopes in the Americas.',s:'ICANH; Giraldo',q:'Ciudad Perdida terraces'},
+  {n:'Stone roads between towns',b:'Paved stone roads link dozens of towns across the steep slopes.',s:'survey',q:'Ciudad Perdida stone path'}],
  med:[
-  {n:'A living plant science',b:'Kogi mámas curate ecological and medicinal knowledge as the Sierra’s living archive, contemporary, guarded, and theirs.',s:'living tradition (respect)',q:'Kogi Sierra Nevada'}],
+  {n:'A living plant science',b:'Kogi mámas hold detailed ecological and medicinal knowledge of the Sierra, maintained today as part of their own tradition.',s:'living tradition (respect)',q:'Kogi Sierra Nevada'}],
  art:[
-  {n:'Figure pendants in gold',b:'Cacique pendants (bat-featured lords in full regalia) are the signature of Tairona casting.',s:'Museo del Oro corpus',q:'Tairona gold pendant'},
-  {n:'Polished blackware',b:'Burnished black vessels with modelled creatures ran alongside the gold as the fine table of the towns.',s:'ceramic corpus',q:'Tairona blackware ceramic'}],
+  {n:'Figure pendants in gold',b:'Cast gold pendants showing lords in full regalia, often with bat features, are characteristic of Tairona metalwork.',s:'Museo del Oro corpus',q:'Tairona gold pendant'},
+  {n:'Polished blackware',b:'Burnished black vessels with modelled animal figures were the fine ceramics of the towns, alongside the goldwork.',s:'ceramic corpus',q:'Tairona blackware ceramic'}],
  adorn:[
-  {n:'Tumbaga & lost wax',b:'Gold-copper alloy cast by lost wax, then surface-enriched by depletion gilding, chemistry making little gold look like much.',s:'metallurgical analysis',q:'tumbaga lost wax'},
-  {n:'Hard-stone beads',b:'Carnelian and rock crystal drilled with reed-and-abrasive patience, necklaces that took seasons.',s:'lapidary studies',q:'Tairona carnelian beads'},
-  {n:'Worn identity',b:'Nose ornaments, labrets, ear spools, the pendant lords wear the full inventory the excavations recover.',s:'iconography + finds',q:'Tairona nose ornament gold'}],
+  {n:'Tumbaga & lost wax',b:'A gold-copper alloy cast by the lost-wax method, then surface-treated by depletion gilding so the finished object looks like pure gold.',s:'metallurgical analysis',q:'tumbaga lost wax'},
+  {n:'Hard-stone beads',b:'Carnelian and rock crystal drilled with reed and abrasive, a slow process producing long bead necklaces.',s:'lapidary studies',q:'Tairona carnelian beads'},
+  {n:'Personal ornament',b:'Nose ornaments, labrets and ear spools appear on the gold pendant figures and are also found in excavations.',s:'iconography + finds',q:'Tairona nose ornament gold'}],
  mat:[
-  {n:'Masonry without mortar',b:'Granite rings, ramps and stairways fitted dry, architecture calibrated to seismic, saturated slopes.',s:'site engineering',q:'Ciudad Perdida masonry'},
-  {n:'Textiles lost, tools left',b:'Cotton cloth rotted in the wet; thousands of spindle whorls testify to the industry that made it.',s:'excavation finds',q:'spindle whorls Colombia'}],
+  {n:'Masonry without mortar',b:'Granite rings, ramps and stairways were fitted together without mortar, suited to steep, water-saturated and earthquake-prone slopes.',s:'site engineering',q:'Ciudad Perdida masonry'},
+  {n:'Textiles lost, tools left',b:'Cotton cloth rotted in the wet climate, but thousands of spindle whorls show how much was spun and woven.',s:'excavation finds',q:'spindle whorls Colombia'}],
  food:[
-  {n:'Terrace staples',b:'Maize, beans and manioc on built soils fed towns stacked a kilometre up the slope.',s:'Giraldo',q:'Sierra Nevada terraces'},
-  {n:'Coast-to-peak exchange',b:'Salt, fish and shell moved up; gold and stone moved down, a vertical economy in one massif.',s:'exchange studies',q:'Sierra Nevada Santa Marta'},
-  {n:'Coca, the sacred leaf',b:'Toasted coca with lime from shells, then and now the ceremonial medium of Kogi men; the poporo gourd is its emblem.',s:'living tradition (respect)',q:'poporo Kogi coca'}],
+  {n:'Terrace staples',b:'Maize, beans and manioc grown on built-up soils fed towns set high on the slopes.',s:'Giraldo',q:'Sierra Nevada terraces'},
+  {n:'Coast-to-peak exchange',b:'Salt, fish and shell moved up from the coast while gold and stone moved down, linking different elevations of the one massif in trade.',s:'exchange studies',q:'Sierra Nevada Santa Marta'},
+  {n:'Coca, the sacred leaf',b:'Toasted coca leaves with lime from shells remain central to Kogi men’s ceremonial life; the poporo gourd that holds the lime is its emblem.',s:'living tradition (respect)',q:'poporo Kogi coca'}],
  rel:[
-  {n:'Aluna, the thought-world',b:'For the Kogi all things are first woven in aluna, the mind-world; the mámas’ work is keeping the weave in balance.',s:'Kogi teaching (as shared publicly)',q:'Kogi mama Sierra'},
+  {n:'Aluna, the thought-world',b:'In Kogi thought, everything exists first in aluna, the world of mind or spirit, before taking material form; the mámas work to keep this order in balance.',s:'Kogi teaching (as shared publicly)',q:'Kogi mama Sierra'},
   {n:'Payments to the land',b:'Offerings (beads, shells, thought) are “payments” at named stones and pools; Teyuna remains an active sacred site.',s:'living practice',q:'Ciudad Perdida ritual site'},
-  {n:'The bat-lord image',b:'Recurring bat-featured figures in gold likely bind rulers to night, caves and transformation.',s:'iconography (interpretive)',q:'Tairona bat figure gold'}],
+  {n:'The bat-lord image',b:'Recurring bat-featured gold figures probably linked rulers to the bat’s associations with night, caves and transformation.',s:'iconography (interpretive)',q:'Tairona bat figure gold'}],
  lang:[
-  {n:'Chibchan voices, unbroken',b:'Kogi (Kágaba), Wiwa and Arhuaco speak Chibchan languages descended from the builders’ world, the Sierra never went silent.',s:'linguistics',q:'Kogi people'}],
+  {n:'Chibchan voices, unbroken',b:'Kogi (Kágaba), Wiwa and Arhuaco speak Chibchan languages descended from those of the Tairona, and still spoken in the Sierra today.',s:'linguistics',q:'Kogi people'}],
  music:[
-  {n:'Flutes & maracas, continuing',b:'Ceremonial flute pairs and rattles sound Kogi ritual today, a living register of Sierra music.',s:'living tradition',q:'Kogi ceremony music'}]}},
+  {n:'Flutes & maracas, continuing',b:'Paired ceremonial flutes and rattles are still played in Kogi ritual today.',s:'living tradition',q:'Kogi ceremony music'}]}},
 xingu:{name:'Upper Xingu (Kuhikugu)',where:'Xingu headwaters, Brazil, Kuikuro territory',d:{
  sci:[
   {n:'Plaza-town geometry',b:'Circular plazas, radial roads at repeated azimuths, moats and bridges, Heckenberger mapped a networked “galactic” plan.',s:'Heckenberger et al. 2008',q:'Kuhikugu Xingu'},
-  {n:'Fish-pond aquaculture',b:'Weirs and excavated ponds farmed fish at settlement scale, aquaculture as core infrastructure.',s:'Heckenberger; Kuikuro practice',q:'Xingu fish weir'},
-  {n:'Dark-earth soil science',b:'Amazonian dark earths (charcoal- and midden-enriched) record deliberate soil building still fertile today.',s:'ADE studies',q:'terra preta dark earth'}],
+  {n:'Fish-pond aquaculture',b:'Weirs and excavated ponds held and harvested fish near the settlements.',s:'Heckenberger; Kuikuro practice',q:'Xingu fish weir'},
+  {n:'Dark-earth soil science',b:'Amazonian dark earths, enriched with charcoal and household waste, are the product of long human settlement and remain fertile today.',s:'ADE studies',q:'terra preta dark earth'}],
  med:[
-  {n:'Kuikuro healing, live',b:'Plant medicine and shamanic curing continue in the same territory, knowledge held by its owners, not by us.',s:'living tradition (respect)',q:'Kuikuro village'}],
+  {n:'Kuikuro healing today',b:'Plant medicine and shamanic healing continue in the same territory, as knowledge belonging to the Kuikuro themselves.',s:'living tradition (respect)',q:'Kuikuro village'}],
  art:[
-  {n:'Ceramics with a lineage',b:'Kuikuro potters today work wares continuous with the archaeological sequence under their villages.',s:'ethnoarchaeology',q:'Kuikuro ceramics'},
-  {n:'Design on the body',b:'Genipapo black and urucum red carry named pattern systems, art whose canvas is people.',s:'Xinguano design corpus',q:'Xingu body paint'},
-  {n:'Zoomorphic benches',b:'Carved animal stools seat chiefs and shamans, furniture as cosmology.',s:'material culture',q:'Amazonian carved bench'}],
+  {n:'Ceramics with a lineage',b:'Kuikuro potters today make pottery continuous with the archaeological sequence found beneath their villages.',s:'ethnoarchaeology',q:'Kuikuro ceramics'},
+  {n:'Design on the body',b:'Genipapo (black) and urucum (red) are used for named body-paint patterns.',s:'Xinguano design corpus',q:'Xingu body paint'},
+  {n:'Zoomorphic benches',b:'Carved wooden stools in animal forms are used by chiefs and shamans and carry cosmological meaning.',s:'material culture',q:'Amazonian carved bench'}],
  adorn:[
-  {n:'Feather regalia',b:'Macaw and eagle featherwork crowns ritual dress, colour engineered from the living forest.',s:'living tradition',q:'Xingu feather headdress'},
-  {n:'Shell belts & exchange',b:'Snail-shell belts and necklaces move through moitará exchange, wealth that circulates by design.',s:'ethnography',q:'Xingu shell belt'}],
+  {n:'Feather regalia',b:'Macaw and eagle feathers are used in ritual headdresses and ornaments.',s:'living tradition',q:'Xingu feather headdress'},
+  {n:'Shell belts & exchange',b:'Snail-shell belts and necklaces are exchanged through the moitará trading system.',s:'ethnography',q:'Xingu shell belt'}],
  mat:[
-  {n:'Detoxifying manioc',b:'Grating, pressing in the tipití sleeve, and roasting turn toxic bitter manioc into daily bread, process chemistry as heritage.',s:'ethnobotany',q:'tipiti manioc press'},
-  {n:'The great thatched oca',b:'Longhouse architecture in wood and thatch spans decades of use, engineering in fully organic materials.',s:'ethnoarchitecture',q:'Xingu oca house'},
-  {n:'Managed forest as material',b:'Pequi orchards and useful-tree groves around old towns show the “wild” forest is partly an heirloom.',s:'historical ecology',q:'pequi tree orchard'}],
+  {n:'Detoxifying manioc',b:'Grating, pressing in the tipití sleeve and roasting remove the cyanide from bitter manioc, making it safe to eat as bread.',s:'ethnobotany',q:'tipiti manioc press'},
+  {n:'The great thatched oca',b:'Large longhouses (oca) built of wood and thatch last for decades.',s:'ethnoarchitecture',q:'Xingu oca house'},
+  {n:'A managed forest',b:'Pequi orchards and groves of useful trees around former town sites show that much of the surrounding forest was shaped by people.',s:'historical ecology',q:'pequi tree orchard'}],
  food:[
-  {n:'Beiju & manioc drink',b:'Flat manioc breads and fermented drinks anchor the cuisine, the staple the ancient towns were built to process.',s:'Heckenberger; living practice',q:'beiju manioc bread'},
-  {n:'Pequi',b:'Oily, sulfur-perfumed orchard fruit, cultivated and eaten here for over a thousand years.',s:'historical ecology',q:'pequi fruit'},
-  {n:'Fish first',b:'Xinguano cuisine centres fish over game, a food identity with archaeological depth.',s:'zooarchaeology; ethnography',q:'Xingu fishing'}],
+  {n:'Beiju & manioc drink',b:'Flat manioc breads (beiju) and fermented drinks are staples of the cuisine, based on the same crop the ancient towns were organised around.',s:'Heckenberger; living practice',q:'beiju manioc bread'},
+  {n:'Pequi',b:'An oily orchard fruit with a strong smell, cultivated and eaten here for over a thousand years.',s:'historical ecology',q:'pequi fruit'},
+  {n:'Fish first',b:'Xinguano cuisine favours fish over hunted game, a pattern also seen in the archaeological record.',s:'zooarchaeology; ethnography',q:'Xingu fishing'}],
  rel:[
   {n:'Kuarup, for the dead',b:'The inter-village mortuary festival honouring great dead (decorated trunks, wrestling, alliance) continues today.',s:'living tradition',q:'Kuarup ceremony'},
   {n:'Itseke, the spirit others',b:'Powerful nonhuman persons inhabit Kuikuro cosmology; ritual manages relations with them.',s:'ethnography',q:'Xingu ritual'},
-  {n:'The sacred flutes',b:'A restricted men’s flute complex exists across the Upper Xingu; out of respect, its details are not ours to display.',s:'noted with respect',q:'Upper Xingu village'}],
+  {n:'The sacred flutes',b:'A restricted men’s flute tradition exists across the Upper Xingu; out of respect for its restrictions, it is not shown in detail here.',s:'noted with respect',q:'Upper Xingu village'}],
  lang:[
   {n:'A multilingual system',b:'Carib, Arawak and Tupi languages share one ritual system, Kuikuro (Carib) among them, thoroughly documented with its speakers.',s:'Franchetto; linguistics',q:'Kuikuro people'}],
  music:[
-  {n:'Songs held & recorded',b:'Kuikuro song and flute repertoires have been recorded with the community, living sound with deep roots.',s:'documentation projects',q:'Kuikuro music'}]}}
+  {n:'Songs held & recorded',b:'Kuikuro song and flute repertoires have been recorded together with the community.',s:'documentation projects',q:'Kuikuro music'}]}}
 };
 TYPE_COLORS.codex='#c9a2ff';TYPE_NAMES.codex='Codex entry';
 Views.codex=function(){
@@ -4693,13 +4693,13 @@ const REAL_KIT={
  adna:[['Thermo Scientific Neptune (isotope MS)','https://www.thermofisher.com/'],['Illumina sequencers (ancient DNA)','https://www.illumina.com/']]};
 const EMERGING=[
  ['Muon tomography','Cosmic-ray muons can image the internals of a structure through metres of solid stone. It has been used inside the Great Pyramid and at Teotihuacan. Could it be used in the Maya pyramids?','Morishima et al. 2017, Nature'],
- ['Sediment ancient DNA','The soil itself remembers. DNA shed into lake mud can recover whole ecosystems (crops, animals, even human presence) with no bones at all.','Kjær et al. 2022, Nature'],
+ ['Sediment ancient DNA','DNA shed into lake mud can allow for the recovery of entire ecosystems, including crops, animals, and human presence, with no bones.','Kjær et al. 2022, Nature'],
  ['Palaeoproteomics & ZooMS','Proteins leave a molecular fingerprint, not a literal one, that identifies a species and sometimes sex from a fragment of bone too small for the eye to place.','Welker et al.'],
  ['AI structure detection','A neural net can now pick out vaulted elite architecture across 110,000 lidar structures at 93% accuracy. That study is in the Library.','Estrada-Belli et al. 2023, JAS'],
- ['Residue chemistry','Lipids and starches trapped in pot walls can name a meal a thousand years cold. Cacao at Tikal was confirmed this way.','Hurst et al.'],
+ ['Residue chemistry','Lipids and starches trapped in pot walls can identify a meal cooked a thousand years ago. Cacao at Tikal was confirmed this way.','Hurst et al.'],
  ['Portable Raman & hyperspectral','Pigments and minerals identified on the spot, with nothing removed for sampling. Maya Blue reads in seconds on a temple wall.','conservation science'],
- ['Airborne geophysics','Magnetometers and radar are moving onto drones and swarms, which brings flooded worlds like the Llanos de Mojos within reach.','method frontier'],
- ['The instrument that does not exist yet','Every method above began with someone noticing information nobody was reading. The next receiver is unmade. It could be yours.','the premise of The Rainforest']];
+ ['Airborne geophysics','Magnetometers and radar are moving onto drones and swarms, which brings flooded landscapes like the Llanos de Mojos within reach.','method frontier'],
+ ['The instrument that does not exist yet','Every method above began with someone proposing how a piece/aspect of data could be found, and what it could offer. What do you see? What do you propose?','the premise of The Rainforest']];
 
 /* ── Views.home v3, the manifesto up front ── */
 Views.home=function(){
@@ -4723,7 +4723,7 @@ Views.home=function(){
       d.innerHTML='<div style="height:56px"></div>'
        +'<div class="overline">The premise</div>'
        +'<h2 class="sect">Information is <em>everywhere</em>.</h2>'
-       +'<p class="lede" style="max-width:74ch">Everything that happens writes itself into something — isotopes in a tooth, starch in a pot wall, DNA in lake mud, the centimetre-scale shape of the ground under a forest. Archaeology is the discipline of retrieving information and contextualizing it, but also analyzing how the information around civilizations –– the way the wind blew, the colors they had seen, the foods they had eaten, the light they perceived, the metals they wore, etc ––  shaped their resulting ideas, technologies, and empires. Every instrument is created to retrieve this information, some reading rooftops with neural nets and image pyramids with cosmic rays. The Rainforest is a unique enviornment, one which is intense and defies many assumtions about human capabilites. What properties affected the people to make it so, and how can we find this using archaeological methods and cutting-edge technologies?</p>'
+       +'<p class="lede" style="max-width:74ch">Everything that happens is written within something: isotopes in a tooth, starch in a pot wall, DNA in lake mud, the centimetre-scale shape of the ground beneath a forest. Archaeology is the discipline of retrieving information and contextualizing it, but also analyzing how the information around civilizations (the way the wind blew, the colors they saw, the foods they ate, the light they perceived, the metals they wore) shaped their resulting ideas, technologies, and empires. Every instrument is created to retrieve this information, some reading rooftops with neural nets and image pyramids with cosmic rays. The Rainforest is a unique environment, one which is intense and defies many assumptions about human capabilities. What properties affected the people to make it so, and how can we find this using archaeological methods and cutting-edge technologies?</p>'
        +'<div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap"><button class="btn primary" data-go="lab">Meet the instruments</button><button class="btn" data-go="codex">Enter a culture world</button></div>';
       const tg=document.querySelector('#v-home .tag-src');(tg?tg.parentNode:stats.parentNode).insertBefore(d,tg?tg.nextElementSibling:stats.nextElementSibling)}}
   const stop=startHero();
@@ -4739,9 +4739,9 @@ Views.atlas=function(){
     +'<div class="foot"><span class="chip">'+esc(s.period)+'</span><span class="chip cy">'+s.techs.length+' instruments</span>'
     +(SV[s.id]?'<span class="chip acc">real 360°</span>':'')+'<span class="go">Open dossier →</span></div></div>'}
   $('#atlasGrid').innerHTML=
-   '<div style="grid-column:1/-1"><div class="overline" style="margin-bottom:2px">Core dossiers, the source papers of this build</div></div>'
+   '<div style="grid-column:1/-1"><div class="overline" style="margin-bottom:2px">Featured sites</div></div>'
    +CORE.map(function(id){return card(SITES.find(function(s){return s.id===id}))}).join('')
-   +'<div style="grid-column:1/-1;margin-top:26px"><div class="overline" style="margin-bottom:2px;color:var(--faint)">Companion landscapes, context, not padding</div></div>'
+   +'<div style="grid-column:1/-1;margin-top:26px"><div class="overline" style="margin-bottom:2px;color:var(--faint)">Additional landscapes</div></div>'
    +SIDE.map(function(id){return card(SITES.find(function(s){return s.id===id}))}).join('');
 };
 
@@ -4813,20 +4813,20 @@ Views.tech=function(id){
 /* ── §FIELD3 THE CODEX v2, immersive culture worlds ── */
 const CULT_X={
  maya:{site:'tikal',accent:'#54e2a7',heroQ:'Tikal temple rainforest canopy',
-  intro:'Step under the Petén canopy at first light. Oropendolas unspool liquid calls, mist hangs on plaster-white stairways, cacao froth sits in a painted cup. For two thousand years the Maya farmed, calculated, warred and wrote beneath this roof of leaves, and much of what they wrote we can now read back.',
-  found:'Lasers counted 61,480 buried structures through the leaves. A deciphered script returned names, dates and wars. Chemistry found chocolate in the cups, and childhood geographies in tooth enamel. A neural net now reads elite vaulted roofs across 110,000 buildings. Every entry below carries its source.'},
+  intro:'At Tikal, in the Petén forest of Guatemala, the Maya built a city of plastered plazas, stepped pyramids and causeways. Over roughly two thousand years they farmed the forest, traded obsidian and jade, tracked time in a written script, and recorded the reigns and wars of their rulers in carved stone.',
+  found:'Airborne lidar has counted 61,480 structures beneath the canopy; the decipherment of Maya script has recovered names, dates and wars; residue analysis has found cacao in drinking vessels; isotopes in teeth and bone trace where individuals lived and whether they later moved; and machine learning now identifies elite vaulted buildings across 110,000 mapped structures.'},
  khmer:{site:'angkor',accent:'#7fd2ff',heroQ:'Angkor Wat sunrise reflection',
-  intro:'Dawn on the western causeway. The towers of Angkor Wat double themselves in the moat, coucals boom from the sugar palms, and the smoke of rice fires drifts across a metropolis of wooden houses that time erased and lidar redrew, mound by mound, pond by pond.',
-  found:'1,300 inscriptions in two languages. A Chinese envoy’s notebook from 1296. Lidar that resolved the wooden city, and the empire’s first capital under forest. Machine-learning dating of a thousand temples that let demographers count the vanished at 700,000 to 900,000 people.'},
+  intro:'Angkor, in present-day Cambodia, was the capital of the Khmer Empire. Beyond the stone temples lay a low-density city of wooden houses, household ponds, canals and rice fields covering roughly a thousand square kilometres. Angkor Wat, built in the twelfth century, is its largest single monument.',
+  found:'Some 1,300 inscriptions in Khmer and Sanskrit, and the eyewitness account of the Chinese envoy Zhou Daguan from 1296, record court life and administration. Airborne lidar has mapped the wooden city around the temples and located Mahendraparvata, an early Khmer capital on Phnom Kulen, beneath the forest. Machine-learning dating of about a thousand temples allowed researchers to estimate a peak population of 700,000 to 900,000 across greater Angkor.'},
  casarabe:{site:'cotoca',accent:'#dca868',heroQ:'Llanos de Mojos Bolivia aerial savanna',
-  intro:'The Llanos breathe in a yearly rhythm: savanna, then a shallow inland sea. Out of that pulse the Casarabe raised earthen pyramids and drove causeways ruler-straight to the horizon, in an Amazon long declared empty of history.',
-  found:'Lidar strips away the gallery forest to reveal whole urban plans in an afternoon. Cores from forest islands hold crop phytoliths ten thousand years old. Excavated platforms hold the builders themselves. Where the evidence runs out, this Codex says so.'},
+  intro:'The Casarabe culture occupied the Llanos de Mojos, a seasonally flooded savanna in the Bolivian Amazon, between roughly 500 and 1400 CE. They built earthen platform mounds and conical pyramids, and linked their settlements with raised causeways and canals across land that floods for part of each year.',
+  found:'Airborne lidar has revealed plans of Cotoca and Landívar, two large Casarabe sites, through the canopy. Sediment cores from forest islands in the savanna preserve crop phytoliths roughly ten thousand years old, predating the Casarabe, among the earliest evidence of plant cultivation in the Amazon. Excavations of the platforms have recovered burials, pottery and the remains of the people who built them.'},
  tairona:{site:'teyuna',accent:'#c9a2ff',heroQ:'Ciudad Perdida terraces mist Sierra Nevada',
-  intro:'A thousand stone steps up into cloud. Ringed terraces shed rain through built channels, gold lords wear the faces of bats, and paths stitch a vertical world together. The Sierra never emptied. The Kogi still keep it, and part of this page is theirs, told with respect.',
-  found:'Drone photogrammetry watches the terraces shift millimetre by millimetre between rains. Metallurgy labs read the tumbaga recipes. And living Kogi, Wiwa and Arhuaco teachers carry a continuity written nowhere else.'},
+  intro:'Teyuna, also called Ciudad Perdida, was built by the Tairona around 800 CE in the Sierra Nevada de Santa Marta in northern Colombia. Stone-paved paths and stairways connect terraces cut into the steep slopes, with stone-lined channels to carry off the heavy rain. The Kogi, Wiwa and Arhuaco, descendants of the Tairona, still live in these mountains.',
+  found:'Drone photogrammetry records millimetre-scale movement in the terraces between rainy seasons, tracking erosion and slope stability. Metallurgical analysis identifies the compositions of tumbaga, the gold-copper alloy used in Tairona goldwork. The Kogi, Wiwa and Arhuaco hold oral and ritual knowledge of the Sierra maintained since Tairona times.'},
  xingu:{site:'kuhikugu',accent:'#8fd45f',heroQ:'Xingu river Amazon aerial forest',
-  intro:'Circular plazas, radial avenues wider than boulevards, orchards of pequi and ponds full of fish: garden cities in the deep Amazon, remembered in precise detail by the Kuikuro, whose ancestors laid them out.',
-  found:'Excavation and satellite mapping done with the Kuikuro community. Dark-earth soil science. Ancient roads walked with GPS behind elders who knew exactly where they ran.'}};
+  intro:'In the Upper Xingu, in the southern Amazon of Brazil, ancestors of the Kuikuro built clusters of plaza settlements between about 1250 and 1650 CE. Broad straight roads connected them, alongside bridges, defensive ditches, managed ponds and orchards of pequi. The Kuikuro retain detailed knowledge of this landscape and have mapped it with the archaeologists who study it.',
+  found:'Excavation and satellite mapping have been carried out together with the Kuikuro community. Soil science has identified Amazonian dark earths, the fertile anthropogenic soils left by long settlement. Road networks have been surveyed on the ground with GPS, guided by Kuikuro elders who know where the old routes run.'}};
 const CULT_PPR={maya:/maya|guatemala|yaxchilan|belize|caracol|vaulted|apocalypse|lidar technology to map wealth/i,
  khmer:/angkor|cambodia|khmer/i,casarabe:/bolivian|prümers|holocene crop/i,
  tairona:/tairona|snowy ranges|colombia/i,xingu:/xingu|future of the amazon/i};
