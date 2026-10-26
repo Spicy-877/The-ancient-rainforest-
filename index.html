@@ -2844,19 +2844,40 @@ async function commonsCat(cat,n){
       lic:stripTags(md.LicenseShortName&&md.LicenseShortName.value)||''}}).filter(Boolean).slice(0,n||6);
   FLD.ph[key]=out;return out;
 }
-const SITE_CAT={tikal:'Tikal',caracol:'Caracol',angkor:'Angkor',teyuna:'Ciudad Perdida',yaxchilan:'Yaxchilan',cotoca:'Llanos de Moxos',kuhikugu:'Upper Xingu'};
-async function sitePhotos(site,n){
-  const cat=SITE_CAT[site.id];
-  if(cat){try{const r=await commonsCat(cat,n);if(r&&r.length>=3)return r}catch(e){}}
-  return commonsPhotos(site.name+' '+site.region.split(',')[0],n);
-}
+const SITE_CAT={tikal:'Tikal',caracol:'Caracol, Belize',angkor:'Angkor Wat',teyuna:'Ciudad Perdida',yaxchilan:'Yaxchilan',cotoca:'Llanos de Moxos',kuhikugu:'Upper Xingu'};
+async function sitePhotos(site,n){ return wikiLeads(SITE_WIKI[site.id]||[],n); }
 /* instruments: pull the device photo from that instrument's own Commons
    category (real photos of that class of instrument), not a keyword search. */
 const TECH_CAT={lidar:'Lidar',photo:'Photogrammetry',gpr:'Ground-penetrating radar',mag:'Magnetometers',multi:'Multispectral imaging',pxrf:'X-ray fluorescence',core:'Core sample',adna:'Mass spectrometry'};
-async function techPhotos(id,fallbackQ,n){
-  const cat=TECH_CAT[id];
-  if(cat){try{const r=await commonsCat(cat,n);if(r&&r.length>=3)return r}catch(e){}}
-  return commonsPhotos(fallbackQ,n);
+async function techPhotos(id,fallbackQ,n){ return wikiLeads(TECH_WIKI[id]||[],n); }
+/* ── Codex images: curated Wikimedia Commons CATEGORIES only (human-filed photos of
+   the exact subject), specific per entry then the culture category, never a free-text
+   keyword search. Returns [] rather than show an unrelated keyword result. ── */
+/* Images come from Wikipedia PAGE IMAGES: the representative lead photo of a
+   disambiguated article (so "Ciudad Perdida" is the Colombian ruins, never a bar of
+   that name), across a curated list of on-topic article titles. */
+async function wikiLeads(titles,n){
+  titles=(titles||[]).filter(Boolean); if(!titles.length)return [];
+  const key='wk|'+titles.join('|')+'|'+(n||6); if(FLD.ph[key])return FLD.ph[key];
+  const u='https://en.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail%7Cname&pithumbsize=1200&titles='+encodeURIComponent(titles.join('|'));
+  const bad=/\.svg|location_map|locator|flag_of|coat_of_arms|_map/i; let out=[];
+  try{const j=await jget(u),q=j.query||{};
+    const redir={};(q.redirects||[]).forEach(function(r){redir[r.from.toLowerCase()]=r.to});
+    const norm={};Object.values(q.pages||{}).forEach(function(pg){norm[(pg.title||'').toLowerCase()]=pg});
+    const seen={};
+    titles.forEach(function(t){const f=redir[t.toLowerCase()]||t;const pg=norm[f.toLowerCase()];
+      if(pg&&pg.thumbnail&&pg.thumbnail.source&&!bad.test(pg.thumbnail.source)&&!seen[pg.thumbnail.source]){seen[pg.thumbnail.source]=1;
+        out.push({thumb:pg.thumbnail.source,page:pg.pageimage?('https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(pg.pageimage)):('https://en.wikipedia.org/wiki/'+encodeURIComponent(f)),credit:'Wikimedia Commons',lic:''})}});
+  }catch(e){}
+  out=out.slice(0,n||6);FLD.ph[key]=out;return out;
+}
+const SITE_WIKI={tikal:['Tikal','Tikal Temple I','Tikal Temple IV','Maya civilization'],caracol:['Caracol','Caana','Xunantunich','Maya civilization'],angkor:['Angkor Wat','Bayon','Angkor Thom','Ta Prohm','Banteay Srei'],teyuna:['Ciudad Perdida','Tairona','Kogi people'],yaxchilan:['Yaxchilan','Bonampak','Usumacinta River'],cotoca:['Casarabe culture','Llanos de Moxos'],kuhikugu:['Kuhikugu','Kuikuro','Xingu peoples']};
+const CULT_WIKI={maya:['Tikal','Palenque','Copán','Maya civilization'],khmer:['Angkor Wat','Bayon','Angkor Thom'],casarabe:['Casarabe culture','Llanos de Moxos'],tairona:['Tairona','Ciudad Perdida','Kogi people'],xingu:['Kuhikugu','Kuikuro','Xingu peoples']};
+const TECH_WIKI={lidar:['Lidar'],photo:['Photogrammetry'],gpr:['Ground-penetrating radar'],mag:['Magnetometer'],multi:['Multispectral imaging','Normalized difference vegetation index'],pxrf:['X-ray fluorescence'],core:['Core sample','Varve'],adna:['Ancient DNA','Archaeogenetics']};
+const CODEX_WIKI={'maya.sci.0':['Maya calendar'],'maya.sci.1':['Maya numerals'],'maya.sci.2':['Dresden Codex'],'maya.sci.3':['Dresden Codex'],'maya.sci.4':['Uaxactun'],'maya.art.0':['Maya ceramics'],'maya.art.1':['Bonampak'],'maya.art.2':['Palenque'],'maya.art.3':['Yaxchilan'],'maya.art.5':['Spondylus'],'maya.art.7':['Resplendent quetzal'],'maya.mat.1':['Maya blue'],'maya.mat.5':['Maya architecture'],'maya.food.0':['Nixtamalization'],'maya.food.1':['Theobroma cacao'],'maya.food.2':['Melipona'],'maya.food.4':['Bixa orellana'],'maya.rel.1':['Maya maize god'],'maya.rel.3':['Cenote'],'maya.lang.1':['Maya script'],'maya.lang.4':['Bonampak'],'khmer.sci.1':['Angkor Wat'],'khmer.art.0':['Angkor Wat'],'khmer.art.2':['Apsara','Angkor Wat'],'khmer.rel.1':['Bayon'],'khmer.lang.3':['Bayon'],'tairona.sci.0':['Ciudad Perdida'],'tairona.sci.1':['Ciudad Perdida'],'tairona.art.0':['Tairona'],'tairona.mat.0':['Ciudad Perdida'],'xingu.sci.2':['Terra preta'],'casarabe.food.0':['Cassava']};
+async function cxPhotos(cul,dk,i,n){
+  const titles=(CODEX_WIKI[cul+'.'+dk+'.'+i]||[]).concat(CULT_WIKI[cul]||[]);
+  return wikiLeads(titles,n||3);
 }
 
 /* ── real terrain: elevation tiles + satellite imagery at true coordinates ── */
@@ -4090,6 +4111,7 @@ const TECH_PHOTO_Q={lidar:'airborne lidar sensor aircraft',photo:'survey drone p
  multi:'multispectral imaging remote sensing camera',pxrf:'portable XRF handheld analyzer',
  core:'sediment core sampling lake',adna:'ancient DNA sequencing laboratory'};
 const TECH_OUTPUT_Q={lidar:'lidar hillshade elevation model archaeology',photo:'photogrammetry 3D point cloud mesh',gpr:'ground penetrating radar radargram profile',mag:'magnetometer survey magnetic map archaeology',multi:'multispectral false color NDVI map',pxrf:'XRF spectrum elemental analysis plot',core:'lake sediment core stratigraphy varves',adna:'DNA sequencing electropherogram chromatogram'};
+const TECH_OUT_CAT={gpr:'Ground-penetrating radar',multi:'NDVI',core:'Varve'};
 Views.tech=function(id){
   const t=TECHS.find(x=>x.id===id); if(!t){show('lab');return}
   App.ctx={type:'tech',id:id,label:t.name,go:['tech',id]}; logJ('view','Instrument · '+t.name,['tech',id]);
@@ -4802,7 +4824,7 @@ Views.tech=function(id){
     off=photoViewer($('#tHero'),img);setP(0);
   }catch(e){const cr=$('#tHeroCr');if(cr)cr.textContent='photo stream blocked here, open the file directly in a browser'}})();
   (async function(){try{const el=$('#tData');if(!el)return;
-    const ps=await commonsPhotos(TECH_OUTPUT_Q[id]||(t.name+' data'),6);
+    const ps=await wikiLeads(TECH_WIKI[id]||[],6);
     if(!document.body.contains(el))return;
     el.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join(''):'<div class="small">no result imagery returned for this method.</div>';
     el.querySelectorAll('.ph').forEach(function(x){x.onclick=function(){window.open(x.dataset.u,'_blank')}});
@@ -4906,7 +4928,7 @@ Views.codex=function(){
     if(sndB)sndB.onclick=function(){const st2=root.querySelector('#cxSt'),mx=root.querySelector('#cxMix');
       if(RECMIX.playing){RECMIX.stop();sndB.textContent='▶ Compose the chorus';st2.hidden=true;mx.innerHTML=''}
       else{sndB.textContent='◼ Stop the chorus';st2.hidden=false;st2.textContent='assembling…';RECMIX.build(site,mx,st2)}};
-    (async function(){try{const ps=await commonsPhotos(th.heroQ,3);
+    (async function(){try{const ps=await wikiLeads((SITE_WIKI[th.site]||[]).concat(CULT_WIKI[cul]||[]),3);
       const bg=root.querySelector('#cxBg');if(!bg||!ps[0])return;
       bg.innerHTML='<img src="'+ps[0].thumb+'" alt="">';
       const cr=root.querySelector('#cxBgCr');if(cr)cr.textContent='backdrop: real photograph · '+ps[0].credit+' · '+ps[0].lic;
@@ -4920,7 +4942,7 @@ Views.codex=function(){
         return '<div class="sp"><img loading="lazy" src="'+u+'" alt=""><div class="nm">'+esc(nm)+'<br>© '+esc(o.user?o.user.login:'iNaturalist')+'</div></div>'}).join(''):'<div class="small">no records returned.</div>';
     }catch(e){const g=root.querySelector('#cxWild');if(g)g.innerHTML='<div class="small">live feed blocked here, open the file directly in a browser.</div>'}})();
     (async function(){try{const el=root.querySelector('#cxArt');if(!el||!C.d.art)return;
-      const ps=await commonsPhotos(C.d.art[0].q,4);
+      const ps=await cxPhotos(cul,'art',0,4);
       if(!document.body.contains(el))return;
       el.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join(''):'';
       el.querySelectorAll('.ph').forEach(function(e2){e2.onclick=function(){window.open(e2.dataset.u,'_blank')}});
@@ -5479,7 +5501,7 @@ function openEntry(cul,dom,i){
     bd.querySelectorAll('[data-rel]').forEach(function(c){c.onclick=function(){
       const p=c.dataset.rel.split('.');const ov=document.querySelector('#overlayRoot .backdrop');if(ov)ov.remove();
       openEntry(p[0],p[1],+p[2])}})}
-  (async function(){try{const ps=await commonsPhotos(e.q,6);const el=$('#enPh');if(!el)return;
+  (async function(){try{const ps=await cxPhotos(cul,dom,i,6);const el=$('#enPh');if(!el)return;
     el.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join(''):'<div class="small">none returned for this query.</div>';
     el.querySelectorAll('.ph').forEach(function(x){x.onclick=function(){window.open(x.dataset.u,'_blank')}});
   }catch(err){const el=$('#enPh');if(el)el.innerHTML='<div class="small">photo stream blocked here.</div>'}})();
@@ -5604,7 +5626,7 @@ function cxEntryCard(cul,dk,e,i){const id=cul+'.'+dk+'.'+i;
   return '<div class="card click cx-card selectable" data-open="'+id+'" style="cursor:pointer">'+colBtn('codex',id,e.n)
    +'<h3 style="font-size:16.5px">'+esc(e.n)+'</h3><p>'+esc(e.b)+'</p>'
    +'<div class="foot"><span class="mus-tag">'+esc(e.s)+'</span>'
-   +'<button class="chip" data-imgx="'+esc(e.q)+'" style="cursor:pointer">Images</button>'
+   +'<button class="chip" data-imgx="'+id+'" style="cursor:pointer">Images</button>'
    +'<button class="chip acc" data-obj="'+esc(e.q)+'" style="cursor:pointer">Real objects</button>'
    +'<span class="go">Open →</span></div></div>'}
 Views.codex=function(){
@@ -5667,7 +5689,7 @@ Views.codex=function(){
       strip=document.createElement('div');strip.className='cx-ph';
       strip.innerHTML='<div class="small" style="grid-column:1/-1">streaming…</div>';
       card.appendChild(strip);
-      (async function(){try{const ps=await commonsPhotos(b.dataset.imgx,3);
+      (async function(){try{const p=b.dataset.imgx.split('.');const ps=await cxPhotos(p[0],p[1],+p[2],3);
         if(!document.body.contains(strip))return;
         strip.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+'</div></div>'}).join(''):'<div class="small" style="grid-column:1/-1">none returned.</div>';
         strip.querySelectorAll('.ph').forEach(function(x){x.onclick=function(ev2){ev2.stopPropagation();window.open(x.dataset.u,'_blank')}});
@@ -5680,7 +5702,7 @@ Views.codex=function(){
     if(sndB)sndB.onclick=function(){const st2=root.querySelector('#cxSt'),mx2=root.querySelector('#cxMix');
       if(RECMIX.playing){RECMIX.stop();sndB.textContent='▶ Compose the chorus';st2.hidden=true;mx2.innerHTML=''}
       else{sndB.textContent='◼ Stop the chorus';st2.hidden=false;st2.textContent='assembling…';RECMIX.build(site,mx2,st2)}};
-    (async function(){try{const ps=await commonsPhotos(th.heroQ,3);
+    (async function(){try{const ps=await wikiLeads((SITE_WIKI[th.site]||[]).concat(CULT_WIKI[cul]||[]),3);
       const bg=root.querySelector('#cxBg');if(!bg||!ps[0])return;
       bg.innerHTML='<img src="'+ps[0].thumb+'" alt="">';
       const cr=root.querySelector('#cxBgCr');if(cr)cr.textContent='backdrop: real photograph · '+ps[0].credit+' · '+ps[0].lic;
@@ -5694,7 +5716,7 @@ Views.codex=function(){
         return '<div class="sp"><img loading="lazy" src="'+u+'" alt=""><div class="nm">'+esc(nm)+'<br>© '+esc(o.user?o.user.login:'iNaturalist')+'</div></div>'}).join(''):'<div class="small">no records returned.</div>';
     }catch(e){const g=root.querySelector('#cxWild');if(g)g.innerHTML='<div class="small">live feed blocked here, open the file directly in a browser.</div>'}})();
     (async function(){try{const el=root.querySelector('#cxArt');if(!el||!C.d.art)return;
-      const ps=await commonsPhotos(C.d.art[0].q,4);
+      const ps=await cxPhotos(cul,'art',0,4);
       if(!document.body.contains(el))return;
       el.innerHTML=ps.length?ps.map(function(p){return '<div class="ph" data-u="'+p.page+'"><img loading="lazy" src="'+p.thumb+'" alt=""><div class="cr">'+esc(p.credit)+' · '+esc(p.lic)+'</div></div>'}).join(''):'';
       el.querySelectorAll('.ph').forEach(function(e2){e2.onclick=function(){window.open(e2.dataset.u,'_blank')}});
